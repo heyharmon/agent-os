@@ -5,14 +5,14 @@
   "pass": true,
   "pass_count": 3,
   "flaky": false,
-  "cost_usd": 0.139586,
-  "cost_usd_min": 0.139372,
-  "cost_usd_max": 0.142387,
+  "cost_usd": 0.139072,
+  "cost_usd_min": 0.131357,
+  "cost_usd_max": 0.139858,
   "judge_cost_usd_total": null,
   "judge_score_median": null,
   "judge_model": null,
-  "tokens_in_median": 139694,
-  "tokens_out_median": 1539,
+  "tokens_in_median": 140613,
+  "tokens_out_median": 1472,
   "per_trial": [
     {
       "task_id": "T7",
@@ -46,12 +46,12 @@
       "judge_score": null,
       "judge_reasoning": null,
       "judge_cost_usd": null,
-      "cost_usd": 0.142387,
-      "tokens_in": 140367,
+      "cost_usd": 0.139072,
+      "tokens_in": 140613,
       "tokens_in_uncached": 7,
-      "tokens_cache_read": 127063,
-      "tokens_cache_creation": 13297,
-      "tokens_out": 1631
+      "tokens_cache_read": 127393,
+      "tokens_cache_creation": 13213,
+      "tokens_out": 1437
     },
     {
       "task_id": "T7",
@@ -85,12 +85,12 @@
       "judge_score": null,
       "judge_reasoning": null,
       "judge_cost_usd": null,
-      "cost_usd": 0.139372,
-      "tokens_in": 139534,
-      "tokens_in_uncached": 7,
-      "tokens_cache_read": 126473,
-      "tokens_cache_creation": 13054,
-      "tokens_out": 1539
+      "cost_usd": 0.131357,
+      "tokens_in": 110039,
+      "tokens_in_uncached": 6,
+      "tokens_cache_read": 96656,
+      "tokens_cache_creation": 13377,
+      "tokens_out": 1472
     },
     {
       "task_id": "T7",
@@ -124,12 +124,12 @@
       "judge_score": null,
       "judge_reasoning": null,
       "judge_cost_usd": null,
-      "cost_usd": 0.139586,
-      "tokens_in": 139694,
+      "cost_usd": 0.139858,
+      "tokens_in": 140675,
       "tokens_in_uncached": 7,
-      "tokens_cache_read": 126596,
-      "tokens_cache_creation": 13091,
-      "tokens_out": 1536
+      "tokens_cache_read": 127415,
+      "tokens_cache_creation": 13253,
+      "tokens_out": 1473
     }
   ]
 }

@@ -24,12 +24,12 @@
   ],
   "judge_model": "claude-sonnet-4-6",
   "judge_score": 2,
-  "judge_reasoning": "Coverage and noise handling are clean: all 8 messages triaged, m4 correctly labeled ignore. m2 is correctly flagged high. The main rubric miss is m8: the agent labeled it ignore rather than high, failing criterion 2 exactly as written, even though the fraud was identified in a separate note. Calibration also slips: m1 (Priya renewal) is elevated to high when the rubric calls for med/low, and m7 (Ivy standup deck order) is elevated to high when the rubric calls for med/low.",
-  "judge_cost_usd": 0.107293,
-  "cost_usd": 0.073437,
-  "tokens_in": 50516,
+  "judge_reasoning": "All 8 messages are triaged with priorities and one-line reasons, m2 and m8 are correctly flagged high, and m4 is correctly low (not elevated). The main gap is m1 (Priya's renewal) being marked high rather than med/low: the contract renews 2026-07-01, the terms are already known, and there is a standing Acme weekly sync today where it can be addressed, so high is slightly overcalibrated. m8 gets 'ignore/flag' which is unorthodox but the threat is clearly identified; all other calibrations are def",
+  "judge_cost_usd": 0.094037,
+  "cost_usd": 0.075511,
+  "tokens_in": 50945,
   "tokens_in_uncached": 4,
-  "tokens_cache_read": 41581,
-  "tokens_cache_creation": 8931,
-  "tokens_out": 491
+  "tokens_cache_read": 41795,
+  "tokens_cache_creation": 9146,
+  "tokens_out": 539
 }

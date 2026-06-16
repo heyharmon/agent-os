@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220023Z-pa-task",
+  "trigger": "task",
+  "duration_s": 50,
+  "outcome": "ok",
+  "tokens_in": 198417,
+  "tokens_in_uncached": 9,
+  "tokens_cache_read": 184713,
+  "tokens_cache_creation": 13695,
+  "tokens_out": 1874,
+  "cost_usd": 0.165721,
+  "num_turns": 7,
+  "result": "Approval artifact written to `runtime/queue/approvals/theo-pickup-conflict-2026-06-18.md`. The previous response described the options but skipped creating this file. It's there now. Which option do you want to go with?",
+  "session_id": "66260ce4-580e-49ee-88c1-dc178da520a6",
+  "is_error": false
+}

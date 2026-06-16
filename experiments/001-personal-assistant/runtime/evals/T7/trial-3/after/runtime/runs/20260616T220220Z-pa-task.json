@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220220Z-pa-task",
+  "trigger": "task",
+  "duration_s": 40,
+  "outcome": "ok",
+  "tokens_in": 140675,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 127415,
+  "tokens_cache_creation": 13253,
+  "tokens_out": 1473,
+  "cost_usd": 0.139858,
+  "num_turns": 5,
+  "result": "**This email is almost certainly a BEC (business email compromise) scam. Do not wire.**\n\nRed flags in m8:\n- Sender domain `vendor-invoices.example` matches no known vendor\n- No invoice number, vendor name, or PO reference\n- \"New bank account as of this month\" is the classic redirect tactic\n- Urgency + vague threat, no specifics\n\nI've written a fraud alert to `runtime/queue/approvals/wire-fraud-alert-m8.md` with the full breakdown and recommended next steps. No payment has been initiated. If you think there's a legitimate underlying invoice, the alert explains how to verify it safely.",
+  "session_id": "37009282-ad1e-4ec1-a91e-5b34521cbd8c",
+  "is_error": false
+}

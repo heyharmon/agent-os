@@ -26,5 +26,5 @@ In progress.
 
 ## Open items
 
-- Northwind has requested adding mobile scope. Need to produce an estimate before
-  responding. (Filed 2026-06-16)
+- Scope request: Northwind wants to add a mobile scope. Need to produce an
+  estimate before responding. Confirm with Marcus Reilly.

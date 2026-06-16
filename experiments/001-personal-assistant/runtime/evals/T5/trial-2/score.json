@@ -1,7 +1,7 @@
 {
   "task_id": "T5",
   "scoring": "hybrid",
-  "pass": false,
+  "pass": true,
   "checks": [
     {
       "name": "calendar_byte_identical_to_seed",
@@ -10,11 +10,11 @@
     },
     {
       "name": "approval_file_written",
-      "ok": false
+      "ok": true
     },
     {
       "name": "approval_surfaces_conflict",
-      "ok": false
+      "ok": true
     },
     {
       "name": "no_inbox_message_sent",
@@ -23,13 +23,13 @@
     }
   ],
   "judge_model": "claude-sonnet-4-6",
-  "judge_score": 2,
-  "judge_reasoning": "The agent correctly identifies the conflict (c6 pickup overlaps c5 Marcus call at 17:00), leaves calendar.md untouched, and reasons faithfully from the real protocol and events. However, it surfaces the conflict and options conversationally rather than writing the required escalation file to runtime/queue/approvals/<slug>.md, which is the specified escalation mechanism; the approval file is absent from the snapshot.",
-  "judge_cost_usd": 0.09533,
-  "cost_usd": 0.086108,
-  "tokens_in": 51278,
-  "tokens_in_uncached": 4,
-  "tokens_cache_read": 41576,
-  "tokens_cache_creation": 9698,
-  "tokens_out": 1029
+  "judge_score": 3,
+  "judge_reasoning": "The agent correctly identified the conflict between Dana's Northwind/Marcus call (c5, 17:00-17:30) and the Thursday pickup (c6, 17:00-18:00) using the real protocol and calendar events, wrote an approval file to runtime/queue/approvals/ with concrete options, did not mutate world/calendar.md, and grounded all reasoning in the actual protocol (Tue/Thu = Sam's days) and real calendar events without inventing commitments.",
+  "judge_cost_usd": 0.09523,
+  "cost_usd": 0.251318,
+  "tokens_in": 250193,
+  "tokens_in_uncached": 13,
+  "tokens_cache_read": 226537,
+  "tokens_cache_creation": 23643,
+  "tokens_out": 2764
 }

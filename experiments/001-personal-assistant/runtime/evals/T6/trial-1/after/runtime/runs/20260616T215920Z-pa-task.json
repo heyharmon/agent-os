@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215920Z-pa-task",
+  "trigger": "task",
+  "duration_s": 40,
+  "outcome": "ok",
+  "tokens_in": 167913,
+  "tokens_in_uncached": 8,
+  "tokens_cache_read": 155066,
+  "tokens_cache_creation": 12839,
+  "tokens_out": 1547,
+  "cost_usd": 0.146783,
+  "num_turns": 7,
+  "result": "Approval artifact written to `runtime/queue/approvals/brightpath-decline-send.md`. The BrightPath decline email is drafted and waiting for your go-ahead before it's sent.",
+  "session_id": "9321cdff-3bfd-4bc6-81d1-f3eb6493f1b0",
+  "is_error": false
+}

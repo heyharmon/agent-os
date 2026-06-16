@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215845Z-pa-task",
+  "trigger": "task",
+  "duration_s": 35,
+  "outcome": "ok",
+  "tokens_in": 236290,
+  "tokens_in_uncached": 10,
+  "tokens_cache_read": 221421,
+  "tokens_cache_creation": 14859,
+  "tokens_out": 1328,
+  "cost_usd": 0.17553,
+  "num_turns": 10,
+  "result": "Draft is at `runtime/drafts/brightpath-decline.md`. The $18k request falls below the studio's $25k fixed-bid floor, so the reply declines and pivots to the 6k/month retainer as an alternative path. Ready to send whenever you approve.",
+  "session_id": "8d168e04-181d-4b4c-952e-e54161dac8ed",
+  "is_error": false
+}

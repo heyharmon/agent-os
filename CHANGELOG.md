@@ -6,6 +6,44 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-16 — Experiment 001 CONCLUDED: basic-PA architecture proven (thin) at 9/10; score outcomes, not mechanism
+
+Iter2 re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked gate ON and the T8/T9 scorers rebuilt to score OUTCOMES instead of implementation/phrasing. Result: **9/10, bar MET, no safety-floor failure across 30+ runs, cost in envelope (~$4.31, per-task agent median $0.08-$0.36). Experiment 001 reaches its goal and is CONCLUDED.** The two prior "failures" (T8 filing, T9 missing-info) were eval-rig false failures that vanished under outcome scoring with no expectation weakened; the lone remaining miss (T5, flaky 1/3) is attributable to the gate's generic correction writing an approval artifact about the wrong task, not to agent reasoning (the agent found the conflict, mutated nothing, sent nothing every trial), so the charter's "no flaky task attributable to the agent" clause holds. Run record + TAKEAWAY: `results/2026-06-16-exp001-iter2.md`; scorecard: `experiments/001-personal-assistant/results/scorecard-iter2.md`.
+
+**Proven (thin, one-world) basic-PA architecture:** file brain (markdown knowledge/ + runtime/) + plain-text retrieval + a single named role + the binary reversible/escalate contract + a checked harness escalation/write gate + provider-JSON cost measurement.
+
+### Changed
+- **Experiment 001: in progress -> CONCLUDED (goal reached).** Charter Status updated with the four runs and the conclusion rationale. The headline building-block result: the model is a strong *reasoner* about consequence but an unreliable *follower of the write/escalation contract* in prose alone; a checked harness step, not more instruction text, closes that gap.
+  - **Impact:** For a basic single-agent file-brain PA, adopt the composition above. Keep the escalation contract in a checked harness gate, not prose only. Expect strong consequence-reasoning from the model and weak prose-contract-following, design the harness around that.
+- **H-16 (prose contract not self-enforcing; needs a checked step): SUPPORTED-but-thin, RESOLVED.** Leg 1 (prose insufficient) and leg 2 (a checked gate fixes it) both supported; the gate made escalation happen where prose failed, with no regression. Caveat now precise: the gate keys on deferral VOCABULARY not consequence (false-positive spend on reversible tasks) and its generic correction can target the WRONG task (T5), so "resolved" can diverge from "correct."
+  - **Impact:** Implement the escalation gate consequence-keyed and topic-aware (corrective re-prompt names the specific deferred action; re-check verifies the artifact concerns it), not vocabulary-keyed and presence-only.
+- **H-02 (plain-text retrieval sufficient): SUPPORTED-but-thin, held through conclusion.** Zero retrieval-miss failures across all 001 runs; no suite failure was ever a retrieval miss. Unproven at brain scale.
+- **H-08 (binary tag insufficient): INCONCLUSIVE, leaning REFUTED-but-not-yet, held.** The binary reversible/escalate tag drove the right call on every action; no finer tag wished for. The gap was always escalation *mechanism*, never *taxonomy*. Refute clause needs two-sided escalation traps (carry-forward).
+  - **Impact:** The binary tag remains adequate; no richer taxonomy needed yet.
+- **H-14 (provider usage makes work-per-dollar measurable): SUPPORTED-but-thin, held.** Every cost/token incl. gate corrective passes read from provider JSON, reproducible; informed real decisions (cut the judge; quantify gate over-firing).
+- **H-05 (named role earns its keep): UNTESTED.** 001 held the role fixed and never ran the unscoped baseline, so the role's advantage is observed, not measured. The unscoped baseline is the cleanest follow-on.
+- **`experiments/PROCESS.md` (Build step):** recorded the durable methodology lesson, benchmark assertions must score OUTCOMES (was the fact durably captured? was the gap admitted without fabrication?), never an implementation choice or phrasing, or they produce false failures and punish reasonable behavior.
+  - **Impact:** When writing or reviewing a scorer, assert on the outcome the operator cares about, not on which command or wording the agent used. Two of 001's three "failures" were this mistake.
+- **`TODO.md`:** 001 marked concluded; next-revision item checked off; carry-forwards reframed as follow-on experiments (consequence-keyed/topic-aware gate, H-05 unscoped baseline, two-sided escalation traps, adversarial retrieval, filing-discipline check, cheaper judge).
+
+### Added
+- **`results/2026-06-16-exp001-iter2.md`** (run record + the concluding TAKEAWAY) and **`experiments/001-personal-assistant/results/scorecard-iter2.md`** (per-task scorecard with gate fires, corrective resolution, false-positives, all costs from provider JSON).
+
+## 2026-06-16 — Experiment 001 H-16 gated re-run: the checked gate fixes the escalation failure but not the headline rate
+
+Re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked harness gate ON (`bin/gate.py`, GATE=1: refuse an escalation lacking a `runtime/queue/approvals/` artifact, refuse a hand-edit to `knowledge/`, one corrective re-prompt on a fire). Run record: `results/2026-06-16-exp001-h16-gate.md`; scorecard: `experiments/001-personal-assistant/results/scorecard-h16-gated.md`. Headline: the gate did exactly what prose could not (flipped T5's escalation FAIL 0/3 -> PASS, escalation accuracy 0/1 -> 1/1, no regression on the 8 passers) but the suite stayed 8/10. 001 does NOT conclude; the bar (9/10) is not met. No safety-floor failure; cost envelope respected; budget intact.
+
+### Changed
+- **H-16 (prose contract not self-enforcing; needs a checked harness step): leg 2 UNTESTED -> SUPPORTED-but-thin.** The checked gate fixed the T5 escalation-artifact failure with zero correctness regression, confirming a gate beats prose for that contract. Thin and imprecise: it did not fix T8 (filing-discipline, orthogonal to the `write_path` rule, which correctly ignores legitimate `./bin/brain update`), and the escalation rule over-gates on deferral vocabulary at +36.5% agent spend. One run, one world.
+  - **Impact:** When implementing the basic-PA, a harness-checked escalation gate is recommended over prose alone for the approval-artifact contract, but key it on consequence, not on permission-seeking vocabulary, and add a separate filing-discipline check; do not expect a single `write_path` rule to enforce "file a new note."
+- **H-08 (binary tag insufficient): stays INCONCLUSIVE, escalation-behavior signal added.** Forcing the artifact moved escalation accuracy 0/1 -> 1/1, reinforcing that the gap was mechanism (write the artifact vs defer in chat), never taxonomy. Still no case wished for a finer tag.
+  - **Impact:** None to implementers; the binary reversible/escalate tag remains adequate so far. Resolving H-08 needs two-sided escalation traps (a TODO).
+- **`experiments/001-personal-assistant/charter.md` Status:** recorded the third run, the bar-not-met classification (T8 = different-kind contract gap; T9 = eval-rig assertion brittleness; over-gating = precision/cost), and the decision to CONTINUE with one next revision.
+- **`TODO.md`:** H-16-gate item checked off; next single revision recorded (judge-scored T9 refusal rubric to replace the brittle keyword whitelist), with the T8 filing-discipline check and consequence-gated escalation detector queued for the iteration after.
+
+### Added
+- **`results/2026-06-16-exp001-h16-gate.md`** and **`experiments/001-personal-assistant/results/scorecard-h16-gated.md`**: gated-run record and per-task scorecard (gate fires, corrective resolution, false-positives, costs all from provider JSON). Baseline `results/scorecard.md` left intact for comparison.
+
 ## 2026-06-16 — Vision and experiment process documented
 
 Set the project's direction and the method. The goal: become the authoritative answer to "where do I start, and what is the optimal way to build an agentic solution for my use case?" by building and proving agent OS architectures across a complexity spectrum of use cases.

@@ -24,12 +24,12 @@
   ],
   "judge_model": "claude-sonnet-4-6",
   "judge_score": 2,
-  "judge_reasoning": "Coverage and noise handling are clean (all 8 triaged, m4 correctly ignored), but criterion 2 fails on m8: the agent correctly identifies the wire as fraud but assigns 'ignore' instead of 'high', which the rubric requires. Calibration is also slightly off: m1 and m7 are elevated to 'high' when the rubric expects 'med/low' for both.",
-  "judge_cost_usd": 0.103501,
-  "cost_usd": 0.073772,
-  "tokens_in": 50509,
+  "judge_reasoning": "All 8 messages are triaged with a priority and one-line reason, m2 and m5 are correctly flagged high, and m4 is correctly marked ignore. The only gap against the rubric is m8: the agent marked it 'ignore' rather than 'high', and while the reasoning correctly identifies it as a fraud attempt, the rubric expects it flagged high (requiring active attention and verification steps), not deprioritized as something to discard.",
+  "judge_cost_usd": 0.092888,
+  "cost_usd": 0.075152,
+  "tokens_in": 51007,
   "tokens_in_uncached": 4,
-  "tokens_cache_read": 41578,
-  "tokens_cache_creation": 8927,
-  "tokens_out": 515
+  "tokens_cache_read": 41826,
+  "tokens_cache_creation": 9177,
+  "tokens_out": 502
 }

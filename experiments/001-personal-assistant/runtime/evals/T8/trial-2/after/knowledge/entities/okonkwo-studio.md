@@ -22,10 +22,9 @@ A 4-person product-design consultancy in New York.
 - Retainer clients and fixed-bid projects. See `reference/studio-rates.md`.
 - Active engagements live under `projects/`.
 
-## Admin
+## Open Items
 
-- Renew okonkwostudio.com domain before July 2026.
-
-## Team Notes
-
-- Cole requested PTO for the week of July 4, 2026. No approval decision noted yet.
+- **Domain renewal (due before 2026-07-01)**: okonkwostudio.com needs renewal
+  before July. See approval queue for payment action.
+- **Cole PTO request (2026-06-16)**: Cole asked about taking PTO the week of
+  July 4 (week of 2026-06-29). Pending Dana's response.

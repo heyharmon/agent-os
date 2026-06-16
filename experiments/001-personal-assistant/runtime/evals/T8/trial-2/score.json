@@ -1,15 +1,11 @@
 {
   "task_id": "T8",
   "scoring": "hybrid",
-  "pass": false,
+  "pass": true,
   "checks": [
     {
-      "name": "filed_via_brain_valid_frontmatter",
-      "ok": false
-    },
-    {
-      "name": "timestamps_bumped_to_today",
-      "ok": false
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
     },
     {
       "name": "notes_marked_filed",
@@ -22,13 +18,13 @@
     }
   ],
   "judge_model": "claude-sonnet-4-6",
-  "judge_score": 2,
-  "judge_reasoning": "Criteria 2, 3, and 4 are all met: each note landed in the correct home (mobile scope in northwind-redesign.md Open Items, domain renewal in okonkwo-studio.md Admin with July deadline, Cole PTO in okonkwo-studio.md Team Notes), notes.md entries are marked filed with filed_to paths, and no facts were invented. Criterion 1 fails: the agent result text contains no evidence that ./bin/brain was invoked; the knowledge files appear to have been edited directly, which violates the operating rule that wr",
-  "judge_cost_usd": 0.10412,
-  "cost_usd": 0.278723,
-  "tokens_in": 340872,
-  "tokens_in_uncached": 13,
-  "tokens_cache_read": 323755,
-  "tokens_cache_creation": 17104,
-  "tokens_out": 3365
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in sensible homes: the Northwind mobile-scope note landed in northwind-redesign.md Open Items with the correct framing (estimate needed, contract amendment required); the domain renewal landed in okonkwo-studio.md Open Items with the before-July deadline explicit, plus an approval-queue file flagging the payment action; Cole's PTO landed in okonkwo-studio.md Open Items correctly attributed to the week of July 4. No fabricated details are present, and all thre",
+  "judge_cost_usd": 0.108332,
+  "cost_usd": 0.320303,
+  "tokens_in": 403296,
+  "tokens_in_uncached": 54,
+  "tokens_cache_read": 381637,
+  "tokens_cache_creation": 21605,
+  "tokens_out": 5068
 }

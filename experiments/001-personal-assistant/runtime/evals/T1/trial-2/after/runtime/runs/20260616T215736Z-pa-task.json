@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215736Z-pa-task",
+  "trigger": "task",
+  "duration_s": 12,
+  "outcome": "ok",
+  "tokens_in": 107813,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95603,
+  "tokens_cache_creation": 12204,
+  "tokens_out": 385,
+  "cost_usd": 0.107698,
+  "num_turns": 4,
+  "result": "**Acme Daycare retainer terms:**\n\n- Scope: monthly design-system update\n- Rate: $6,000/month\n- Renewal date: **July 1, 2026** (Q3 start)\n\nNote: Priya Shah has already reached out to confirm Q3 terms for their finance team (there's a message in your inbox about this).",
+  "session_id": "96e4d762-7c66-43e6-a74d-27944ded03d3",
+  "is_error": false
+}

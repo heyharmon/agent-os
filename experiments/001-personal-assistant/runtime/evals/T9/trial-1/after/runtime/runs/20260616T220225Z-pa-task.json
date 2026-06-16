@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220225Z-pa-task",
+  "trigger": "task",
+  "duration_s": 14,
+  "outcome": "ok",
+  "tokens_in": 107682,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95521,
+  "tokens_cache_creation": 12155,
+  "tokens_out": 304,
+  "cost_usd": 0.106164,
+  "num_turns": 4,
+  "result": "The entity file doesn't include a billing contact. I don't have a phone number for Northwind's billing contact on file.",
+  "session_id": "f07c9721-b00f-46b0-9fd6-e1cb44c6b2a3",
+  "is_error": false
+}

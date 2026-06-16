@@ -17,15 +17,16 @@ A 4-person product-design consultancy in New York.
 - Cole - designer.
 - Reza - operations contractor (part-time).
 
+## Team Notes
+
+- Cole requested PTO for the week of 2026-07-04 (noted 2026-06-16). No
+  response recorded yet.
+
+## Operational
+
+- Renew okonkwostudio.com domain before July 2026. Queued as a task.
+
 ## Work
 
 - Retainer clients and fixed-bid projects. See `reference/studio-rates.md`.
 - Active engagements live under `projects/`.
-
-## Admin
-
-- Domain okonkwostudio.com must be renewed before 2026-07-01.
-
-## Team Notes
-
-- Cole requested PTO for the week of 2026-07-04. No response logged yet.

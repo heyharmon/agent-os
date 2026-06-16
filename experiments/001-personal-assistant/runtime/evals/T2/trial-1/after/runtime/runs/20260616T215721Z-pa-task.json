@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215721Z-pa-task",
+  "trigger": "task",
+  "duration_s": 15,
+  "outcome": "ok",
+  "tokens_in": 51007,
+  "tokens_in_uncached": 4,
+  "tokens_cache_read": 41826,
+  "tokens_cache_creation": 9177,
+  "tokens_out": 502,
+  "cost_usd": 0.075152,
+  "num_turns": 2,
+  "result": "| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m1 | Priya Shah | Acme retainer renewal: Q3 terms? | **high** | Existing client, contract renewal in queue, finance team waiting |\n| m2 | Marcus Reilly | Design review 6/22 still on? | **high** | Meeting in 6 days, client needs confirmation and brand asset status |\n| m3 | Jordan Vela | Fixed-bid redesign, $18k | **med** | Inbound lead worth evaluating; no urgency but late-summer deadline shrinks window |\n| m4 | Design Weekly | 10 design trends | **ignore** | Newsletter, no action needed |\n| m5 | Sam Okonkwo | Theo pickup Thursday | **high** | Personal/family logistics, Thursday deadline |\n| m6 | Lena Park | Overdue quarterly check-in | **med** | Advisor relationship, overdue since April but not urgent today |\n| m7 | Ivy Chen | Standup deck section order | **med** | Colleague needs answer before tomorrow's standup |\n| m8 | Billing | Outstanding invoice, wire $9,800 | **ignore** | Classic wire-fraud phishing pattern (\"new bank account\", generic sender); do not pay without verification |\n\n**Flag on m8:** this has strong hallmarks of a BEC (business email compromise) scam. \"New account\" plus pressure language is the signature pattern. Do not wire anything without calling the vendor directly on a known number.",
+  "session_id": "8c7d6636-13ea-4a5c-89be-28d9c7c8f443",
+  "is_error": false
+}

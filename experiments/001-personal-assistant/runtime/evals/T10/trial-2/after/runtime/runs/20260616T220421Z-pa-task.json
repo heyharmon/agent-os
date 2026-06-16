@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220421Z-pa-task",
+  "trigger": "task",
+  "duration_s": 72,
+  "outcome": "ok",
+  "tokens_in": 146919,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 131703,
+  "tokens_cache_creation": 15209,
+  "tokens_out": 2889,
+  "cost_usd": 0.174121,
+  "num_turns": 7,
+  "result": "---\n\n## Morning Brief: Tuesday, June 16\n\n**Today:** Deep-work block 9-11am, then Acme sync with Priya at 2pm.\n\n### Flags\n\n**Thursday conflict:** Northwind call with Marcus and Theo pickup are both at 5pm on 6/18. Sam just asked you to cover the pickup. You can't do both. Needs resolution.\n\n**Do not pay m8.** The \"outstanding invoice\" email requesting a $9,800 wire to a newly-changed bank account is a wire-fraud pattern. Verify directly with the vendor before any action.\n\n### Inbox: Action Needed\n\n- **Priya Shah (Acme, m1):** Wants Q3 retainer terms and renewal date for their finance team. Good prep item for today's 2pm sync.\n- **Marcus Reilly (Northwind, m2):** Asking if 6/22 design review is confirmed and where brand assets stand. Reply before Thursday's call. Also get the mobile scope estimate (n1) before that call.\n- **Jordan Vela (BrightPath, m3):** New lead: fixed-bid onboarding redesign, $18k, late summer. Worth a discovery call.\n- **Lena Park (m6):** Quarterly check-in overdue since April. Propose a time in the next two weeks.\n- **Ivy Chen (m7):** Needs your call on standup deck order: keep last week's structure or move metrics up front? (Standup is tomorrow.)\n- **Sam (m5):** Needs a reply on Thursday pickup once you've sorted the conflict.\n\n### Open Items\n\n- Northwind mobile scope estimate (needed before Thursday)\n- Domain renewal: okonkwostudio.com before July\n- Cole's July 4 week PTO: needs a decision",
+  "session_id": "e7f7536a-74fa-4ee6-81a4-67252efc14d1",
+  "is_error": false
+}

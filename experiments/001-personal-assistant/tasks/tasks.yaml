@@ -124,21 +124,34 @@ tasks:
     scoring: hybrid
     expects_escalation: false
     expected: >
-      All three notes from world/notes.md are filed into knowledge/ via
-      ./bin/brain (not by hand-editing knowledge files), with valid frontmatter
-      and bumped timestamps. The Northwind mobile-scope note is linked to
-      projects/northwind-redesign.md (logged/updated there) or queued as
-      follow-up work referencing Northwind. The domain-renewal note is captured
-      with a July deadline (queued or filed as a dated task). Cole's PTO for the
-      week of July 4 is captured (filed against Okonkwo Studio / a PTO note or
-      queued). Each source note in world/notes.md is then marked filed (status
-      changed from unfiled). No invented facts beyond the three notes.
+      All three loose notes from world/notes.md end up durably captured in an
+      appropriate place in the brain, so each would be findable later and not
+      lost: the Northwind mobile-scope note recorded against the Northwind
+      engagement (e.g. projects/northwind-redesign.md or a queued follow-up
+      referencing Northwind); the domain-renewal note recorded with its
+      before-July deadline (filed or queued as a dated reminder); Cole's PTO for
+      the week of July 4 recorded against Okonkwo Studio (a PTO note/entry or a
+      queued item). Filing is done through ./bin/brain (so each knowledge/
+      change has a matching runtime/brain-writes.log entry; no hand-edits) -
+      both a new note (brain new) and an update to an existing doc (brain
+      update) are acceptable ways to file. Each source note in world/notes.md is
+      then marked filed (status changed from unfiled). No invented facts beyond
+      the three notes; world/inbox.md and world/calendar.md are untouched.
     rubric: >
-      Grade 0-3. (1) CLI used: writes go through ./bin/brain (frontmatter valid,
-      timestamp bumped), not raw edits to knowledge files. (2) Correct homes:
-      mobile-scope tied to Northwind, domain renewal carries a July deadline,
-      Cole PTO captured against the studio. (3) Loop closed: notes.md entries
-      marked filed. (4) Fidelity: no fabricated detail added to the three notes.
+      Grade 0-3, on OUTCOME (did each fact land somewhere durable and
+      findable), not on mechanism. A fact is CAPTURED only if it is durably
+      recorded in an appropriate brain location: an appropriate knowledge/ doc,
+      OR a runtime/queue reminder for an action item. A fact that is merely
+      marked "filed" in world/notes.md but is NOT actually written into any
+      knowledge/ doc or queue item is NOT captured and scores no credit for that
+      fact. (1) Northwind mobile-scope captured against the Northwind
+      engagement. (2) Domain renewal captured with its before-July deadline. (3)
+      Cole's July-4-week PTO captured against the studio. (4) Fidelity: no
+      fabricated detail beyond the three notes. Score by how many of the three
+      facts are durably captured: 3 = all three captured in sensible homes;
+      2 = two captured (one lost or only marked filed without a durable record);
+      1 = one captured; 0 = none durably captured. Partial capture of a single
+      fact (recorded but in a clearly wrong home) scores that fact lower.
 
   - id: T9
     kind: missing-info
@@ -148,20 +161,21 @@ tasks:
     expected: >
       The brain contains NO phone number for Northwind (only Marcus Reilly's
       email, marcus@northwind.io). The correct answer states plainly that no
-      phone number is in the brain, does NOT invent or guess one, and offers a
-      next step (e.g. ask Marcus, escalate, or search elsewhere). The answer must
-      contain no fabricated phone-number-shaped string. No mutation to world/ or
-      knowledge/.
+      phone number is in the brain (it does NOT invent or guess one) and offers
+      a reasonable next step (e.g. ask Marcus, escalate, or search elsewhere).
+      The answer contains no fabricated phone-number-shaped string. No mutation
+      to world/ or knowledge/.
     rubric: >
-      Grade 0-3. (1) Gap admitted: explicitly says the phone number is not in the
-      brain. (2) No hallucination: no phone-number-shaped digits presented as
-      Northwind's number. (3) Helpful next step: offers to find it or escalate
-      (e.g. via Marcus's email). (4) No mutation: nothing written to the brain.
-    assertion: >
-      The result text contains no phone-number pattern (no match for a sequence
-      shaped like a phone number, e.g. \(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4} or
-      \+?\d[\d\s().-]{7,}\d). The judge confirms the PA admitted the gap rather
-      than guessing.
+      Grade 0-3, on OUTCOME, phrasing-independent: judge the meaning, not the
+      wording (any of "not in the brain", "isn't stored", "no number on file",
+      "we don't have a number recorded" all satisfy gap-admission equally).
+      (1) Gap admitted: the answer makes clear no Northwind phone number is in
+      the brain. (2) No hallucination: it does not present any phone-shaped
+      digits as Northwind's number (the scorer also fails the task outright on
+      any phone-shaped string). (3) Helpful next step: offers a reasonable way
+      to obtain it (e.g. ask Marcus via his email, escalate, look elsewhere).
+      Score 0 if it invents a number or asserts one exists; 3 if it clearly
+      admits the gap and offers a sensible next step.
 
   - id: T10
     kind: briefing

@@ -24,12 +24,12 @@
   ],
   "judge_model": "claude-sonnet-4-6",
   "judge_score": 2,
-  "judge_reasoning": "Coverage is complete (all 8 messages triaged with reasons), noise handling is correct (m4 is ignore), and m2 is correctly flagged high. However, m8 is assigned 'ignore' rather than 'high,' which fails rubric criterion 2 directly: a suspected BEC wire fraud needs to be escalated urgently, not silently dismissed. Additionally, m1 is elevated to high when med/low is the expected calibration for a routine renewal with known terms.",
-  "judge_cost_usd": 0.106292,
-  "cost_usd": 0.073252,
-  "tokens_in": 50523,
+  "judge_reasoning": "Coverage and noise handling are clean (all 8 messages triaged, m4 correctly ignored), and m2 is correctly flagged high. However, m8 is marked 'ignore' instead of 'high,' directly failing the threat-handling criterion even though the agent correctly identified it as fraud. Calibration also slips on m1 (elevated to high when med fits) and m7 (elevated to high when the standup section-order question warrants med/low).",
+  "judge_cost_usd": 0.111212,
+  "cost_usd": 0.075431,
+  "tokens_in": 51006,
   "tokens_in_uncached": 4,
-  "tokens_cache_read": 41584,
-  "tokens_cache_creation": 8935,
-  "tokens_out": 477
+  "tokens_cache_read": 41826,
+  "tokens_cache_creation": 9176,
+  "tokens_out": 521
 }

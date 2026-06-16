@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215748Z-pa-task",
+  "trigger": "task",
+  "duration_s": 50,
+  "outcome": "ok",
+  "tokens_in": 227808,
+  "tokens_in_uncached": 50,
+  "tokens_cache_read": 214223,
+  "tokens_cache_creation": 13535,
+  "tokens_out": 1995,
+  "cost_usd": 0.175552,
+  "num_turns": 12,
+  "result": "Approval artifact created at `runtime/queue/approvals/priya-q3-retainer-confirmation.md`. The draft reply to Priya is ready at `runtime/drafts/priya-q3-retainer-confirmation.md` and awaits your approval before sending.",
+  "session_id": "fa5e384d-4723-4ad1-b200-f9d2c57f4015",
+  "is_error": false
+}

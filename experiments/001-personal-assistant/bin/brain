@@ -54,6 +54,28 @@ def emit_frontmatter(fm):
     return "\n".join(out)
 
 
+def record_write(op, path):
+    """Append a write-log line so the harness gate (GATE=1) can tell a
+    brain-mediated knowledge/ write from a hand-edit. One line per write:
+    <stamp>\t<op>\t<knowledge-relative-or-absolute path>. The gate flags any
+    knowledge/ change with no matching entry here as a hand-edit. Logging is
+    best-effort: a failure here never blocks the write itself.
+    """
+    try:
+        path = pathlib.Path(path).resolve()
+        try:
+            rel = path.relative_to(ROOT)
+            rec = str(rel)
+        except ValueError:
+            rec = str(path)
+        logdir = ROOT / "runtime"
+        logdir.mkdir(parents=True, exist_ok=True)
+        with (logdir / "brain-writes.log").open("a") as f:
+            f.write(f"{now_stamp()}\t{op}\t{rec}\n")
+    except OSError:
+        pass
+
+
 def cmd_new(args):
     # brain new <collection> <slug> [--field k=v]...
     if len(args) < 2:
@@ -82,6 +104,7 @@ def cmd_new(args):
     path.parent.mkdir(parents=True, exist_ok=True)
     title = fm["name"]
     path.write_text(emit_frontmatter(fm) + f"\n\n# {title}\n")
+    record_write("new", path)
     print(str(path))
 
 
@@ -98,6 +121,7 @@ def cmd_update(args):
     fm, body = parse_frontmatter(text)
     fm["updated"] = now_date()
     path.write_text(emit_frontmatter(fm) + "\n" + body)
+    record_write("update", path)
     print(str(path))
 
 

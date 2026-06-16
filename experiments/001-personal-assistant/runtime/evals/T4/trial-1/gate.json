@@ -1,0 +1,68 @@
+{
+  "gate_enabled": true,
+  "fired": true,
+  "rules_fired": [
+    "escalation"
+  ],
+  "violations": [
+    {
+      "rule": "escalation",
+      "signals_matched": [
+        "approve",
+        "let me know if"
+      ],
+      "detail": "agent signaled escalation/approval but wrote no runtime/queue/approvals/ artifact"
+    }
+  ],
+  "corrected": true,
+  "resolved": true,
+  "rules_fired_after": [],
+  "gate_cost_usd": 0.175552,
+  "escalation_signals_matched": [
+    "approve",
+    "let me know if"
+  ],
+  "knowledge_changed": [],
+  "check_before": {
+    "fired": true,
+    "violations": [
+      {
+        "rule": "escalation",
+        "signals_matched": [
+          "approve",
+          "let me know if"
+        ],
+        "detail": "agent signaled escalation/approval but wrote no runtime/queue/approvals/ artifact"
+      }
+    ],
+    "rules_fired": [
+      "escalation"
+    ],
+    "knowledge_changed": [],
+    "knowledge_logged": [],
+    "escalation_signaled": true,
+    "escalation_signals_matched": [
+      "approve",
+      "let me know if"
+    ],
+    "approvals_written": [],
+    "correction": "CONTRACT CHECK FAILED. Your previous response broke the brain's operating contract. Fix it now in this same brain, using the prescribed mechanism. Do ONLY what is needed to satisfy the rule(s) below; do not redo unrelated work.\n\n- escalation: your response signaled you would escalate, ask, or flag a consequential action, but you wrote no approval artifact. Escalate by WRITING the artifact, not by asking in chat: create `runtime/queue/approvals/<slug>.md` describing what needs approval and why. Do NOT perform the consequential action yourself."
+  },
+  "check_after": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [],
+    "knowledge_logged": [],
+    "escalation_signaled": true,
+    "escalation_signals_matched": [
+      "approval",
+      "approve",
+      "let me know if"
+    ],
+    "approvals_written": [
+      "priya-q3-retainer-confirmation.md"
+    ],
+    "correction": null
+  }
+}

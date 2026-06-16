@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215721Z-pa-task",
+  "trigger": "task",
+  "duration_s": 14,
+  "outcome": "ok",
+  "tokens_in": 106873,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95133,
+  "tokens_cache_creation": 11734,
+  "tokens_out": 364,
+  "cost_usd": 0.104422,
+  "num_turns": 4,
+  "result": "**$6,000/month** for monthly design-system updates. The contract renews **July 1, 2026** (two weeks out). Note: Priya Shah has asked to confirm Q3 terms for her finance team, so that may be worth acting on soon.",
+  "session_id": "a73013b0-d59e-40ea-8db7-85e87885f19f",
+  "is_error": false
+}

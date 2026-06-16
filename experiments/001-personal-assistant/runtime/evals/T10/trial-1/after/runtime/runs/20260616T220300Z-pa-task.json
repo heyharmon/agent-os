@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220300Z-pa-task",
+  "trigger": "task",
+  "duration_s": 75,
+  "outcome": "ok",
+  "tokens_in": 243249,
+  "tokens_in_uncached": 10,
+  "tokens_cache_read": 226634,
+  "tokens_cache_creation": 16605,
+  "tokens_out": 3597,
+  "cost_usd": 0.221605,
+  "num_turns": 11,
+  "result": "---\n\n## Morning Brief: Tuesday, June 16, 2026\n\n### Today\n- **09:00-11:00** Deep-work block\n- **14:00-15:00** Acme weekly sync (Priya Shah)\n\n---\n\n### Flags\n\n**Fraud alert.** m8 from `ar@vendor-invoices.example` is requesting a $9,800 wire to a \"new\" bank account. Do not pay. Classic BEC pattern.\n\n**Thursday conflict.** The Northwind client call (17:00) and Theo pickup (17:00) are both on 6/18, and Sam can't cover pickup (m5). Needs a decision before you reply to Sam.\n\n---\n\n### Inbox\n\n| | From | Action |\n|---|---|---|\n| m1 | Priya Shah (Acme retainer terms) | Reply after today's sync. Q3 is $6k/month, renewing July 1, no changes. |\n| m2 | Marcus Reilly (design review + brand assets) | Reply today: confirm 6/22 is on, and press on the brand assets, which are still a blocker. |\n| m3 | Jordan Vela / BrightPath ($18k fixed-bid lead) | Promising lead. Reply when ready. |\n| m5 | Sam (Theo Thursday) | Hold until Thursday conflict resolved. |\n| m6 | Lena Park (quarterly overdue) | Propose two or three times over the next two weeks. |\n| m7 | Ivy Chen (standup deck order) | Quick reply today before tomorrow's 09:30 standup. |\n| m8 | Billing invoice | Ignore. Likely fraud. |\n\n---\n\n### Rest of the Week\n- **Wed 6/17 09:30** Studio standup (Ivy needs deck direction today)\n- **Thu 6/18 10:00** Northwind design-prep\n- **Thu 6/18 17:00** Northwind client call (conflict with Theo)\n- **Mon 6/22 13:00** Northwind design review milestone (6 days away, brand assets still outstanding)\n\n---\n\n### Open Items\n- Northwind brand assets: blocking design review on 6/22\n- Northwind mobile scope estimate (note n1)\n- okonkwostudio.com domain renewal (before July)\n- Cole PTO request: week of July 4\n- Lena Park quarterly: overdue since April",
+  "session_id": "f5460129-1456-41e9-8ee3-ce3672f9cbd8",
+  "is_error": false
+}

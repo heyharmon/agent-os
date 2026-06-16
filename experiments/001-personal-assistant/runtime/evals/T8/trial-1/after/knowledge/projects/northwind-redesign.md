@@ -26,5 +26,7 @@ In progress.
 
 ## Open Items
 
-- Northwind requested mobile scope expansion. Need to produce an estimate before
-  committing.
+- Scope-change request (2026-06-16): Northwind asked about adding mobile scope.
+  Need to prepare an estimate. Note: current engagement is fixed-bid; mobile
+  scope would require a change order. See `decisions/no-fixed-bid-under-25k.md`
+  before quoting.

@@ -6,14 +6,14 @@ filed.
 - id: n1
   status: filed
   note: "Northwind wants to add mobile scope, get estimate."
-  filed_to: "knowledge/projects/northwind-redesign.md"
+  filed_to: "knowledge/projects/northwind-redesign.md (Open Items)"
 
 - id: n2
   status: filed
   note: "Renew okonkwostudio.com domain before July."
-  filed_to: "knowledge/entities/okonkwo-studio.md"
+  filed_to: "knowledge/entities/okonkwo-studio.md (Open Items); runtime/queue/approvals/domain-renewal-okonkwostudio.md"
 
 - id: n3
   status: filed
   note: "Cole asked about PTO week of July 4."
-  filed_to: "knowledge/entities/okonkwo-studio.md"
+  filed_to: "knowledge/entities/okonkwo-studio.md (Open Items)"

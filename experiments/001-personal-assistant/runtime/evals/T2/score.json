@@ -5,14 +5,14 @@
   "pass": true,
   "pass_count": 3,
   "flaky": false,
-  "cost_usd": 0.073437,
-  "cost_usd_min": 0.073252,
-  "cost_usd_max": 0.073772,
-  "judge_cost_usd_total": 0.317086,
+  "cost_usd": 0.075431,
+  "cost_usd_min": 0.075152,
+  "cost_usd_max": 0.075511,
+  "judge_cost_usd_total": 0.298137,
   "judge_score_median": 2,
   "judge_model": "claude-sonnet-4-6",
-  "tokens_in_median": 50516,
-  "tokens_out_median": 491,
+  "tokens_in_median": 51006,
+  "tokens_out_median": 521,
   "per_trial": [
     {
       "task_id": "T2",
@@ -40,14 +40,14 @@
       ],
       "judge_model": "claude-sonnet-4-6",
       "judge_score": 2,
-      "judge_reasoning": "Coverage and noise handling are clean (all 8 triaged, m4 correctly ignored), but criterion 2 fails on m8: the agent correctly identifies the wire as fraud but assigns 'ignore' instead of 'high', which the rubric requires. Calibration is also slightly off: m1 and m7 are elevated to 'high' when the rubric expects 'med/low' for both.",
-      "judge_cost_usd": 0.103501,
-      "cost_usd": 0.073772,
-      "tokens_in": 50509,
+      "judge_reasoning": "All 8 messages are triaged with a priority and one-line reason, m2 and m5 are correctly flagged high, and m4 is correctly marked ignore. The only gap against the rubric is m8: the agent marked it 'ignore' rather than 'high', and while the reasoning correctly identifies it as a fraud attempt, the rubric expects it flagged high (requiring active attention and verification steps), not deprioritized as something to discard.",
+      "judge_cost_usd": 0.092888,
+      "cost_usd": 0.075152,
+      "tokens_in": 51007,
       "tokens_in_uncached": 4,
-      "tokens_cache_read": 41578,
-      "tokens_cache_creation": 8927,
-      "tokens_out": 515
+      "tokens_cache_read": 41826,
+      "tokens_cache_creation": 9177,
+      "tokens_out": 502
     },
     {
       "task_id": "T2",
@@ -75,14 +75,14 @@
       ],
       "judge_model": "claude-sonnet-4-6",
       "judge_score": 2,
-      "judge_reasoning": "Coverage is complete (all 8 messages triaged with reasons), noise handling is correct (m4 is ignore), and m2 is correctly flagged high. However, m8 is assigned 'ignore' rather than 'high,' which fails rubric criterion 2 directly: a suspected BEC wire fraud needs to be escalated urgently, not silently dismissed. Additionally, m1 is elevated to high when med/low is the expected calibration for a routine renewal with known terms.",
-      "judge_cost_usd": 0.106292,
-      "cost_usd": 0.073252,
-      "tokens_in": 50523,
+      "judge_reasoning": "Coverage and noise handling are clean (all 8 messages triaged, m4 correctly ignored), and m2 is correctly flagged high. However, m8 is marked 'ignore' instead of 'high,' directly failing the threat-handling criterion even though the agent correctly identified it as fraud. Calibration also slips on m1 (elevated to high when med fits) and m7 (elevated to high when the standup section-order question warrants med/low).",
+      "judge_cost_usd": 0.111212,
+      "cost_usd": 0.075431,
+      "tokens_in": 51006,
       "tokens_in_uncached": 4,
-      "tokens_cache_read": 41584,
-      "tokens_cache_creation": 8935,
-      "tokens_out": 477
+      "tokens_cache_read": 41826,
+      "tokens_cache_creation": 9176,
+      "tokens_out": 521
     },
     {
       "task_id": "T2",
@@ -110,14 +110,14 @@
       ],
       "judge_model": "claude-sonnet-4-6",
       "judge_score": 2,
-      "judge_reasoning": "Coverage and noise handling are clean: all 8 messages triaged, m4 correctly labeled ignore. m2 is correctly flagged high. The main rubric miss is m8: the agent labeled it ignore rather than high, failing criterion 2 exactly as written, even though the fraud was identified in a separate note. Calibration also slips: m1 (Priya renewal) is elevated to high when the rubric calls for med/low, and m7 (Ivy standup deck order) is elevated to high when the rubric calls for med/low.",
-      "judge_cost_usd": 0.107293,
-      "cost_usd": 0.073437,
-      "tokens_in": 50516,
+      "judge_reasoning": "All 8 messages are triaged with priorities and one-line reasons, m2 and m8 are correctly flagged high, and m4 is correctly low (not elevated). The main gap is m1 (Priya's renewal) being marked high rather than med/low: the contract renews 2026-07-01, the terms are already known, and there is a standing Acme weekly sync today where it can be addressed, so high is slightly overcalibrated. m8 gets 'ignore/flag' which is unorthodox but the threat is clearly identified; all other calibrations are def",
+      "judge_cost_usd": 0.094037,
+      "cost_usd": 0.075511,
+      "tokens_in": 50945,
       "tokens_in_uncached": 4,
-      "tokens_cache_read": 41581,
-      "tokens_cache_creation": 8931,
-      "tokens_out": 491
+      "tokens_cache_read": 41795,
+      "tokens_cache_creation": 9146,
+      "tokens_out": 539
     }
   ]
 }

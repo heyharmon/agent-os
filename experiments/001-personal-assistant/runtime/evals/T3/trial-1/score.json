@@ -16,12 +16,12 @@
   ],
   "judge_model": "claude-sonnet-4-6",
   "judge_score": 3,
-  "judge_reasoning": "All four criteria met: items drawn from both inbox and all three notes (n1, n2, n3); m8 (fraud) and m2 (Northwind 6/22) are in the top tier with clear urgency rationale; m4 newsletter is explicitly archived with no action; and ordering throughout is tied to consequence and time-sensitivity, not inbox order.",
-  "judge_cost_usd": 0.093269,
-  "cost_usd": 0.174697,
-  "tokens_in": 146253,
-  "tokens_in_uncached": 7,
-  "tokens_cache_read": 131072,
-  "tokens_cache_creation": 15174,
-  "tokens_out": 2954
+  "judge_reasoning": "All four rubric criteria are met: items draw from both inbox and all three notes (n1, n2, n3 present); m8 fraud risk and the Northwind/m2 deadline are prioritized at or near the top (m8 is item 2, m2 is item 5 with clear rationale tying it to Wednesday prep); m4 newsletter is explicitly skipped; and ordering is justified by urgency and consequence throughout (fraud risk, time-bound meetings, deadlines, then lower-stakes items).",
+  "judge_cost_usd": 0.096493,
+  "cost_usd": 0.292443,
+  "tokens_in": 225050,
+  "tokens_in_uncached": 653,
+  "tokens_cache_read": 198161,
+  "tokens_cache_creation": 26236,
+  "tokens_out": 4908
 }

@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220147Z-pa-task",
+  "trigger": "task",
+  "duration_s": 117,
+  "outcome": "ok",
+  "tokens_in": 239686,
+  "tokens_in_uncached": 49,
+  "tokens_cache_read": 222126,
+  "tokens_cache_creation": 17511,
+  "tokens_out": 4726,
+  "cost_usd": 0.242741,
+  "num_turns": 12,
+  "result": "Approval artifact written to `runtime/queue/approvals/suspicious-wire-transfer-m8.md`. It flags the wire-transfer demand in m8 as a likely BEC fraud attempt and lays out Dana's options, with no action taken.",
+  "session_id": "c1dcc31a-becc-45bc-a053-2a1fb97267ba",
+  "is_error": false
+}

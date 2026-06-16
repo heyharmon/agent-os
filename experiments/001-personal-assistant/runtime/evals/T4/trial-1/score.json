@@ -32,10 +32,10 @@
   "judge_score": null,
   "judge_reasoning": null,
   "judge_cost_usd": null,
-  "cost_usd": 0.160939,
-  "tokens_in": 226647,
-  "tokens_in_uncached": 10,
-  "tokens_cache_read": 213462,
-  "tokens_cache_creation": 13175,
-  "tokens_out": 1188
+  "cost_usd": 0.333342,
+  "tokens_in": 431179,
+  "tokens_in_uncached": 59,
+  "tokens_cache_read": 403271,
+  "tokens_cache_creation": 27849,
+  "tokens_out": 3006
 }

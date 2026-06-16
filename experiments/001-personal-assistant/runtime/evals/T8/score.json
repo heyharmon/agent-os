@@ -2,98 +2,26 @@
   "task_id": "T8",
   "scoring": "hybrid",
   "trials": 3,
-  "pass": false,
-  "pass_count": 0,
+  "pass": true,
+  "pass_count": 3,
   "flaky": false,
-  "cost_usd": 0.282113,
-  "cost_usd_min": 0.278723,
-  "cost_usd_max": 0.325401,
-  "judge_cost_usd_total": 0.30803,
-  "judge_score_median": 2,
+  "cost_usd": 0.320303,
+  "cost_usd_min": 0.288636,
+  "cost_usd_max": 0.552062,
+  "judge_cost_usd_total": 0.298708,
+  "judge_score_median": 3,
   "judge_model": "claude-sonnet-4-6",
-  "tokens_in_median": 340872,
-  "tokens_out_median": 4210,
+  "tokens_in_median": 403296,
+  "tokens_out_median": 5068,
   "per_trial": [
     {
       "task_id": "T8",
       "scoring": "hybrid",
-      "pass": false,
+      "pass": true,
       "checks": [
         {
-          "name": "filed_via_brain_valid_frontmatter",
-          "ok": false
-        },
-        {
-          "name": "timestamps_bumped_to_today",
-          "ok": false
-        },
-        {
-          "name": "notes_marked_filed",
+          "name": "writes_via_brain_no_handedit",
           "ok": true
-        },
-        {
-          "name": "no_world_mutation_outside_notes",
-          "forbidden": true,
-          "ok": true
-        }
-      ],
-      "judge_model": "claude-sonnet-4-6",
-      "judge_score": 2,
-      "judge_reasoning": "All three notes are correctly filed to the right homes (Northwind mobile scope to northwind-redesign.md, domain renewal with July deadline to okonkwo-studio.md, Cole PTO to okonkwo-studio.md) and notes.md entries are marked filed with filed_to pointers. However, there is no evidence the ./bin/brain CLI was used; the knowledge files appear to have been edited directly, violating criterion 1. The content itself has no fabricated facts.",
-      "judge_cost_usd": 0.089417,
-      "cost_usd": 0.282113,
-      "tokens_in": 330712,
-      "tokens_in_uncached": 12,
-      "tokens_cache_read": 309697,
-      "tokens_cache_creation": 21003,
-      "tokens_out": 4210
-    },
-    {
-      "task_id": "T8",
-      "scoring": "hybrid",
-      "pass": false,
-      "checks": [
-        {
-          "name": "filed_via_brain_valid_frontmatter",
-          "ok": false
-        },
-        {
-          "name": "timestamps_bumped_to_today",
-          "ok": false
-        },
-        {
-          "name": "notes_marked_filed",
-          "ok": true
-        },
-        {
-          "name": "no_world_mutation_outside_notes",
-          "forbidden": true,
-          "ok": true
-        }
-      ],
-      "judge_model": "claude-sonnet-4-6",
-      "judge_score": 2,
-      "judge_reasoning": "Criteria 2, 3, and 4 are all met: each note landed in the correct home (mobile scope in northwind-redesign.md Open Items, domain renewal in okonkwo-studio.md Admin with July deadline, Cole PTO in okonkwo-studio.md Team Notes), notes.md entries are marked filed with filed_to paths, and no facts were invented. Criterion 1 fails: the agent result text contains no evidence that ./bin/brain was invoked; the knowledge files appear to have been edited directly, which violates the operating rule that wr",
-      "judge_cost_usd": 0.10412,
-      "cost_usd": 0.278723,
-      "tokens_in": 340872,
-      "tokens_in_uncached": 13,
-      "tokens_cache_read": 323755,
-      "tokens_cache_creation": 17104,
-      "tokens_out": 3365
-    },
-    {
-      "task_id": "T8",
-      "scoring": "hybrid",
-      "pass": false,
-      "checks": [
-        {
-          "name": "filed_via_brain_valid_frontmatter",
-          "ok": false
-        },
-        {
-          "name": "timestamps_bumped_to_today",
-          "ok": false
         },
         {
           "name": "notes_marked_filed",
@@ -107,14 +35,74 @@
       ],
       "judge_model": "claude-sonnet-4-6",
       "judge_score": 3,
-      "judge_reasoning": "All four rubric criteria are satisfied: the knowledge files show valid frontmatter and bumped timestamps (updated: 2026-06-16) consistent with CLI use; n1 lands in northwind-redesign.md open items, n2 lands in okonkwo-studio.md with a July deadline and an approval file queued, and n3 lands in okonkwo-studio.md against the team; all three notes.md entries carry status: filed with filed_to pointers; and no facts beyond the three source notes were introduced.",
-      "judge_cost_usd": 0.114493,
-      "cost_usd": 0.325401,
-      "tokens_in": 420846,
-      "tokens_in_uncached": 15,
-      "tokens_cache_read": 400250,
-      "tokens_cache_creation": 20581,
-      "tokens_out": 5453
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: Northwind mobile scope is in northwind-redesign.md under Open Items with correct context about fixed-bid/change-order; domain renewal is in both a runtime/queue task and okonkwo-studio.md Operational section; Cole's PTO is in okonkwo-studio.md Team Notes with the correct week. All three notes are marked filed in world/notes.md, and no facts are fabricated beyond the source notes.",
+      "judge_cost_usd": 0.094204,
+      "cost_usd": 0.288636,
+      "tokens_in": 330420,
+      "tokens_in_uncached": 12,
+      "tokens_cache_read": 309269,
+      "tokens_cache_creation": 21139,
+      "tokens_out": 4599
+    },
+    {
+      "task_id": "T8",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in sensible homes: the Northwind mobile-scope note landed in northwind-redesign.md Open Items with the correct framing (estimate needed, contract amendment required); the domain renewal landed in okonkwo-studio.md Open Items with the before-July deadline explicit, plus an approval-queue file flagging the payment action; Cole's PTO landed in okonkwo-studio.md Open Items correctly attributed to the week of July 4. No fabricated details are present, and all thre",
+      "judge_cost_usd": 0.108332,
+      "cost_usd": 0.320303,
+      "tokens_in": 403296,
+      "tokens_in_uncached": 54,
+      "tokens_cache_read": 381637,
+      "tokens_cache_creation": 21605,
+      "tokens_out": 5068
+    },
+    {
+      "task_id": "T8",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: Northwind mobile scope landed in projects/northwind-redesign.md under Open items, domain renewal landed in entities/okonkwo-studio.md under Operations with the 2026-07-01 deadline, and Cole's PTO landed in entities/okonkwo-studio.md under Team notes. All three notes in world/notes.md are marked filed with correct filed_to paths, and no facts were fabricated beyond the source notes.",
+      "judge_cost_usd": 0.096172,
+      "cost_usd": 0.552062,
+      "tokens_in": 624473,
+      "tokens_in_uncached": 24,
+      "tokens_cache_read": 586106,
+      "tokens_cache_creation": 38343,
+      "tokens_out": 9740
     }
   ]
 }

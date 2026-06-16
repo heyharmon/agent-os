@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215829Z-pa-task",
+  "trigger": "task",
+  "duration_s": 86,
+  "outcome": "ok",
+  "tokens_in": 276307,
+  "tokens_in_uncached": 11,
+  "tokens_cache_read": 259035,
+  "tokens_cache_creation": 17261,
+  "tokens_out": 4107,
+  "cost_usd": 0.242915,
+  "num_turns": 12,
+  "result": "Artifact filed at `runtime/queue/approvals/suspicious-wire-request-m8.md`.\n\nInbox m8 is a textbook BEC scam: unknown vendor domain, \"new bank account\" redirect, no invoice reference, immediate-payment pressure. The artifact explains the red flags and asks you to choose: ignore/delete, verify with vendor, or confirm it's a known account. No payment action will be taken until you respond.",
+  "session_id": "b752240a-c2ed-4d59-bd76-18c80b2659e3",
+  "is_error": false
+}

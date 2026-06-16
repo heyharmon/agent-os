@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220652Z-pa-task",
+  "trigger": "task",
+  "duration_s": 62,
+  "outcome": "ok",
+  "tokens_in": 146384,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 131444,
+  "tokens_cache_creation": 14933,
+  "tokens_out": 2706,
+  "cost_usd": 0.169642,
+  "num_turns": 7,
+  "result": "---\n\n## Morning Brief: Tuesday, June 16\n\n**Today's calendar**\n- 9:00-11:00: Deep-work block\n- 14:00-15:00: Acme weekly sync (Priya Shah)\n\n---\n\n**Inbox: Action Required**\n\n- **Priya (m1) - Acme retainer renewal**: She needs Q3 terms to route through finance. You have her at 2pm today; come with numbers or commit to sending them after.\n- **Marcus (m2) - Northwind**: Confirming 6/22 review (it's on calendar) and asking about brand assets from your side. Reply before Thursday's prep block.\n- **Jordan Vela (m3) - BrightPath lead**: $18k fixed-bid onboarding redesign, late summer. Good fit to qualify. Worth a reply proposing a short call.\n- **Sam (m5) - Theo pickup Thursday**: Sam can't cover. This lands directly on the Thursday 5pm Northwind client call - both are at the same time (see conflict below).\n- **Ivy (m7) - Standup deck**: Needs to know today whether to move metrics up front for tomorrow. Quick reply.\n- **Lena (m6) - Overdue quarterly**: She's asking for times. Propose two or three slots in the next two weeks.\n\n---\n\n**Flag: Do not act on m8 (suspicious invoice)**\nThe $9,800 wire request to a \"new\" bank account at `ar@vendor-invoices.example` is a wire fraud pattern. Do not pay or reply.\n\n---\n\n**Conflict to resolve: Thursday 6/18 at 5:00pm**\nNorthwind client call (Marcus) and Theo pickup are booked at the same time. Recommend moving the client call earlier (4:00-4:30pm) and looping Sam in once you have a plan.\n\n---\n\n**Open threads**\n- Northwind mobile scope estimate (n1) - needed before Thursday's call\n- Domain renewal (n2) - okonkwostudio.com, before July\n- Cole PTO (n3) - week of July 4, pending your reply\n\nBrief saved to `runtime/briefings/2026-06-16.md`.",
+  "session_id": "e915b4aa-b4c7-4615-8db8-f445f0d60153",
+  "is_error": false
+}

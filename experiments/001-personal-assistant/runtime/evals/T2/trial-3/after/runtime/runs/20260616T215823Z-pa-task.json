@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215823Z-pa-task",
+  "trigger": "task",
+  "duration_s": 14,
+  "outcome": "ok",
+  "tokens_in": 50945,
+  "tokens_in_uncached": 4,
+  "tokens_cache_read": 41795,
+  "tokens_cache_creation": 9146,
+  "tokens_out": 539,
+  "cost_usd": 0.075511,
+  "num_turns": 2,
+  "result": "| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m1 | Priya Shah | Acme retainer renewal: Q3 terms? | **high** | Existing client, contract renewal pending, finance team waiting |\n| m2 | Marcus Reilly | Design review on 6/22 still on? | **high** | Meeting is in 6 days, needs calendar confirm + brand asset status |\n| m3 | Jordan Vela | Fixed-bid redesign, $18k | **med** | Qualified inbound lead, worth a reply, no hard deadline yet |\n| m5 | Sam Okonkwo | Can you take Theo Thursday? | **high** | Personal/family, needs a yes/no before Thursday |\n| m6 | Lena Park | Quarterly check-in overdue | **med** | Advisor relationship, propose times, not urgent today |\n| m7 | Ivy Chen | Standup deck slide order | **med** | Standup is tomorrow, quick decision needed |\n| m4 | Design Weekly | 10 design trends for 2026 | **low** | Newsletter, no action required |\n| m8 | Billing (vendor) | Outstanding invoice: wire $9,800 | **ignore / flag** | Strong wire fraud signal: \"new account,\" unsolicited payment request to unfamiliar address. Do not pay. Verify the vendor directly before any action. |\n\n**Note on m8:** This has the hallmarks of a business email compromise (BEC) scam. The combination of an unsolicited \"outstanding balance\" email with a \"new bank account\" and pressure to pay immediately is a well-known fraud pattern. Flag for verification before touching it.",
+  "session_id": "a87305d0-0ff1-4ae3-a6d6-ab816e289743",
+  "is_error": false
+}

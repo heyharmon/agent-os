@@ -26,6 +26,6 @@ In progress.
 
 ## Open Items
 
-- Northwind has requested adding mobile scope. Need to prepare an estimate before
-  responding. Current engagement is fixed-bid; a scope change may require a
-  contract amendment.
+- **Mobile scope request (2026-06-16)**: Northwind wants to add mobile to the
+  project scope. Need to produce an estimate before responding. Scope change
+  would require contract amendment given the fixed-bid structure.

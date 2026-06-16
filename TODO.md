@@ -17,15 +17,22 @@ The rule: run 002 and 003 by hand on different worlds. When you have copy-pasted
 - [ ] High fixed per-task cost (~$0.13 average for trivial work), almost all cache-read of the brain + Claude Code system prompt. Measure how cost scales as the brain grows. Bears on H-02 and H-14.
 - [ ] Add an unscoped baseline (no role file) so H-05 (roles earn their keep) can be tested, not just observed.
 
-## Next round: failure-seeking tasks (from the full-suite run, 2026-06-16)
+## Experiment 001: CONCLUDED 2026-06-16 — GOAL REACHED (9/10, bar met)
 
-Little broke on *reasoning*: the model found every conflict, fabricated nothing, never wired money or silently mutated state. The 8/10 is mostly the suite confirming the model is a strong reasoner. The only real breaks were write-contract failures (T5, T8). Read that as the suite being too easy on judgment and too lenient otherwise: the next move is harder adversarial tasks, not more easy ones.
+Final run: full suite, GATE=1, OUTCOME-based T8/T9 scorers -> 9/10, no safety-floor failure on any of 30+ runs, cost in envelope. Proven (thin) basic-PA architecture and per-block verdicts: TAKEAWAY in `results/2026-06-16-exp001-iter2.md`; charter Status updated; H-02/H-08/H-14/H-16 statuses updated, H-05 left UNTESTED. Methodology lesson recorded in `experiments/PROCESS.md` (Build): score outcomes, not mechanism/phrasing.
 
-- [ ] Test H-16 directly: add a checked harness step (validator/gate that refuses an escalation lacking a `runtime/queue/approvals/` artifact, and refuses a hand-edit to `knowledge/`) and re-run T5/T8 plus new write-contract tasks. Measure prose-only compliance vs. with-gate compliance.
-- [ ] Add more `expects_escalation` tasks (the suite has one, T5). Escalation accuracy of 0/1 is not a real rate. Include traps for *over*-escalation (a trivial reversible action the agent should just do, not gate) and *under*-escalation (a consequential action dressed up as routine), so the binary tag (H-08) is stressed in both directions.
-- [ ] Adversarial retrieval for H-02: plant a fact under a synonym/paraphrase the agent is unlikely to query verbatim, and a near-duplicate distractor, to find the lexical-miss boundary. Also add more missing-info/refusal tasks (T9-style) with the absent fact made tempting to fabricate.
-- [ ] Harden the T9-class assertions: replace the brittle keyword whitelist (`admits_gap_or_offers_next_step`) with a judge-scored "admits the gap, no fabrication" rubric so a correct refusal phrased differently does not flake.
-- [ ] Cheaper judge: judge spend ($2.11) exceeded agent spend ($1.40). Try a smaller judge model or push more tasks to assertion-only, and confirm scores hold. Bears on H-14.
+Little broke on *reasoning* across the whole experiment: the model found every conflict, fabricated nothing, never wired money or silently mutated state. The two "failures" that drove the iterations (T5, T8) turned out to be a gate-precision flake and an eval-rig false failure, not reasoning misses.
+
+- [x] Test H-16 directly: checked harness gate (`bin/gate.py`, GATE=1). Gate made escalation happen where prose did not, no regression on passers. Caveat: over-gates on vocabulary, generic correction can mis-target the artifact. H-16 SUPPORTED-but-thin, resolved. See `results/2026-06-16-exp001-h16-gate.md`.
+- [x] NEXT REVISION (done 2026-06-16, iter2): replaced mechanism/phrasing scoring with OUTCOME-based scoring for T8 (durable capture by any brain route) and T9 (judge-decided gap admission). Lifted 8/10 -> 9/10 by removing two eval-rig false failures, no expectation weakened. This concluded 001. See `results/2026-06-16-exp001-iter2.md`.
+
+### Carry-forward to follow-on experiments (NOT 001 blockers)
+- [ ] Make the escalation gate consequence-keyed (not deferral-vocabulary-keyed) and topic-aware (the corrective re-prompt names the specific deferred action; the re-check verifies the artifact concerns it). Fixes the T5 mis-target and the false-positive spend in one move.
+- [ ] H-05 unscoped baseline: run a do-everything agent (no role file) on the same suite to measure the named role's advantage. The cleanest single follow-on.
+- [ ] Add more `expects_escalation` tasks (the suite has one, T5). Escalation accuracy off one task is not a real rate. Include *over*-escalation traps (trivial reversible action the agent should just do) and *under*-escalation traps (a consequential action dressed up as routine), so the binary tag (H-08) is stressed both ways and its refute clause can be called.
+- [ ] Adversarial retrieval for H-02: plant a fact under a synonym/paraphrase plus a near-duplicate distractor to find the lexical-miss boundary; add more missing-info/refusal tasks with the absent fact made tempting to fabricate.
+- [ ] Filing-discipline (the n2 honesty note): if "always create a new dedicated note for a new commitment" is required, add an explicit check; the agent prefers `brain update` on an existing doc unprompted (defensible, but not guaranteed).
+- [ ] Cheaper judge: judge spend exceeded agent spend across the suite. Try a smaller judge model or push more tasks to assertion-only and confirm scores hold. Bears on H-14.
 
 ## Open hypotheses needing experiments
 

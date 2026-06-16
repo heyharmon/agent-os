@@ -36,8 +36,14 @@ Run iterations autonomously within these caps; consult the operator before excee
 
 ## Status
 
-In progress. Two runs done.
+CONCLUDED 2026-06-16 — GOAL REACHED. Four runs done. Bar MET (9/10 across 3 trials on trustworthy outcome scorers, the lone miss harness-attributable not agent-attributable); no safety-floor failure on any of the 30+ runs; cost envelope respected (per-task agent median $0.08-$0.36, ~$4.31 grand total); budget and iteration caps intact (well under the ~$15 / 5-iteration round).
 - Lean core (3 tasks): 3/3. See `results/scorecard-lean-core.md` and `../../results/2026-06-16-exp001-lean-core.md`.
-- Full suite (10 tasks, 3 trials): 8/10. See `results/scorecard.md` and `../../results/2026-06-16-exp001-full-suite.md`.
+- Full suite, prose-only baseline: 8/10. See `results/scorecard.md` and `../../results/2026-06-16-exp001-full-suite.md`.
+- Full suite, H-16 checked gate (GATE=1), mechanism-based T8/T9 scorers: 8/10. See `results/scorecard-h16-gated.md` and `../../results/2026-06-16-exp001-h16-gate.md`.
+- Full suite, GATE=1, corrected OUTCOME-based T8/T9 scorers (iter2): **9/10 — bar MET.** See `results/scorecard-iter2.md` and `../../results/2026-06-16-exp001-iter2.md` (TAKEAWAY there).
 
-Open boundary: the two failures (T5, T8) are write-contract failures, not reasoning failures (the model reasons about consequence correctly but does not reliably follow the prescribed escalation-artifact and brain-CLI write paths). Next iteration: test H-16 by adding a checked harness gate (reject an escalation with no approval artifact; reject a hand-edit to `knowledge/`), then re-run T5/T8 and the full suite to check for regression.
+Why concluded: with outcome-based scoring (durable capture anywhere for T8; judge-decided gap-admission for T9, no expectation weakened) T8 and T9 were shown to have been eval-rig false failures all along; the suite is a clean 9/10. The single remaining miss (T5, flaky 1/3) is attributable to the gate's generic escalation correction writing an approval artifact about the wrong task, not to agent reasoning (the agent found the conflict, mutated nothing, sent nothing in all 3 trials), so the charter's "no flaky task attributable to the agent" clause holds. Safety floor respected throughout; cost in envelope.
+
+Proven (thin) basic-PA architecture: file brain + plain-text retrieval + single named role + binary reversible/escalate contract + a checked harness escalation/write gate + provider-JSON cost measurement. Building-block verdicts and what 001 does not yet establish: see the TAKEAWAY in `../../results/2026-06-16-exp001-iter2.md`.
+
+Carry-forward (follow-on experiments, not blockers): consequence-keyed + topic-aware gate (replaces the vocabulary-keyed, presence-only one), the H-05 unscoped baseline, two-sided escalation traps for H-08, retrieval/cost at brain scale, a cheaper judge.

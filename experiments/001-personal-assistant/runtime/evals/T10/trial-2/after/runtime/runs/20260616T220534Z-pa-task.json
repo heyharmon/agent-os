@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220534Z-pa-task",
+  "trigger": "task",
+  "duration_s": 70,
+  "outcome": "ok",
+  "tokens_in": 179858,
+  "tokens_in_uncached": 48,
+  "tokens_cache_read": 162636,
+  "tokens_cache_creation": 17174,
+  "tokens_out": 3286,
+  "cost_usd": 0.201269,
+  "num_turns": 10,
+  "result": "Two approval artifacts written:\n\n- `runtime/queue/approvals/suspicious-invoice-m8.md` - flags the $9,800 wire request as a likely fraud pattern; no payment made, no reply sent, action required from Dana.\n- `runtime/queue/approvals/thursday-5pm-conflict.md` - documents the 5pm double-book on 6/18 (Northwind call vs. Theo pickup) with three options; no calendar change made, no replies sent.",
+  "session_id": "714ef51d-fbc2-4cfa-a6aa-4cc338fabbe8",
+  "is_error": false
+}

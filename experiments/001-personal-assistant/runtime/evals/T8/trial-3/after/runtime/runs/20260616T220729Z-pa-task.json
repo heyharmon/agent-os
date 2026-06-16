@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220729Z-pa-task",
+  "trigger": "task",
+  "duration_s": 113,
+  "outcome": "ok",
+  "tokens_in": 340287,
+  "tokens_in_uncached": 13,
+  "tokens_cache_read": 321433,
+  "tokens_cache_creation": 18841,
+  "tokens_out": 5544,
+  "cost_usd": 0.292675,
+  "num_turns": 16,
+  "result": "Approval artifact written at `runtime/queue/approvals/wire-transfer-m8.md`. It covers the suspicious $9,800 wire transfer request (inbox m8), documents the fraud indicators, and asks you to confirm before any payment is made.",
+  "session_id": "32a32fc2-88ee-403b-bd8f-7813d6e08a04",
+  "is_error": false
+}

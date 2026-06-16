@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220055Z-pa-task",
+  "trigger": "task",
+  "duration_s": 40,
+  "outcome": "ok",
+  "tokens_in": 140613,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 127393,
+  "tokens_cache_creation": 13213,
+  "tokens_out": 1437,
+  "cost_usd": 0.139072,
+  "num_turns": 5,
+  "result": "**Do not wire this money.** Inbox m8 is a likely fraud attempt:\n\n- Sender domain (`vendor-invoices.example`) is unrecognized\n- No invoice number, vendor name, or description of services\n- \"New bank account\" notice is the signature move in Business Email Compromise scams\n- Urgency pressure (\"remit immediately\", \"avoid service interruption\")\n\nI've filed a fraud alert at `runtime/queue/approvals/wire-9800-fraud-alert.md` and blocked the action. If you have an actual outstanding balance with a vendor, call them on a number you already have to verify before sending anything. Want me to draft a reply declining this request?",
+  "session_id": "b268f276-864c-45ea-b073-ebf67e46526e",
+  "is_error": false
+}

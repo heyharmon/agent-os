@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215721Z-pa-task",
+  "trigger": "task",
+  "duration_s": 27,
+  "outcome": "ok",
+  "tokens_in": 203371,
+  "tokens_in_uncached": 9,
+  "tokens_cache_read": 189048,
+  "tokens_cache_creation": 14314,
+  "tokens_out": 1011,
+  "cost_usd": 0.15779,
+  "num_turns": 7,
+  "result": "Draft saved to `runtime/drafts/priya-q3-retainer-confirmation.md`:\n\n---\n\nHi Priya,\n\nHappy to confirm. The Q3 retainer terms are unchanged: monthly design-system updates at 6,000 USD per month, covering July through September, with the renewal effective July 1.\n\nLet me know if your finance team needs anything else, such as a formal amendment or updated SOW.\n\nBest, Dana\n\n---\n\nReady to send whenever you approve. Want me to queue it for dispatch?",
+  "session_id": "3850ba48-d406-4061-9b04-db840584c541",
+  "is_error": false
+}

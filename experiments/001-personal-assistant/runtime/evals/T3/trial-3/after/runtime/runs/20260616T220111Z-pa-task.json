@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220111Z-pa-task",
+  "trigger": "task",
+  "duration_s": 69,
+  "outcome": "ok",
+  "tokens_in": 146941,
+  "tokens_in_uncached": 648,
+  "tokens_cache_read": 131189,
+  "tokens_cache_creation": 15104,
+  "tokens_out": 2649,
+  "cost_usd": 0.17166,
+  "num_turns": 7,
+  "result": "---\n\n**Today, June 16**\n\n**Immediate (before 14:00 Acme sync):**\n\n1. **Do not pay m8** - The \"outstanding invoice\" wire request to a new bank account is almost certainly fraud. Verify independently before any action.\n2. **Reply to Ivy** (m7) - Standup deck section order; she needs it today for tomorrow's 09:30.\n3. **Prep Acme Q3 retainer terms** (m1) - Priya will likely raise this on today's 14:00 call.\n\n**Today:**\n\n4. **Resolve Thursday 5pm conflict** - Sam can't cover Theo pickup (m5), and you have the Northwind client call with Marcus at the same time (c5 + c6 both 17:00 Thu). Needs active resolution: reschedule one or find alternate pickup.\n5. **Reply to Marcus** (m2) - Confirm 6/22 review is on, address brand assets status.\n6. **Evaluate BrightPath** (m3) - $18K fixed-bid onboarding redesign, late summer. Worth a quick go/no-go before replying to Jordan.\n\n**This week:**\n\n- Northwind mobile scope estimate (n1) - before Thursday's prep block\n- Propose times to Lena Park for quarterly check-in (m6)\n- Cole's July 4 PTO decision (n3)\n- Domain renewal before July (n2)",
+  "session_id": "c261a444-006e-4143-a7bf-526c6e5d1f65",
+  "is_error": false
+}

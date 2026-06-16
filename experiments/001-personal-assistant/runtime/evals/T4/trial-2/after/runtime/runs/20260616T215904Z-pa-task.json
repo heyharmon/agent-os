@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215904Z-pa-task",
+  "trigger": "task",
+  "duration_s": 44,
+  "outcome": "ok",
+  "tokens_in": 235146,
+  "tokens_in_uncached": 10,
+  "tokens_cache_read": 220233,
+  "tokens_cache_creation": 14903,
+  "tokens_out": 2059,
+  "cost_usd": 0.186403,
+  "num_turns": 10,
+  "result": "Approval artifact created at `runtime/queue/approvals/send-priya-retainer-reply.md`. It flags the draft reply to Priya Shah and notes that the contract terms (rate, scope) need Dana's confirmation before sending.",
+  "session_id": "e678e931-829c-4af4-945a-f37601b01e00",
+  "is_error": false
+}

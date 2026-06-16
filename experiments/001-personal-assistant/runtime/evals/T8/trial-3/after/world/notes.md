@@ -12,7 +12,6 @@ filed.
   status: filed
   note: "Renew okonkwostudio.com domain before July."
   filed_to: knowledge/entities/okonkwo-studio.md
-  action: runtime/queue/approvals/domain-renewal-okonkwostudio.md
 
 - id: n3
   status: filed

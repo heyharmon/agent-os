@@ -1,0 +1,33 @@
+{
+  "gate_enabled": true,
+  "fired": false,
+  "rules_fired": [],
+  "violations": [],
+  "corrected": false,
+  "resolved": null,
+  "rules_fired_after": null,
+  "gate_cost_usd": 0.0,
+  "escalation_signals_matched": [],
+  "knowledge_changed": [
+    "projects/northwind-redesign.md",
+    "entities/okonkwo-studio.md"
+  ],
+  "check_before": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [
+      "projects/northwind-redesign.md",
+      "entities/okonkwo-studio.md"
+    ],
+    "knowledge_logged": [
+      "entities/okonkwo-studio.md",
+      "projects/northwind-redesign.md"
+    ],
+    "escalation_signaled": false,
+    "escalation_signals_matched": [],
+    "approvals_written": [],
+    "correction": null
+  },
+  "check_after": null
+}

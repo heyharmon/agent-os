@@ -5,14 +5,14 @@
   "pass": true,
   "pass_count": 3,
   "flaky": false,
-  "cost_usd": 0.101028,
-  "cost_usd_min": 0.095974,
-  "cost_usd_max": 0.174697,
-  "judge_cost_usd_total": 0.307348,
-  "judge_score_median": 2,
+  "cost_usd": 0.292443,
+  "cost_usd_min": 0.17166,
+  "cost_usd_max": 0.316757,
+  "judge_cost_usd_total": 0.291445,
+  "judge_score_median": 3,
   "judge_model": "claude-sonnet-4-6",
-  "tokens_in_median": 51537,
-  "tokens_out_median": 1921,
+  "tokens_in_median": 225050,
+  "tokens_out_median": 4908,
   "per_trial": [
     {
       "task_id": "T3",
@@ -32,14 +32,14 @@
       ],
       "judge_model": "claude-sonnet-4-6",
       "judge_score": 3,
-      "judge_reasoning": "All four criteria met: items drawn from both inbox and all three notes (n1, n2, n3); m8 (fraud) and m2 (Northwind 6/22) are in the top tier with clear urgency rationale; m4 newsletter is explicitly archived with no action; and ordering throughout is tied to consequence and time-sensitivity, not inbox order.",
-      "judge_cost_usd": 0.093269,
-      "cost_usd": 0.174697,
-      "tokens_in": 146253,
-      "tokens_in_uncached": 7,
-      "tokens_cache_read": 131072,
-      "tokens_cache_creation": 15174,
-      "tokens_out": 2954
+      "judge_reasoning": "All four rubric criteria are met: items draw from both inbox and all three notes (n1, n2, n3 present); m8 fraud risk and the Northwind/m2 deadline are prioritized at or near the top (m8 is item 2, m2 is item 5 with clear rationale tying it to Wednesday prep); m4 newsletter is explicitly skipped; and ordering is justified by urgency and consequence throughout (fraud risk, time-bound meetings, deadlines, then lower-stakes items).",
+      "judge_cost_usd": 0.096493,
+      "cost_usd": 0.292443,
+      "tokens_in": 225050,
+      "tokens_in_uncached": 653,
+      "tokens_cache_read": 198161,
+      "tokens_cache_creation": 26236,
+      "tokens_out": 4908
     },
     {
       "task_id": "T3",
@@ -58,15 +58,15 @@
         }
       ],
       "judge_model": "claude-sonnet-4-6",
-      "judge_score": 2,
-      "judge_reasoning": "All three notes appear and m4 is absent, so sourcing and noise criteria are met. Ordering is mostly right but has gaps: m8 (fraud) lands at #3 behind Ivy's low-stakes standup question and retainer prep, when a potential wire fraud should anchor the list; m2/Northwind falls in the second section rather than the top tier. Justification via calendar-anchored sections is clear. One additional gap: BrightPath (m3) is treated as worth evaluating when the studio's explicit <$25k policy makes it a strai",
-      "judge_cost_usd": 0.109957,
-      "cost_usd": 0.095974,
-      "tokens_in": 51537,
-      "tokens_in_uncached": 4,
-      "tokens_cache_read": 41573,
-      "tokens_cache_creation": 9960,
-      "tokens_out": 1582
+      "judge_score": 3,
+      "judge_reasoning": "All four rubric criteria are met: items are sourced from both inbox and all three notes (n1, n2, n3); m8 (fraud) and m2 (Northwind 6/22 deadline) are at or near the top; m4 newsletter is explicitly parked as skip/archive; and ordering rationale is visible and tied to urgency/consequence throughout.",
+      "judge_cost_usd": 0.098533,
+      "cost_usd": 0.316757,
+      "tokens_in": 261161,
+      "tokens_in_uncached": 13,
+      "tokens_cache_read": 234378,
+      "tokens_cache_creation": 26770,
+      "tokens_out": 5719
     },
     {
       "task_id": "T3",
@@ -85,15 +85,15 @@
         }
       ],
       "judge_model": "claude-sonnet-4-6",
-      "judge_score": 2,
-      "judge_reasoning": "Sourcing is excellent (all three notes present, inbox fully covered, m4 correctly skipped), and justification is clear throughout. The main gap is ordering: m7 (Ivy's standup deck question) is elevated to #2, above m2 (the Northwind 6/22 design review), which the rubric requires near the top given its deadline and consequence; m2 ends up at #5, after trivia.",
-      "judge_cost_usd": 0.104122,
-      "cost_usd": 0.101028,
-      "tokens_in": 51529,
-      "tokens_in_uncached": 4,
-      "tokens_cache_read": 41570,
-      "tokens_cache_creation": 9955,
-      "tokens_out": 1921
+      "judge_score": 3,
+      "judge_reasoning": "All four rubric criteria are fully met: items draw from both inbox and all three notes (n1, n2, n3); m8 and m2 sit at positions 1 and 5 with m8 flagged as fraud at the top; m4 is explicitly deprioritized/excluded; and every item carries a visible urgency rationale tied to deadlines, consequence, or calendar context.",
+      "judge_cost_usd": 0.096419,
+      "cost_usd": 0.17166,
+      "tokens_in": 146941,
+      "tokens_in_uncached": 648,
+      "tokens_cache_read": 131189,
+      "tokens_cache_creation": 15104,
+      "tokens_out": 2649
     }
   ]
 }

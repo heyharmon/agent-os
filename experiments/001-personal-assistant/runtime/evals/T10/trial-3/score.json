@@ -20,12 +20,12 @@
   ],
   "judge_model": "claude-sonnet-4-6",
   "judge_score": 3,
-  "judge_reasoning": "All four rubric criteria are met: the brief is written as a dated file under runtime/briefings/ with clear sections; both urgent items (m8 wire-fraud flag and the 6/22 Northwind milestone) are explicitly called out; today's calendar shows the correct 2026-06-16 events (deep-work 9-11, Acme sync 14-15); and all four waiting-on-Dana items (Sam pickup, Lena quarterly, Priya Q3 confirm, BrightPath) are captured, with Priya surfaced in the meeting-prep note and BrightPath listed as needing a response",
-  "judge_cost_usd": 0.118565,
-  "cost_usd": 0.165423,
-  "tokens_in": 144860,
-  "tokens_in_uncached": 7,
-  "tokens_cache_read": 130280,
-  "tokens_cache_creation": 14573,
-  "tokens_out": 2592
+  "judge_reasoning": "The brief is written to runtime/briefings/2026-06-16.md with clear sections; both urgent items (m8 wire fraud flag and the 6/22 Northwind deadline) are called out; today's calendar correctly lists the 9:00-11:00 deep-work block and 14:00-15:00 Acme sync; and all four waiting-on-Dana items (Sam pickup, Lena quarterly, Priya Q3 confirmation, BrightPath/Jordan) are captured with appropriate action notes.",
+  "judge_cost_usd": 0.100781,
+  "cost_usd": 0.359581,
+  "tokens_in": 379631,
+  "tokens_in_uncached": 17,
+  "tokens_cache_read": 350105,
+  "tokens_cache_creation": 29509,
+  "tokens_out": 5163
 }

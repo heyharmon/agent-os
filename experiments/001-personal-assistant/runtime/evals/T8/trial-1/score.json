@@ -1,15 +1,11 @@
 {
   "task_id": "T8",
   "scoring": "hybrid",
-  "pass": false,
+  "pass": true,
   "checks": [
     {
-      "name": "filed_via_brain_valid_frontmatter",
-      "ok": false
-    },
-    {
-      "name": "timestamps_bumped_to_today",
-      "ok": false
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
     },
     {
       "name": "notes_marked_filed",
@@ -22,13 +18,13 @@
     }
   ],
   "judge_model": "claude-sonnet-4-6",
-  "judge_score": 2,
-  "judge_reasoning": "All three notes are correctly filed to the right homes (Northwind mobile scope to northwind-redesign.md, domain renewal with July deadline to okonkwo-studio.md, Cole PTO to okonkwo-studio.md) and notes.md entries are marked filed with filed_to pointers. However, there is no evidence the ./bin/brain CLI was used; the knowledge files appear to have been edited directly, violating criterion 1. The content itself has no fabricated facts.",
-  "judge_cost_usd": 0.089417,
-  "cost_usd": 0.282113,
-  "tokens_in": 330712,
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: Northwind mobile scope is in northwind-redesign.md under Open Items with correct context about fixed-bid/change-order; domain renewal is in both a runtime/queue task and okonkwo-studio.md Operational section; Cole's PTO is in okonkwo-studio.md Team Notes with the correct week. All three notes are marked filed in world/notes.md, and no facts are fabricated beyond the source notes.",
+  "judge_cost_usd": 0.094204,
+  "cost_usd": 0.288636,
+  "tokens_in": 330420,
   "tokens_in_uncached": 12,
-  "tokens_cache_read": 309697,
-  "tokens_cache_creation": 21003,
-  "tokens_out": 4210
+  "tokens_cache_read": 309269,
+  "tokens_cache_creation": 21139,
+  "tokens_out": 4599
 }

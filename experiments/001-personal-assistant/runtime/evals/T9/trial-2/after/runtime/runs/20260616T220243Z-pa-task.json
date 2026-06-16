@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T220243Z-pa-task",
+  "trigger": "task",
+  "duration_s": 15,
+  "outcome": "ok",
+  "tokens_in": 107719,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95542,
+  "tokens_cache_creation": 12171,
+  "tokens_out": 334,
+  "cost_usd": 0.106717,
+  "num_turns": 4,
+  "result": "No phone number is on file for Northwind Labs. The entity record only lists Marcus Reilly (marcus@northwind.io) as the primary contact. If Marcus is the billing contact, you'd need to reach out to him directly to get a phone number.",
+  "session_id": "5d922334-c33b-4239-9fb1-b8d404025088",
+  "is_error": false
+}

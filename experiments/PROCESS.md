@@ -31,6 +31,7 @@ An experiment answers one question about how to build an agent operating system 
 
 1. **Define.** Write the charter.
 2. **Build.** The system under test (brain, agent(s), tools, harness) and the benchmark (seeded realistic world, task set, scorer). Reuse the rig (`bin/brain`, `run-task.sh`, `score.py`, `seed/`) by hand; do not build new machinery you do not yet need.
+   - *Lesson (001):* benchmark assertions must score OUTCOMES (was the fact durably captured? was the gap admitted without fabrication?), never an implementation choice or specific phrasing (`brain new` vs `brain update`; a keyword whitelist). Mechanism/phrasing assertions produce false failures and punish reasonable agent behavior; two of 001's three "failures" were eval-rig artifacts that vanished under outcome scoring with no expectation weakened.
 3. **Run.** Each task in a hermetic scratch reset from `seed/`, N trials (default 3) to measure variance. Record outcome correctness, cost and tokens from provider JSON (never estimated), and escalation/intervention accuracy.
 4. **Diagnose.** Classify every failure. The most useful distinction we have found: does it fail at *reasoning* (wrong judgment) or at *contract* (right judgment, wrong execution of how the system requires it to act)? They have different fixes.
 5. **Revise.** Change one variable, recorded as an intervention: a harness gate, a prompt edit, a tool, an architecture change. One change at a time so the re-run attributes cause.

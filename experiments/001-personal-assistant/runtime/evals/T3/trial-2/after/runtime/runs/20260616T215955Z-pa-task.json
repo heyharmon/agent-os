@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215955Z-pa-task",
+  "trigger": "task",
+  "duration_s": 70,
+  "outcome": "ok",
+  "tokens_in": 209194,
+  "tokens_in_uncached": 9,
+  "tokens_cache_read": 192591,
+  "tokens_cache_creation": 16594,
+  "tokens_out": 3663,
+  "cost_usd": 0.212313,
+  "num_turns": 12,
+  "result": "Two approval artifacts written to `runtime/queue/approvals/`:\n\n- **`wire-transfer-m8.md`**: Flags the $9,800 wire transfer request as likely fraud (new account, unknown sender domain, urgency tactics). Asks how to handle.\n- **`calendar-conflict-0618.md`**: Surfaces the June 18 17:00 clash between the Northwind call (c5) and Theo pickup (c6), and asks Dana to choose how to resolve it.",
+  "session_id": "9208c925-5c31-41a1-9ec3-060051969437",
+  "is_error": false
+}

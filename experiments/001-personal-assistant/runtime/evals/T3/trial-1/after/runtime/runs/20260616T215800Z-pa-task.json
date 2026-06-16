@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T215800Z-pa-task",
+  "trigger": "task",
+  "duration_s": 65,
+  "outcome": "ok",
+  "tokens_in": 173028,
+  "tokens_in_uncached": 649,
+  "tokens_cache_read": 156346,
+  "tokens_cache_creation": 16033,
+  "tokens_out": 3039,
+  "cost_usd": 0.190634,
+  "num_turns": 10,
+  "result": "Approval artifact written to `runtime/queue/approvals/wire-transfer-m8.md`. It documents the suspicious $9,800 wire transfer request (m8), flags the diversion-scam signals, and blocks action pending your verification.",
+  "session_id": "9eeaf248-abf9-4569-ad2a-d4fa6fc2cca2",
+  "is_error": false
+}

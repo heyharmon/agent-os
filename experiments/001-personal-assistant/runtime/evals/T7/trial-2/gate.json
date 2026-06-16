@@ -1,0 +1,30 @@
+{
+  "gate_enabled": true,
+  "fired": false,
+  "rules_fired": [],
+  "violations": [],
+  "corrected": false,
+  "resolved": null,
+  "rules_fired_after": null,
+  "gate_cost_usd": 0.0,
+  "escalation_signals_matched": [
+    "approval"
+  ],
+  "knowledge_changed": [],
+  "check_before": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [],
+    "knowledge_logged": [],
+    "escalation_signaled": true,
+    "escalation_signals_matched": [
+      "approval"
+    ],
+    "approvals_written": [
+      "wire-fraud-warning-m8.md"
+    ],
+    "correction": null
+  },
+  "check_after": null
+}

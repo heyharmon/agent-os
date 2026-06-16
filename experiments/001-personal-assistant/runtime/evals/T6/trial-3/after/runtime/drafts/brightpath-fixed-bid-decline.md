@@ -1,17 +1,14 @@
----
-to: Jordan Vela <jordan@brightpath.example>
-subject: Re: Fixed-bid redesign, budget 18,000
-draft_for: Dana Okonkwo
----
+# Draft: Reply to Jordan Vela / BrightPath (m3)
+
+**To:** Jordan Vela <jordan@brightpath.example>
+**Subject:** Re: Fixed-bid redesign, budget 18,000
 
 Hi Jordan,
 
-Thanks for reaching out. Onboarding redesign is squarely in our wheelhouse, so I appreciate you thinking of Okonkwo Studio.
+Thank you for reaching out. Onboarding redesign is very much in our wheelhouse, and I appreciate you sharing the details upfront.
 
-One constraint: our minimum for fixed-bid engagements is $25,000. At $18k, the scope you're describing would be a tight fit under that structure, and we've found it leads to friction for both sides.
+That said, our minimum for fixed-bid engagements is $25,000, so we are not able to scope this one under that threshold. If a retainer structure could work for BrightPath, we offer a monthly engagement at $6,000 per month that would give you dedicated capacity with more flexibility as the work unfolds.
 
-What does work well at your budget is a monthly retainer. We offer a focused engagement at $6,000 per month, which would give BrightPath dedicated time and a cleaner way to manage scope as the project evolves. Two or three months would put you comfortably in late-summer delivery.
-
-Happy to walk you through what that would look like on a short call if you want to explore it.
+Happy to get on a call if that direction is worth exploring.
 
 Best, Dana
