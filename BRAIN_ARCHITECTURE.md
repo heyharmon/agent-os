@@ -13,9 +13,9 @@ This is a **vision and a set of invariants** — the rules that don't bend — n
 
 > **It is opinionated about structure and convention, and agnostic about technology — with one deliberate exception.**
 
-That exception is the **storage format**: the brain is **plain text kept in git, following the [Open Knowledge Format (OKF)](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)** — markdown files with a small structured header (YAML frontmatter). This is the only technology the brain commits to, and it is barely a commitment: a brain *must* be saved and versioned somehow, and git is the obvious choice — free history and an undo button for every change. Everything built *on top* of the files — how they're searched, written to, and kept current, and the agents themselves — stays fill-in-the-blank.
+That exception is the **storage format**: the brain's knowledge layer follows the [Open Knowledge Format (OKF)](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf), plain-text markdown with a small structured header (YAML frontmatter). A format is a *convention*, the kind of thing the architecture is free to fix (like "frontmatter is the schema"), and it is the only thing the brain pins down. Note what is *not* on that list: the architecture also requires the brain to keep a **version history** (so every change has an audit trail and an undo), but that is a required *capability*, not a named tool. Git is the obvious way to provide it and what the recipes use, yet a brain on any system that tracks changes reversibly is compliant. Everything built on top of the files, how they're searched, written to, and kept current, and the agents themselves, stays fill-in-the-blank.
 
-Why commit to OKF and nothing else? Because the format is the one decision that determines **portability and longevity**. Get it right and the brain outlives every tool that touches it — any agent, any model, any vendor that speaks OKF can read and write it. Get it wrong and you rebuild your whole setup every time your tools change.
+Why commit to the format and nothing else? Because the format is the one decision that determines **portability and longevity**. Get it right and the brain outlives every tool that touches it: any agent, any model, any vendor that speaks OKF can read and write it. Get it wrong and you rebuild your whole setup every time your tools change. Versioning is the other non-negotiable, but since any version-control tool serves, pinning the *format* is the only place a specific commitment earns its keep.
 
 **Read it as a compass, not a checklist.** Start with a handful of files. Add structure only when the work demands it.
 
@@ -44,7 +44,7 @@ The brain is kept current by *agents doing the tidying* — filing, linking, rec
 A brain is compliant if and only if it honors these. Everything else is free.
 
 1. **One source of truth.** Every fact lives in exactly one canonical file; everything else links to it.
-2. **Plain text in git, conforming to OKF.** The knowledge layer is markdown + YAML frontmatter in a versioned repo. This is the brain's one technology commitment; git history is its audit log and undo.
+2. **Plain text, conforming to OKF, under version control.** The knowledge layer is markdown + YAML frontmatter (OKF, the brain's one *format* commitment), kept in something that tracks every change reversibly so its history is the audit log and undo. Version control is a required *capability*, not a prescribed tool: git is the obvious implementation and what the recipes use, but any system that versions the files reversibly complies.
 3. **Frontmatter is the schema.** If a detail isn't in the frontmatter, nothing can reliably search or sort by it. Keep the set of fields small — resist any you won't actually use.
 4. **Three areas, never confused.** Curated knowledge (durable, OKF), role machinery (durable, not OKF), and runtime state (transient, not OKF) stay clearly separated.
 5. **Writes go through a contract.** Agents add and update through one defined doorway, not by editing raw files however they like, so the brain stays consistent. (What that doorway looks like is yours to choose — see §6.)
@@ -58,7 +58,7 @@ A brain is compliant if and only if it honors these. Everything else is free.
 ## 3. The shape: three areas
 
 ```
-  THE BRAIN  ·  one git repo, plain text
+  THE BRAIN  ·  one versioned repo, plain text
   │
   ├─ knowledge/   curated · durable · OKF-conformant
   │     roles (charters) · entities · projects · decisions · reference
@@ -135,7 +135,7 @@ A brain stays useful only if something keeps it current — and that something i
 2. **Consolidate.** Reconcile contradictions, add links, prune, and generate the digest.
 3. **Improve.** Cluster the feedback against the eval scorecards and open diffs against role-charters (`AGENT_ARCHITECTURE.md §11`).
 
-The whole operation is one agent session, fully inspectable in git — the format makes the curation auditable.
+The whole operation is one agent session, fully inspectable in the version history: the format makes the curation auditable.
 
 ---
 
@@ -154,11 +154,12 @@ Scaling is addition, not migration — the same reason the agent architecture sc
 
 ## 9. Filling in the blanks
 
-OKF + git is fixed. Everything else is a choice — two compliant brains that share a format but no code:
+The OKF format is fixed and so is keeping a version history; everything else, including *which* tool versions the files, is a choice. Two compliant brains that share a format but no code:
 
 | Component | Example A (local) | Example B (hosted) |
 |---|---|---|
-| Storage | markdown + git, OKF | markdown + git, OKF |
+| Storage format | markdown + YAML, OKF | markdown + YAML, OKF |
+| Version control | local git | hosted git (or another VCS) |
 | Write contract | a small CLI | an API or MCP server |
 | Retrieval | local full-text index | a managed search service |
 | Curation schedule | cron on an always-on machine | a managed scheduler |
@@ -185,7 +186,7 @@ Both honor §2. Both are readable raw. Swap any cell without touching the others
 
 The brain and its three areas are defined in §1–§3; this lists only terms a reader might jump to.
 
-- **OKF (Open Knowledge Format)** — the open standard the knowledge layer conforms to: markdown + YAML frontmatter in git.
+- **OKF (Open Knowledge Format)** — the open standard the knowledge layer conforms to: plain-text markdown + YAML frontmatter. The brain's one format commitment; kept under version control (git by default, not mandated).
 - **Write contract** — the defined interface agents write through, in place of editing raw files (§6).
 - **Dreaming** — the scheduled curation agent that keeps the brain current and improving (§7; `AGENT_ARCHITECTURE.md §6`).
 

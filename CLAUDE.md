@@ -23,11 +23,11 @@ These docs are deliberately tech-agnostic. The **`recipes/`** subdirectory is th
 
 ## The core thesis (so edits stay coherent)
 
-- **The brain is the bus.** All durable state lives in one place — plain markdown in git. Agents coordinate only by reading/writing the brain, never by calling each other. So agents are **swappable** (a new session, or a different provider).
+- **The brain is the bus.** All durable state lives in one place — plain markdown under version control. Agents coordinate only by reading/writing the brain, never by calling each other. So agents are **swappable** (a new session, or a different provider).
 - **Agents take on roles.** Organize work by hiring each agent into an accountable *role* — a durable, well-defined job (like "Communications Manager") that holds the tools and knowledge for the work. The role persists; the agent that fills it is swappable.
 - **Opinionated about mechanism, agnostic about policy.** The architecture fixes how things are wired; the operator chooses the settings — above all, how much **autonomy** each role gets (a per-role dial) and which **surfaces** they use.
-- **Self-improving, auditably.** Interventions become feedback → dreaming clusters them → proposes a diff to a role's charter → human approves. Every change is a readable git diff.
-- One deliberate technology commitment: the brain uses **OKF + git** (the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)) for its knowledge layer. Everything else is fill-in-the-blank.
+- **Self-improving, auditably.** Interventions become feedback → dreaming clusters them → proposes a diff to a role's charter → human approves. Every change is a readable, revertible diff.
+- One deliberate commitment, and it's a *format* not a technology: the brain's knowledge layer uses **OKF** (the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)). The brain must also be version-controlled (git by default), but that is a required *capability*, not a prescribed tool. Everything else is fill-in-the-blank; technology is pinned only in `recipes/` and `kits/`.
 
 ## Committing & the changelog
 

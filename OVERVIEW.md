@@ -8,7 +8,7 @@ A way to put AI to work across your day — and scale it from one agent to a sys
 
 ## Three ideas hold the whole thing up
 
-1. **The brain is the bus.** All durable state lives in one place — plain files in git. Agents never call each other; they coordinate by reading and writing the brain. So any agent is swappable: kill a run, swap the provider — nothing is lost.
+1. **The brain is the bus.** All durable state lives in one place — plain files under version control. Agents never call each other; they coordinate by reading and writing the brain. So any agent is swappable: kill a run, swap the provider — nothing is lost.
 2. **Agents take on roles.** Organize work the way a company does — each agent is hired into an accountable **role** (a job, like "Communications Manager"), not piled onto one do-everything bot. The role is durable and holds the tools and knowledge for the job; the agent that fills it is swappable.
 3. **Opinionated about mechanism, agnostic about policy.** The architecture fixes how things are wired; **you** choose the settings — above all, how much autonomy each role gets.
 
@@ -40,7 +40,7 @@ flowchart LR
     a["you step in"] --> b["saved as<br/>feedback"] --> c["dreaming spots<br/>the pattern"] --> d["proposes a diff to<br/>the role's charter"] --> e["you approve"] --> f["it needs you<br/>less next time"]
 ```
 
-Every improvement is a readable git diff. Nothing changes behind your back.
+Every improvement is a readable diff you can revert. Nothing changes behind your back.
 
 ---
 

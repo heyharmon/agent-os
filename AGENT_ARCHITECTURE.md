@@ -25,7 +25,7 @@ Everything in this document descends from three ideas. Hold these and the rest i
 
 ### 1.1 The brain is the bus. Agents are swappable.
 
-All durable state — context, work to do, what was done, how well it went, how to improve — lives in **one place: the brain** (plain files in a git repo, per `BRAIN_ARCHITECTURE.md`). Agents never call each other. They coordinate *only* by reading and writing the brain.
+All durable state — context, work to do, what was done, how well it went, how to improve — lives in **one place: the brain** (plain files under version control, per `BRAIN_ARCHITECTURE.md`). Agents never call each other. They coordinate *only* by reading and writing the brain.
 
 This single rule keeps the system simple at one agent and still simple at fifty:
 
@@ -223,7 +223,7 @@ The architecture treats autonomy as a continuous dial and presents **every posit
 - every action carries a **consequence tag** (#6);
 - every role carries an **authority level** in its charter;
 - the rule that runs everywhere: **an action proceeds when the role's authority covers its consequence; otherwise it escalates** (§9);
-- **reversibility and audit** (the run-ledger, git history) so that acting-then-reviewing is safe;
+- **reversibility and audit** (the run-ledger, the brain's version history) so that acting-then-reviewing is safe;
 - **graduated trust**: authority can rise as a role's evals prove it out (§10–11) — promotion with evidence, not by vibe.
 
 **Policy you set, per role, and revise over time:** where each role sits on the dial; which of its actions count as consequential; how high the escalation bar is.
@@ -313,7 +313,7 @@ flowchart TD
 
 Why this gets better on its own *without* getting opaque:
 
-- **Improvement = a readable diff to a charter.** Because a role's behavior is defined by files (§5), "the system improved itself" is a git commit you can read, question, and revert. No hidden weights, no mystery. This is **coaching** made auditable.
+- **Improvement = a readable diff to a charter.** Because a role's behavior is defined by files (§5), "the system improved itself" is a tracked, reversible change you can read, question, and revert. No hidden weights, no mystery. This is **coaching** made auditable.
 - **Promotion is just one kind of improvement.** When evals prove a role out, the proposed diff may *raise its authority* (§8) — the system recommending its own promotion, with the scorecard as the case for it. You approve the raise; the role takes on more without a human in the critical path.
 - **Your scarce attention compounds.** A correction made once becomes a labeled example that prevents the whole class of mistake — instead of the same correction every week.
 - **The loop closes.** Intervene → captured → clustered → proposed as a fix or promotion → you approve the diff → evals confirm the gain → intervention rate drops. The system's job is to need you less, and to *prove* it earned the trust.
