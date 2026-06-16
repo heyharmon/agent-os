@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230630Z-pa-task",
+  "trigger": "task",
+  "duration_s": 14,
+  "outcome": "ok",
+  "tokens_in": 109625,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96625,
+  "tokens_cache_creation": 12994,
+  "tokens_out": 444,
+  "cost_usd": 0.113629,
+  "num_turns": 4,
+  "result": "**Q3 retainer terms (Brightfold / Renata Voss):**\n\n- **Rate:** $6,500/month\n- **Scope:** weekly working session, monthly close review, runway model\n- **Renewal:** July 1, 2026\n\nRenata has flagged a potential expansion to add board-deck review in Q3. Any new scope would require a fresh PO from Brightfold AP and must clear the advisory engagement floor policy.",
+  "session_id": "6edc1edb-a2bd-45f9-ab4b-8dfafa7ae998",
+  "is_error": false
+}

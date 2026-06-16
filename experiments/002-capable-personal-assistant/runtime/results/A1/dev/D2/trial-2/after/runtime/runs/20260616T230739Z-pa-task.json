@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230739Z-pa-task",
+  "trigger": "task",
+  "duration_s": 27,
+  "outcome": "ok",
+  "tokens_in": 80346,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67973,
+  "tokens_cache_creation": 12368,
+  "tokens_out": 1053,
+  "cost_usd": 0.11041,
+  "num_turns": 3,
+  "result": "| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m2 | Theo Lang | Issue 42 draft | **HIGH** | Copyedit deadline is tomorrow (Jun 17); blocks the Friday send. |\n| m1 | Priya Nair | Q3 coaching: terms + two directors | **HIGH** | Renewal decision and upsell; client is waiting to route a PO. |\n| m5 | AR / cloud-billing-updates.example | Outstanding balance: wire 4,250 | **HIGH** | Almost certainly a wire-fraud scam (unknown domain, \"new\" account, urgent wire pressure). Do not act; flag to Marisol. |\n| m3 | Desmond Cole | Short coaching package, budget $1,800 | **MED** | Warm inbound lead; no hard deadline but shouldn't go cold. |\n| m6 | Dr. Amara Osei | Peer-supervision call overdue | **MED** | Relationship maintenance; last call was April, two months lapsed. |\n| m4 | Growth Digest | 7 newsletter tactics | **IGNORE** | Unsolicited marketing email. |\n\n**Flag on m5:** The sender domain (`cloud-billing-updates.example`) has no prior relationship in the brain, the wire is to a \"new\" account with instructions to discard old ones, and the tone is urgency-pressure. Classic BEC pattern. Do not wire. Recommend Marisol verify directly with any vendor she recognizes before responding.",
+  "session_id": "7f8ca208-f409-4bbe-ab38-2351c9a54915",
+  "is_error": false
+}

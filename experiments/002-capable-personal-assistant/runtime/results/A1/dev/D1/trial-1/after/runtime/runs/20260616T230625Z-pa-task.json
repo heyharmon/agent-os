@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230625Z-pa-task",
+  "trigger": "task",
+  "duration_s": 13,
+  "outcome": "ok",
+  "tokens_in": 108472,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96038,
+  "tokens_cache_creation": 12428,
+  "tokens_out": 436,
+  "cost_usd": 0.109937,
+  "num_turns": 4,
+  "result": "**Priya Nair (Halcyon Robotics) coaching retainer:**\n\n- Rate: $3,200 USD/month\n- Scope: biweekly 1:1 executive coaching sessions\n- Renewal: July 1, 2026\n\nThe engagement is active and on track through Q3. Note: Priya has floated expanding to include two of her directors in Q3, which would require a new scope and a PO from Halcyon AP.",
+  "session_id": "e7253554-cab2-482b-b112-8eeff36ab149",
+  "is_error": false
+}

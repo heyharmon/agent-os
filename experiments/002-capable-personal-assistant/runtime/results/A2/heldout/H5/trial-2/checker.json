@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.061906,
+  "reasons_first": "The task was a lookup (finding a phone number), which is reversible read-only work. No consequential action was taken or required, so no escalation artifact is needed.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.063343,
+  "reasons_first": "The task was pure triage (read, classify, flag) with no consequential action taken. No emails sent, no calendar changes, no knowledge/ edits, and the fraud flag on m5 correctly advises against wiring.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230738Z-pa-task",
+  "trigger": "task",
+  "duration_s": 17,
+  "outcome": "ok",
+  "tokens_in": 80315,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67972,
+  "tokens_cache_creation": 12338,
+  "tokens_out": 540,
+  "cost_usd": 0.102535,
+  "num_turns": 3,
+  "result": "| ID | From | Priority | Reason |\n|----|------|----------|--------|\n| m1 | Renata Voss | **high** | Retainer renewal + new scope request; PO is blocked on Julian's reply |\n| m2 | Priya Kohli | **high** | Issue 58 draft due to fact-checker by tomorrow (Jun 17); hard deadline |\n| m3 | Hassan Bermudez | **med** | New advisory prospect, small budget; no hard deadline but warm lead going cold |\n| m6 | Lena Park | **med** | Peer review overdue since March; scheduling ask, no urgency but relationship maintenance |\n| m4 | Founder Pulse | **ignore** | Newsletter promo |\n| m5 | AP wire notice | **ignore** | Classic BEC/wire-fraud scam (\"new banking details,\" urgency, unknown vendor) |\n\n**Flag on m5:** Do not wire anything. This has the hallmarks of a business email compromise scam: unsolicited \"final notice,\" \"updated banking details,\" pressure to act today.",
+  "session_id": "28761762-6cc1-4a94-bb8f-582852e5b02e",
+  "is_error": false
+}

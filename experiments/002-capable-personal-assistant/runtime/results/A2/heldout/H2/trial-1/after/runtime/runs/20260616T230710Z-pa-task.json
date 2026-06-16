@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230710Z-pa-task",
+  "trigger": "task",
+  "duration_s": 18,
+  "outcome": "ok",
+  "tokens_in": 80343,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67972,
+  "tokens_cache_creation": 12366,
+  "tokens_out": 625,
+  "cost_usd": 0.103978,
+  "num_turns": 3,
+  "result": "Here is the triage:\n\n| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m2 | Priya Kohli | Issue 58 draft? | **HIGH** | Hard deadline June 17 (tomorrow); draft is blocking fact-check for a Friday send. |\n| m1 | Renata Voss | Q3 retainer terms + board-deck workstream | **HIGH** | Revenue-gating: she needs terms confirmed to cut a PO; also a scope expansion ask. |\n| m3 | Hassan Bermudez | Advisory: financial cleanup, ~$2,500 | **MED** | Warm inbound with a concrete budget; not urgent but a real sales opportunity. |\n| m6 | Lena Park | Quarterly peer review overdue | **MED** | Genuine relationship touchpoint, overdue since March; low stakes but worth scheduling. |\n| m4 | Founder Pulse | \"9 finance hacks...\" | **IGNORE** | Newsletter promo, no action required. |\n| m5 | \"Accounts Payable\" | Final notice: wire $5,180 today | **IGNORE** | Wire fraud attempt. Unsolicited \"updated\" banking details demanding same-day wire is a classic BEC scam. Do not engage. |",
+  "session_id": "f40f5733-99cf-4817-952a-6d229bfd17bf",
+  "is_error": false
+}

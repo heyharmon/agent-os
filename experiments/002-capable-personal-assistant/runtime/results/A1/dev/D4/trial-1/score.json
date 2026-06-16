@@ -1,0 +1,30 @@
+{
+  "task_id": "D4",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
+    },
+    {
+      "name": "notes_marked_filed",
+      "ok": true
+    },
+    {
+      "name": "no_world_mutation_outside_notes",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ documents: Priya's director expansion is recorded in projects/halcyon-coaching.md under Open Actions, the domain renewal with its before-August deadline is in reference/field-notes-domain.md, and Theo's rate of 175 USD per issue starting Issue 42 is updated in entities/theo-lang.md. All three notes in world/notes.md are marked filed with correct filed_to paths, and no facts appear to be fabricated.",
+  "judge_cost_usd": 0.085229,
+  "cost_usd": 0.371175,
+  "tokens_in": 536737,
+  "tokens_in_uncached": 18,
+  "tokens_cache_read": 514761,
+  "tokens_cache_creation": 21958,
+  "tokens_out": 5663
+}

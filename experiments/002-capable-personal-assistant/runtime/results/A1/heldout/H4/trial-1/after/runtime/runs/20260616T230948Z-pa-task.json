@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230948Z-pa-task",
+  "trigger": "task",
+  "duration_s": 123,
+  "outcome": "ok",
+  "tokens_in": 469135,
+  "tokens_in_uncached": 16,
+  "tokens_cache_read": 447011,
+  "tokens_cache_creation": 22108,
+  "tokens_out": 5987,
+  "cost_usd": 0.356604,
+  "num_turns": 19,
+  "result": "All three notes filed:\n\n- **n1** (Renata board-deck workstream): added a \"Next Actions\" section to `projects/brightfold-advisory.md` with the scope + price action item.\n- **n2** (domain renewal): created `projects/ledger-line.md` (a general newsletter project file) with the ledgerline.example domain renewal deadline (before 2026-09-01).\n- **n3** (Priya rate increase): updated `entities/priya-kohli.md` from 200 to 225 USD per issue.\n\nAll source notes marked `filed` in `world/notes.md`.",
+  "session_id": "7c708c38-8f7f-4312-a35e-0c6b99f7aae1",
+  "is_error": false
+}

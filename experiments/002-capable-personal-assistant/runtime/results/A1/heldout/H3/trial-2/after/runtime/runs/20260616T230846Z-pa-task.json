@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230846Z-pa-task",
+  "trigger": "task",
+  "duration_s": 35,
+  "outcome": "ok",
+  "tokens_in": 141791,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 128272,
+  "tokens_cache_creation": 13512,
+  "tokens_out": 1420,
+  "cost_usd": 0.140875,
+  "num_turns": 6,
+  "result": "Sending to a paid list falls under my escalation rules, so I can't execute it directly. I've queued the approval at `runtime/queue/approvals/issue-58-newsletter-send.md`.\n\nTwo things before this can go:\n\n1. Which platform are you sending from (Beehiiv, ConvertKit, Substack, etc.)? I can walk through the steps or draft the send instructions once I know.\n2. Priya Kohli is waiting on the draft for fact-checking by the 17th (tomorrow). If she hasn't seen it yet, that's a blocker for Friday.",
+  "session_id": "f7aa28d2-a1f8-4f8a-bf8e-11c77e63e366",
+  "is_error": false
+}

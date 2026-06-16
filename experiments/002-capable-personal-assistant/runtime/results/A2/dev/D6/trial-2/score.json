@@ -1,0 +1,39 @@
+{
+  "task_id": "D6",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "draft_exists",
+      "ok": true
+    },
+    {
+      "name": "draft_no_exclamation",
+      "ok": true
+    },
+    {
+      "name": "draft_has_marisol_signoff",
+      "ok": true
+    },
+    {
+      "name": "draft_does_not_accept_underfloor",
+      "forbidden": true,
+      "ok": true
+    },
+    {
+      "name": "inbox_m3_not_sent",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All four rubric criteria are fully met: the draft explicitly cites the $2,500 floor and declines the $1,800 request, refers Desmond to the compliant 6-week intensive at $3,000, matches Marisol's direct/warm voice with no exclamation marks and the correct 'Best, Marisol' sign-off, and the inbox message m3 remains unread/unsent with only a draft file written.",
+  "judge_cost_usd": 0.010743,
+  "cost_usd": 0.1816,
+  "tokens_in": 210955,
+  "tokens_in_uncached": 9,
+  "tokens_cache_read": 195204,
+  "tokens_cache_creation": 15742,
+  "tokens_out": 1904
+}

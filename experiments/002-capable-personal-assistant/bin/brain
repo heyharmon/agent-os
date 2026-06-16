@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""brain: the write contract + retrieval path for the local brain.
+
+Operates relative to env BRAIN_ROOT (default ./brain). Timestamps use env
+BRAIN_NOW if set (for reproducibility), else system date.
+"""
+import os
+import sys
+import subprocess
+import datetime
+import pathlib
+
+ROOT = pathlib.Path(os.environ.get("BRAIN_ROOT", "./brain")).resolve()
+
+
+def now_date():
+    n = os.environ.get("BRAIN_NOW")
+    if n:
+        return n
+    return datetime.date.today().isoformat()
+
+
+def now_stamp():
+    n = os.environ.get("BRAIN_NOW")
+    if n:
+        return n
+    return datetime.datetime.now().isoformat(timespec="seconds")
+
+
+def parse_frontmatter(text):
+    """Return (fields_dict, body_str). Minimal YAML: key: value lines."""
+    if not text.startswith("---"):
+        return {}, text
+    lines = text.splitlines()
+    if lines[0].strip() != "---":
+        return {}, text
+    fm = {}
+    i = 1
+    while i < len(lines) and lines[i].strip() != "---":
+        line = lines[i]
+        if ":" in line:
+            k, _, v = line.partition(":")
+            fm[k.strip()] = v.strip()
+        i += 1
+    body = "\n".join(lines[i + 1:]) if i < len(lines) else ""
+    return fm, body
+
+
+def emit_frontmatter(fm):
+    out = ["---"]
+    for k, v in fm.items():
+        out.append(f"{k}: {v}")
+    out.append("---")
+    return "\n".join(out)
+
+
+def record_write(op, path):
+    """Append a write-log line so the harness gate (GATE=1) can tell a
+    brain-mediated knowledge/ write from a hand-edit. One line per write:
+    <stamp>\t<op>\t<knowledge-relative-or-absolute path>. The gate flags any
+    knowledge/ change with no matching entry here as a hand-edit. Logging is
+    best-effort: a failure here never blocks the write itself.
+    """
+    try:
+        path = pathlib.Path(path).resolve()
+        try:
+            rel = path.relative_to(ROOT)
+            rec = str(rel)
+        except ValueError:
+            rec = str(path)
+        logdir = ROOT / "runtime"
+        logdir.mkdir(parents=True, exist_ok=True)
+        with (logdir / "brain-writes.log").open("a") as f:
+            f.write(f"{now_stamp()}\t{op}\t{rec}\n")
+    except OSError:
+        pass
+
+
+def cmd_new(args):
+    # brain new <collection> <slug> [--field k=v]...
+    if len(args) < 2:
+        sys.exit("usage: brain new <collection> <slug> [--field k=v]...")
+    collection, slug = args[0], args[1]
+    fields = {}
+    i = 2
+    while i < len(args):
+        if args[i] == "--field" and i + 1 < len(args):
+            k, _, v = args[i + 1].partition("=")
+            fields[k] = v
+            i += 2
+        else:
+            i += 1
+    d = now_date()
+    fm = {
+        "type": fields.pop("type", "Note"),
+        "name": fields.pop("name", slug),
+        "created": d,
+        "updated": d,
+        "tags": fields.pop("tags", f"[{collection}]"),
+    }
+    for k, v in fields.items():
+        fm[k] = v
+    path = ROOT / "knowledge" / collection / f"{slug}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    title = fm["name"]
+    path.write_text(emit_frontmatter(fm) + f"\n\n# {title}\n")
+    record_write("new", path)
+    print(str(path))
+
+
+def cmd_update(args):
+    # brain update <path>  -> bump updated timestamp
+    if not args:
+        sys.exit("usage: brain update <path>")
+    path = pathlib.Path(args[0])
+    if not path.is_absolute():
+        path = (ROOT.parent / args[0]) if (ROOT.parent / args[0]).exists() else pathlib.Path(args[0])
+    if not path.exists():
+        sys.exit(f"no such file: {path}")
+    text = path.read_text()
+    fm, body = parse_frontmatter(text)
+    fm["updated"] = now_date()
+    path.write_text(emit_frontmatter(fm) + "\n" + body)
+    record_write("update", path)
+    print(str(path))
+
+
+def cmd_search(args):
+    # brain search <query> -> search knowledge/ and world/
+    if not args:
+        sys.exit("usage: brain search <query>")
+    query = " ".join(args)
+    targets = [str(ROOT / "knowledge"), str(ROOT / "world")]
+    targets = [t for t in targets if pathlib.Path(t).exists()]
+    if not targets:
+        return
+    # Prefer ripgrep via `command rg` (bare rg is a shadowed shim here).
+    for runner in (["command", "rg", "-n", query], ["grep", "-rn", query]):
+        try:
+            r = subprocess.run(runner + targets, capture_output=True, text=True)
+            if r.returncode in (0, 1):
+                sys.stdout.write(r.stdout)
+                return
+        except FileNotFoundError:
+            continue
+    # Python fallback.
+    for t in targets:
+        for p in pathlib.Path(t).rglob("*"):
+            if p.is_file():
+                try:
+                    for n, line in enumerate(p.read_text().splitlines(), 1):
+                        if query in line:
+                            print(f"{p}:{n}:{line}")
+                except (UnicodeDecodeError, OSError):
+                    continue
+
+
+def cmd_queue(args):
+    # brain queue add <text> [--priority p]
+    if not args or args[0] != "add":
+        sys.exit("usage: brain queue add <text> [--priority p]")
+    rest = args[1:]
+    priority = "normal"
+    text_parts = []
+    i = 0
+    while i < len(rest):
+        if rest[i] == "--priority" and i + 1 < len(rest):
+            priority = rest[i + 1]
+            i += 2
+        else:
+            text_parts.append(rest[i])
+            i += 1
+    text = " ".join(text_parts)
+    qdir = ROOT / "runtime" / "queue"
+    qdir.mkdir(parents=True, exist_ok=True)
+    stamp = now_stamp().replace(":", "").replace("-", "")
+    path = qdir / f"task-{stamp}.md"
+    path.write_text(
+        f"---\ntype: Task\ncreated: {now_date()}\npriority: {priority}\n---\n\n{text}\n"
+    )
+    print(str(path))
+
+
+def cmd_log(args):
+    # brain log <msg>
+    if not args:
+        sys.exit("usage: brain log <msg>")
+    msg = " ".join(args)
+    logdir = ROOT / "runtime"
+    logdir.mkdir(parents=True, exist_ok=True)
+    logfile = logdir / "log.md"
+    with logfile.open("a") as f:
+        f.write(f"- {now_stamp()} {msg}\n")
+    print(str(logfile))
+
+
+def main():
+    if len(sys.argv) < 2:
+        sys.exit("usage: brain <new|update|search|queue|log> ...")
+    cmd, rest = sys.argv[1], sys.argv[2:]
+    dispatch = {
+        "new": cmd_new,
+        "update": cmd_update,
+        "search": cmd_search,
+        "queue": cmd_queue,
+        "log": cmd_log,
+    }
+    fn = dispatch.get(cmd)
+    if not fn:
+        sys.exit(f"unknown command: {cmd}")
+    fn(rest)
+
+
+if __name__ == "__main__":
+    main()

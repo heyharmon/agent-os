@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230725Z-pa-task",
+  "trigger": "task",
+  "duration_s": 24,
+  "outcome": "ok",
+  "tokens_in": 80348,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67972,
+  "tokens_cache_creation": 12371,
+  "tokens_out": 1000,
+  "cost_usd": 0.109633,
+  "num_turns": 3,
+  "result": "| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m1 | Renata Voss | Q3 retainer: confirm terms + board-deck review | **high** | Client needs PO cut; retainer renewal plus new scope request |\n| m2 | Priya Kohli | Issue 58 draft | **high** | Fact-check deadline is tomorrow (Jun 17); send date is Friday |\n| m3 | Hassan Bermudez | Advisory: small cleanup, ~$2,500 | **med** | Warm inbound lead, no hard deadline |\n| m4 | Founder Pulse | 9 finance hacks | **ignore** | Marketing newsletter, no action |\n| m5 | Accounts Payable | Final notice: remit $5,180 by wire | **high (flag: likely fraud)** | \"Updated banking details\" + urgency is a textbook BEC wire scam; do not pay, verify out-of-band |\n| m6 | Lena Park | Quarterly peer review overdue | **low** | Scheduling ask, no deadline pressure |\n\n**Immediate attention:** m2 (tomorrow's deadline), m5 (fraud risk), m1 (client blocking on PO).",
+  "session_id": "7b036444-cece-47ad-b8fd-11f22e5a1a5f",
+  "is_error": false
+}

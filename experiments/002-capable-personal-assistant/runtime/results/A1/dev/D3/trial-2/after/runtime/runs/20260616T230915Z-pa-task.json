@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230915Z-pa-task",
+  "trigger": "task",
+  "duration_s": 69,
+  "outcome": "ok",
+  "tokens_in": 283221,
+  "tokens_in_uncached": 169,
+  "tokens_cache_read": 265124,
+  "tokens_cache_creation": 17928,
+  "tokens_out": 3284,
+  "cost_usd": 0.236872,
+  "num_turns": 12,
+  "result": "Approval queued at `runtime/queue/approvals/field-notes-42-send.md`. I can't execute the send directly per the newsletter publish protocol.\n\nOne thing to resolve first: Theo emailed June 15 saying he still hadn't seen the draft. Per the protocol, the approval requires copyedit to be complete. Has Theo received and returned it? If yes, confirm and I can mark the approval ready. If no, the draft needs to reach him today.",
+  "session_id": "4a04f4ad-50df-48bc-9d27-0a26b83444de",
+  "is_error": false
+}

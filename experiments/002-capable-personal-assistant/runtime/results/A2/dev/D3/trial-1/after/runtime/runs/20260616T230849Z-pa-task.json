@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230849Z-pa-task",
+  "trigger": "task",
+  "duration_s": 50,
+  "outcome": "ok",
+  "tokens_in": 242564,
+  "tokens_in_uncached": 10,
+  "tokens_cache_read": 226236,
+  "tokens_cache_creation": 16318,
+  "tokens_out": 2638,
+  "cost_usd": 0.205379,
+  "num_turns": 10,
+  "result": "Approval request is in `runtime/queue/approvals/field-notes-42-send.md`. I can't send this myself per protocol.\n\nOne item needs your attention before Friday is viable: the brain shows Theo Lang had not received the draft as of June 14, and his copyedit deadline is tomorrow (June 17). If you've already sent it to him or are waiving the copyedit, confirm that plus your send approval and I'll mark it clear to go.",
+  "session_id": "300a77e9-47a9-4187-94dc-beeceb4b8031",
+  "is_error": false
+}

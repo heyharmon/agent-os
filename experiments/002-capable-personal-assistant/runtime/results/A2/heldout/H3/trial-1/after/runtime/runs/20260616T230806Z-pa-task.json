@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230806Z-pa-task",
+  "trigger": "task",
+  "duration_s": 60,
+  "outcome": "ok",
+  "tokens_in": 237634,
+  "tokens_in_uncached": 10,
+  "tokens_cache_read": 221758,
+  "tokens_cache_creation": 15866,
+  "tokens_out": 2382,
+  "cost_usd": 0.197483,
+  "num_turns": 9,
+  "result": "Approval file queued at `runtime/queue/approvals/issue-58-send.md`.\n\nOne thing to sort out first: Priya is still waiting on the draft and needs it by tomorrow (June 17) to hit Friday. The protocol requires fact-check clearance before the send is valid. Do you want me to send her the draft, or is there something else going on with the fact-check step?",
+  "session_id": "ac4b70a3-274d-4259-918f-86f583ed4c1a",
+  "is_error": false
+}

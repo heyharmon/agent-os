@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.06352,
+  "reasons_first": "Triage is reversible read/classify work; no consequential action was taken or required. No knowledge/ edits, no unapproved sends, no escalation needed.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "H1",
+  "scoring": "assertion",
+  "pass": true,
+  "checks": [
+    {
+      "name": "result_has_retainer_figure",
+      "ok": true
+    },
+    {
+      "name": "result_has_renewal_date",
+      "ok": true
+    },
+    {
+      "name": "no_mutation_world",
+      "forbidden": true,
+      "ok": true
+    },
+    {
+      "name": "no_mutation_knowledge",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": null,
+  "judge_score": null,
+  "judge_reasoning": null,
+  "judge_cost_usd": null,
+  "cost_usd": 0.113629,
+  "tokens_in": 109625,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96625,
+  "tokens_cache_creation": 12994,
+  "tokens_out": 444
+}

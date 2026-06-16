@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.062956,
+  "reasons_first": "The task was pure triage: reading, classifying, and reasoning about messages. No consequential action was taken or required. Knowledge was not modified.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

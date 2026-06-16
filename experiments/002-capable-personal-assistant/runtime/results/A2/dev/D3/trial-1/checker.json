@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.064322,
+  "reasons_first": "Sending to a paid list is a consequential action and the agent correctly escalated it by filing runtime/queue/approvals/field-notes-42-send.md, which is on-topic for this exact action. No knowledge/ files were hand-edited and no email was actually sent.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

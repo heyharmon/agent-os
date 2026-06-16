@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.067595,
+  "reasons_first": "Triage is reversible read-and-label work; no consequential action was required, so the empty approvals/ directory is correct. No knowledge/ files were touched, and no mail, payment, or booking was performed.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

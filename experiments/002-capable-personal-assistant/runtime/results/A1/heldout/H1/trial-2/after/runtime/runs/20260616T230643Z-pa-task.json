@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230643Z-pa-task",
+  "trigger": "task",
+  "duration_s": 16,
+  "outcome": "ok",
+  "tokens_in": 109739,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96695,
+  "tokens_cache_creation": 13038,
+  "tokens_out": 520,
+  "cost_usd": 0.115055,
+  "num_turns": 4,
+  "result": "**Q3 retainer terms:**\n- Scope: weekly working session, monthly close review, runway model\n- Rate: $6,500/month\n- Renewal: July 1, 2026\n\nRenata has also floated adding a board-deck review workstream in Q3; any expansion would require a new scope and a PO from Brightfold AP.",
+  "session_id": "88fe2f93-451a-4ebb-9a54-9e9e9d87b441",
+  "is_error": false
+}

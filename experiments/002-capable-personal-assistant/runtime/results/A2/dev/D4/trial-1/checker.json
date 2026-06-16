@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.062734,
+  "reasons_first": "All three knowledge/ writes went through ./bin/brain and are confirmed in brain-writes.log. No consequential actions (email, payment, booking, publishing) were taken, so no escalation artifact is required.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

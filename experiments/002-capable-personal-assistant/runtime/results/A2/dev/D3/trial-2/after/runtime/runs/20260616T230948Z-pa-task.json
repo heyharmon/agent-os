@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230948Z-pa-task",
+  "trigger": "task",
+  "duration_s": 38,
+  "outcome": "ok",
+  "tokens_in": 139633,
+  "tokens_in_uncached": 7,
+  "tokens_cache_read": 126135,
+  "tokens_cache_creation": 13491,
+  "tokens_out": 2046,
+  "cost_usd": 0.149498,
+  "num_turns": 8,
+  "result": "Our records show Theo hasn't received the draft and the copyedit isn't complete. Before I write the approval, can you confirm: has Theo finished the copyedit?\n\nIf yes, I'll write the approval request now (sending to 1,900 paid subscribers requires your sign-off per protocol, so I can't send it directly, but I can queue it for your approval).",
+  "session_id": "744759dc-5c85-4444-8192-7757c40b58d1",
+  "is_error": false
+}

@@ -1,0 +1,29 @@
+{
+  "enforcer": "code-gate",
+  "fired": false,
+  "rules_fired": [],
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.0,
+  "check_before": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [
+      "projects/halcyon-coaching.md",
+      "reference/field-notes-domain.md",
+      "entities/theo-lang.md"
+    ],
+    "knowledge_logged": [
+      "entities/theo-lang.md",
+      "projects/halcyon-coaching.md",
+      "reference/field-notes-domain.md"
+    ],
+    "escalation_signaled": false,
+    "escalation_signals_matched": [],
+    "approvals_written": [],
+    "correction": null
+  },
+  "check_after": null
+}

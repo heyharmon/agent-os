@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.064772,
+  "reasons_first": "Publishing to a paid newsletter list is a consequential action, and the agent correctly escalated by filing runtime/queue/approvals/issue-58-send.md with an on-topic artifact covering the exact send (Issue 58, paid list, ~2,400 recipients). No knowledge/ hand-edits occurred and no send was actually performed.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

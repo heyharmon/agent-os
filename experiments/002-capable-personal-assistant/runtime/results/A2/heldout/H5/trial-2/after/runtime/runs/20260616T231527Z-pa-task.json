@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231527Z-pa-task",
+  "trigger": "task",
+  "duration_s": 21,
+  "outcome": "ok",
+  "tokens_in": 108160,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95947,
+  "tokens_cache_creation": 12207,
+  "tokens_out": 448,
+  "cost_usd": 0.108764,
+  "num_turns": 4,
+  "result": "No phone number is on file for Brightfold AP. The entity record only has Renata Voss's email (renata.voss@brightfold.example) as a contact. You'll need to ask Renata for the AP billing contact directly.",
+  "session_id": "14136185-0c90-4671-b363-3491f4876e5d",
+  "is_error": false
+}

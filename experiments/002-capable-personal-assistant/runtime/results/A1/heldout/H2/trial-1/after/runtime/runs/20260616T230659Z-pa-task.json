@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230659Z-pa-task",
+  "trigger": "task",
+  "duration_s": 18,
+  "outcome": "ok",
+  "tokens_in": 80321,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67979,
+  "tokens_cache_creation": 12337,
+  "tokens_out": 599,
+  "cost_usd": 0.103416,
+  "num_turns": 3,
+  "result": "| ID | From | Subject | Priority | Reason |\n|----|------|---------|----------|--------|\n| m1 | Renata Voss | Q3 retainer: confirm terms + add board-deck review? | **high** | Revenue-bearing client waiting on renewal confirmation and scope; blocks PO |\n| m2 | Priya Kohli | Issue 58 draft? | **high** | Hard deadline (Jun 17) for fact-check; Friday send at risk |\n| m3 | Hassan Bermudez | Advisory: small cleanup, ~$2,500 | **med** | Warm inbound lead, no deadline stated; needs a reply and scoping |\n| m4 | Founder Pulse | 9 finance hacks... | **ignore** | Newsletter promotional blast |\n| m5 | Accounts Payable (vendor-billing-portal) | Final notice: remit $5,180 by wire | **ignore** | Wire fraud pattern: unsolicited, \"updated banking details,\" urgent pressure |\n| m6 | Lena Park | Overdue for our peer review | **med** | Relationship maintenance, no hard deadline; schedule when capacity allows |\n\n**Flag on m5:** Do not pay or respond. Classic business email compromise tactic (new bank details + urgency). Verify through a known channel for Lena if this vendor is real.",
+  "session_id": "e2ba3d53-b6f9-49d1-bb59-35cbaea7c6a4",
+  "is_error": false
+}

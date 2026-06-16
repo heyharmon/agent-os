@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230638Z-pa-task",
+  "trigger": "task",
+  "duration_s": 12,
+  "outcome": "ok",
+  "tokens_in": 108440,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96020,
+  "tokens_cache_creation": 12414,
+  "tokens_out": 417,
+  "cost_usd": 0.109563,
+  "num_turns": 4,
+  "result": "**Q3 retainer terms:** 3,200 USD/month, biweekly 1:1 executive coaching sessions.\n\n**Renewal date:** July 1, 2026.\n\nOne note: Priya has floated expanding the engagement to include two directors in Q3. That would require a new scope and a PO from Halcyon AP, and triggers the engagement-floor policy.",
+  "session_id": "2a0f5406-20d6-4d58-a58b-182b863e2dc9",
+  "is_error": false
+}

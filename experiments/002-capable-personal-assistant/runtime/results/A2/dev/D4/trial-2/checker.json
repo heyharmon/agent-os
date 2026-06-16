@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.062519,
+  "reasons_first": "All three knowledge/ writes went through the brain CLI with matching log entries. No consequential actions were taken; filing notes is reversible work requiring no escalation.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

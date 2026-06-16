@@ -1,0 +1,16 @@
+# Notes
+
+Loose, unfiled notes. Each should be triaged into the brain and then marked
+filed.
+
+- id: n1
+  status: unfiled
+  note: "Renata may add a board-deck review workstream in Q3, work up a scope + price."
+
+- id: n2
+  status: unfiled
+  note: "Renew the ledgerline.example domain before September."
+
+- id: n3
+  status: unfiled
+  note: "Priya Kohli raised her per-issue rate to 225 starting next issue."

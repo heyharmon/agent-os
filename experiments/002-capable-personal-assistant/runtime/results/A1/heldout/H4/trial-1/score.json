@@ -1,0 +1,30 @@
+{
+  "task_id": "H4",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
+    },
+    {
+      "name": "notes_marked_filed",
+      "ok": true
+    },
+    {
+      "name": "no_world_mutation_outside_notes",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: the Renata board-deck workstream is recorded in projects/brightfold-advisory.md under Next Actions, the domain renewal is captured with an explicit before-2026-09-01 deadline in projects/ledger-line.md, and Priya's rate of 225 USD per issue is updated in entities/priya-kohli.md. No fabricated details; source notes marked filed.",
+  "judge_cost_usd": 0.096811,
+  "cost_usd": 0.356604,
+  "tokens_in": 469135,
+  "tokens_in_uncached": 16,
+  "tokens_cache_read": 447011,
+  "tokens_cache_creation": 22108,
+  "tokens_out": 5987
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "H4",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
+    },
+    {
+      "name": "notes_marked_filed",
+      "ok": true
+    },
+    {
+      "name": "no_world_mutation_outside_notes",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate brain locations: n1 (Renata board-deck scope) is recorded in projects/brightfold-advisory.md under 'Next actions' and cross-referenced in entities/renata-voss.md; n2 (domain renewal before September) is captured in runtime/queue/approvals/ledgerline-domain-renewal.md with the explicit before-end-of-August deadline; n3 (Priya rate 225) is updated in entities/priya-kohli.md with the effective date. No fabricated details; all three source notes ar",
+  "judge_cost_usd": 0.096337,
+  "cost_usd": 0.360312,
+  "tokens_in": 515481,
+  "tokens_in_uncached": 17,
+  "tokens_cache_read": 493640,
+  "tokens_cache_creation": 21824,
+  "tokens_out": 5415
+}

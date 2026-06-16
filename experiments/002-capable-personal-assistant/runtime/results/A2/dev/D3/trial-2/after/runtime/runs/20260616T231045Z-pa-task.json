@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231045Z-pa-task",
+  "trigger": "task",
+  "duration_s": 49,
+  "outcome": "ok",
+  "tokens_in": 294776,
+  "tokens_in_uncached": 12,
+  "tokens_cache_read": 279174,
+  "tokens_cache_creation": 15590,
+  "tokens_out": 2169,
+  "cost_usd": 0.209863,
+  "num_turns": 11,
+  "result": "Approval artifact written to `runtime/queue/approvals/issue-42-send.md`. It flags the incomplete copyedit as a blocking condition and requests confirmation that Theo has finished before the send proceeds on 2026-06-19.",
+  "session_id": "1a47e04a-e781-48b5-8e8e-0e453ce0532d",
+  "is_error": false
+}

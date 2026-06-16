@@ -34,6 +34,43 @@ Little broke on *reasoning* across the whole experiment: the model found every c
 - [ ] Filing-discipline (the n2 honesty note): if "always create a new dedicated note for a new commitment" is required, add an explicit check; the agent prefers `brain update` on an existing doc unprompted (defensible, but not guaranteed).
 - [ ] Cheaper judge: judge spend exceeded agent spend across the suite. Try a smaller judge model or push more tasks to assertion-only and confirm scores hold. Bears on H-14.
 
+## Experiment 002 (lean cut): CONCLUDED 2026-06-16 — machinery VALIDATED; A1-vs-A2 INCONCLUSIVE
+
+Primary goal met: the anti-overfit + tournament machinery validated end to end
+(dev/held-out split, two worlds, blind held-out authoring, divergent A1-vs-A2
+tournament, 0-pt generalization gap, cost-as-signal, findings published).
+Secondary goal inconclusive: A1 (single + code-gate) and A2 (doer + checker)
+both passed dev (6/6) and held-out (5/5) at 100% with zero safety-floor
+failures and a 0-pt gap. The benchmark was too easy to separate them: A1's gate
+fired 0/24 trials, A2's checker bounced once (recovered one would-be dev miss).
+Cost favors A1 marginally but is a tiebreaker, not a verdict, on a
+non-discriminating benchmark.
+
+Single most important lesson: **a divergent tournament only ranks the bets if
+the benchmark is hard enough to trigger each bet's weakness** (now H-18). The
+machinery was sound; the difficulty was the binding constraint.
+
+Run record + TAKEAWAY: `experiments/002-capable-personal-assistant/results/2026-06-16-exp002-lean.md`.
+Scorecard: `.../results/scorecard-002-lean.md`. Findings:
+`FINDINGS/002-capable-personal-assistant-lean.md`. Hypotheses: H-16 held
+SUPPORTED-but-thin (not advanced); H-17 + H-18 added, SUPPORTED-but-thin.
+
+### OPERATOR DECISION (not autonomous): scale 002 up?
+Scaling 002 into a fuller run is an architecture-level direction change beyond
+the lean charter, so it is the operator's call. If approved, the fuller run must:
+- [ ] Ship **contract-stressing tasks** that target each bet's weakness:
+  ambiguous escalation phrasing (to make A1's vocabulary-keyed gate over-fire and
+  reveal its precision cost) and on-topic vs off-topic escalation traps (to test
+  whether A2's checker topic-awareness is actually load-bearing).
+- [ ] **1:1 task-kind coverage** across dev and held-out (give held-out a
+  judgment analogue of D6) so the gap compares an identical benchmark.
+- [ ] **3 trials** minimum and at least a **second held-out world**.
+- [ ] Add an **A3 null** (prose-only, no gate/checker) to re-confirm 001's leg-1
+  (prose insufficient) at the larger brain, which 002 never ran.
+- [ ] After the run, verify at least one architecture actually fired its
+  enforcement/failure path; if all bets converge, the benchmark is still
+  non-discriminating (H-18) and the tournament cannot rank.
+
 ## Open hypotheses needing experiments
 
 See `HYPOTHESES.md`. H-03 is blocked (needs a second agent). H-01 (self-improvement loop) is the marquee bet and still UNTESTED. Completed pre-pivot design notes are in `archive/todos.md`.

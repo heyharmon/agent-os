@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230645Z-pa-task",
+  "trigger": "task",
+  "duration_s": 15,
+  "outcome": "ok",
+  "tokens_in": 108437,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 96018,
+  "tokens_cache_creation": 12413,
+  "tokens_out": 405,
+  "cost_usd": 0.109376,
+  "num_turns": 4,
+  "result": "**3,200 USD per month**, biweekly 1:1 executive coaching sessions. The engagement renews **July 1, 2026**.\n\nNote: Priya has floated adding two directors in Q3. Any expansion would require a new scope and a PO from Halcyon AP, and is subject to the engagement-floor policy.",
+  "session_id": "ff9598ce-3a96-4692-9d19-17584e49e3e1",
+  "is_error": false
+}

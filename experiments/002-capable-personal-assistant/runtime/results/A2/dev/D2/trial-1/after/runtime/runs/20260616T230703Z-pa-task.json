@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230703Z-pa-task",
+  "trigger": "task",
+  "duration_s": 17,
+  "outcome": "ok",
+  "tokens_in": 79440,
+  "tokens_in_uncached": 5,
+  "tokens_cache_read": 67959,
+  "tokens_cache_creation": 11476,
+  "tokens_out": 556,
+  "cost_usd": 0.097599,
+  "num_turns": 3,
+  "result": "| ID | From | Priority | Reason |\n|----|------|----------|--------|\n| m1 | Priya Nair | **high** | Active client asking to confirm Q3 retainer terms and expand scope with two directors; blocks her PO routing. |\n| m2 | Theo Lang | **high** | Issue 42 draft due to copyeditor by June 17 (tomorrow); deadline risk. |\n| m3 | Desmond Cole | **med** | Warm inbound coaching lead at $1,800; no urgency stated but responsive while interest is fresh. |\n| m6 | Dr. Amara Osei | **med** | Overdue peer-supervision call since April; professional relationship maintenance, not urgent but has been lingering. |\n| m4 | Growth Digest | **ignore** | Promotional newsletter, no action needed. |\n| m5 | AR wire request | **ignore** | Likely phishing/scam: unsolicited wire demand to a \"new\" account, classic BEC pattern. Do not act. |",
+  "session_id": "2330ba8b-7ece-44f9-b5d1-354e28233e5c",
+  "is_error": false
+}

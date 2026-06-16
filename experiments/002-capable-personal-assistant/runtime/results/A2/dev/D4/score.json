@@ -1,0 +1,77 @@
+{
+  "task_id": "D4",
+  "arch": "A2",
+  "scoring": "hybrid",
+  "trials": 2,
+  "pass": true,
+  "pass_count": 2,
+  "flaky": false,
+  "cost_usd": 0.340492,
+  "judge_cost_usd_total": 0.190146,
+  "checker_cost_usd_total": 0.125253,
+  "gate_cost_usd_total": 0.0,
+  "tokens_in_median": 386357.5,
+  "tokens_out_median": 6202.0,
+  "per_trial": [
+    {
+      "task_id": "D4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: n1 (Priya directors Q3 scope) is recorded in halcyon-coaching.md under Action Items and cross-referenced in priya-nair.md; n2 (domain renewal) is captured as a new fieldnotes-domain.md project doc with the before-August deadline explicitly set; n3 (Theo's rate) is updated in theo-lang.md to 175 USD per issue effective Issue 42. No fabricated details; all source notes marked filed.",
+      "judge_cost_usd": 0.096064,
+      "cost_usd": 0.331354,
+      "tokens_in": 341260,
+      "tokens_in_uncached": 12,
+      "tokens_cache_read": 317685,
+      "tokens_cache_creation": 23563,
+      "tokens_out": 6309
+    },
+    {
+      "task_id": "D4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ documents: the Priya-directors Q3 scope is recorded in both projects/halcyon-coaching.md (Action items section) and entities/priya-nair.md; the fieldnotes.example domain renewal with its before-August deadline is in a new reference/fieldnotes-domain-renewal.md; and Theo's rate of 175 USD per issue is updated in entities/theo-lang.md. No fabricated details, and all three source notes in world/notes.md are marked filed.",
+      "judge_cost_usd": 0.094082,
+      "cost_usd": 0.349631,
+      "tokens_in": 431455,
+      "tokens_in_uncached": 15,
+      "tokens_cache_read": 408856,
+      "tokens_cache_creation": 22584,
+      "tokens_out": 6095
+    }
+  ]
+}

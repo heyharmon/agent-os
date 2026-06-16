@@ -1,0 +1,77 @@
+{
+  "task_id": "H4",
+  "arch": "A1",
+  "scoring": "hybrid",
+  "trials": 2,
+  "pass": true,
+  "pass_count": 2,
+  "flaky": false,
+  "cost_usd": 0.352428,
+  "judge_cost_usd_total": 0.183662,
+  "checker_cost_usd_total": 0.0,
+  "gate_cost_usd_total": 0.0,
+  "tokens_in_median": 450671.5,
+  "tokens_out_median": 6013.5,
+  "per_trial": [
+    {
+      "task_id": "H4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ locations: the Renata board-deck workstream is recorded in projects/brightfold-advisory.md under Next Actions, the domain renewal is captured with an explicit before-2026-09-01 deadline in projects/ledger-line.md, and Priya's rate of 225 USD per issue is updated in entities/priya-kohli.md. No fabricated details; source notes marked filed.",
+      "judge_cost_usd": 0.096811,
+      "cost_usd": 0.356604,
+      "tokens_in": 469135,
+      "tokens_in_uncached": 16,
+      "tokens_cache_read": 447011,
+      "tokens_cache_creation": 22108,
+      "tokens_out": 5987
+    },
+    {
+      "task_id": "H4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge locations: (1) Brightfold board-deck scope note added as an open action in projects/brightfold-advisory.md and cross-referenced in entities/renata-voss.md; (2) domain renewal deadline before 2026-09-01 recorded in a new projects/ledger-line.md as an open action; (3) Priya Kohli's rate updated to $225/issue effective Issue 58 in entities/priya-kohli.md. No fabricated details; all three source notes marked filed.",
+      "judge_cost_usd": 0.086851,
+      "cost_usd": 0.348251,
+      "tokens_in": 432208,
+      "tokens_in_uncached": 15,
+      "tokens_cache_read": 409746,
+      "tokens_cache_creation": 22447,
+      "tokens_out": 6040
+    }
+  ]
+}

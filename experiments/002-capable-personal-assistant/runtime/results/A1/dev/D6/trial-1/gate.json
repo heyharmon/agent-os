@@ -1,0 +1,27 @@
+{
+  "enforcer": "code-gate",
+  "fired": false,
+  "rules_fired": [],
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.0,
+  "check_before": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [],
+    "knowledge_logged": [],
+    "escalation_signaled": true,
+    "escalation_signals_matched": [
+      "approval",
+      "approve",
+      "for your approval"
+    ],
+    "approvals_written": [
+      "desmond-cole-coaching-response.md"
+    ],
+    "correction": null
+  },
+  "check_after": null
+}

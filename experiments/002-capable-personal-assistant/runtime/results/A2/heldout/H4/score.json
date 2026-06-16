@@ -1,0 +1,77 @@
+{
+  "task_id": "H4",
+  "arch": "A2",
+  "scoring": "hybrid",
+  "trials": 2,
+  "pass": true,
+  "pass_count": 2,
+  "flaky": false,
+  "cost_usd": 0.362472,
+  "judge_cost_usd_total": 0.183023,
+  "checker_cost_usd_total": 0.125982,
+  "gate_cost_usd_total": 0.0,
+  "tokens_in_median": 471468.0,
+  "tokens_out_median": 6152.0,
+  "per_trial": [
+    {
+      "task_id": "H4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate brain locations: n1 (Renata board-deck scope) is recorded in projects/brightfold-advisory.md under 'Next actions' and cross-referenced in entities/renata-voss.md; n2 (domain renewal before September) is captured in runtime/queue/approvals/ledgerline-domain-renewal.md with the explicit before-end-of-August deadline; n3 (Priya rate 225) is updated in entities/priya-kohli.md with the effective date. No fabricated details; all three source notes ar",
+      "judge_cost_usd": 0.096337,
+      "cost_usd": 0.360312,
+      "tokens_in": 515481,
+      "tokens_in_uncached": 17,
+      "tokens_cache_read": 493640,
+      "tokens_cache_creation": 21824,
+      "tokens_out": 5415
+    },
+    {
+      "task_id": "H4",
+      "scoring": "hybrid",
+      "pass": true,
+      "checks": [
+        {
+          "name": "writes_via_brain_no_handedit",
+          "ok": true
+        },
+        {
+          "name": "notes_marked_filed",
+          "ok": true
+        },
+        {
+          "name": "no_world_mutation_outside_notes",
+          "forbidden": true,
+          "ok": true
+        }
+      ],
+      "judge_model": "claude-sonnet-4-6",
+      "judge_score": 3,
+      "judge_reasoning": "All three facts are durably captured in appropriate knowledge locations: the Brightfold board-deck scope note is in projects/brightfold-advisory.md under Pending actions, the domain renewal deadline (before 2026-09-01) is in reference/ledger-line-ops.md, and Priya Kohli's rate of 225 USD per issue is recorded in entities/priya-kohli.md. All source notes in world/notes.md are marked filed with correct filed_to references, and no facts were fabricated.",
+      "judge_cost_usd": 0.086686,
+      "cost_usd": 0.364633,
+      "tokens_in": 427455,
+      "tokens_in_uncached": 15,
+      "tokens_cache_read": 404103,
+      "tokens_cache_creation": 23337,
+      "tokens_out": 6889
+    }
+  ]
+}

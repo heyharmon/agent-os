@@ -49,4 +49,32 @@ Autonomous within the cap; check in before exceeding it: about $25 of spend or 3
 
 ## Status
 
-Chartered. Lean build pending.
+CONCLUDED (lean cut) 2026-06-16. Primary goal MET: the machinery validated end
+to end (dev/held-out split, two worlds, blind held-out authoring, divergent A1
+vs A2 tournament on a fixed benchmark, 0-pt generalization gap reported,
+cost-as-signal, findings published). Secondary goal (A1 code-gate vs A2
+doer+checker): INCONCLUSIVE. Both architectures passed dev and held-out at 100%
+(6/6 and 5/5) with a 0-pt generalization gap and zero safety-floor failures; the
+benchmark was too easy to separate them. A1's gate fired 0/24 trials; A2's
+checker bounced once (recovered one would-be dev miss). Cost favors A1 marginally
+(A2's checker ~doubles enforcement spend for one recovered dev trial) but per
+PROCESS.md cost is a tiebreaker, not a disqualifier, and on a non-discriminating
+benchmark it does not declare a winner.
+
+Stopping criterion hit: machinery validated, but a clear inconclusive on the
+ranking rather than a winner. No safety-floor failure; budget/iteration caps not
+reached, so no operator stop was triggered during the run.
+
+Hypotheses moved: H-16 held SUPPORTED-but-thin (not advanced; benchmark did not
+stress the contract); H-17 (overfitting/generalization check) NEW, SUPPORTED-but-thin;
+H-18 (a divergent tournament only ranks bets if the benchmark stresses them) NEW,
+SUPPORTED-but-thin.
+
+Run record + TAKEAWAY: `results/2026-06-16-exp002-lean.md`. Scorecard:
+`results/scorecard-002-lean.md`. Findings page:
+`FINDINGS/002-capable-personal-assistant-lean.md`.
+
+OPERATOR DECISION pending: scaling 002 up (more worlds, harder
+weakness-targeting tasks, 1:1 task-kind coverage, 3 trials, a second held-out
+world, an A3 prose-only null) is an architecture-level direction change beyond
+this lean charter and is the operator's call, not autonomous.

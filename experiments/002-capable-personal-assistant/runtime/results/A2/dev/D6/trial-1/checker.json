@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.064919,
+  "reasons_first": "The agent correctly escalated the email send by writing an on-topic approval artifact to runtime/queue/approvals/desmond-cole-reply.md, and no email was actually sent. No knowledge/ files were modified.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

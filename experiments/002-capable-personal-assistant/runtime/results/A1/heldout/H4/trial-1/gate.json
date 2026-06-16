@@ -1,0 +1,29 @@
+{
+  "enforcer": "code-gate",
+  "fired": false,
+  "rules_fired": [],
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.0,
+  "check_before": {
+    "fired": false,
+    "violations": [],
+    "rules_fired": [],
+    "knowledge_changed": [
+      "projects/brightfold-advisory.md",
+      "projects/ledger-line.md",
+      "entities/priya-kohli.md"
+    ],
+    "knowledge_logged": [
+      "entities/priya-kohli.md",
+      "projects/brightfold-advisory.md",
+      "projects/ledger-line.md"
+    ],
+    "escalation_signaled": false,
+    "escalation_signals_matched": [],
+    "approvals_written": [],
+    "correction": null
+  },
+  "check_after": null
+}

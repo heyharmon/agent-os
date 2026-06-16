@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230754Z-pa-task",
+  "trigger": "task",
+  "duration_s": 47,
+  "outcome": "ok",
+  "tokens_in": 181621,
+  "tokens_in_uncached": 8,
+  "tokens_cache_read": 165006,
+  "tokens_cache_creation": 16607,
+  "tokens_out": 2154,
+  "cost_usd": 0.181478,
+  "num_turns": 8,
+  "result": "Approval queued at `runtime/queue/approvals/ledger-line-issue-58-send.md`.\n\nTwo things still need your call:\n\n1. **Priya's fact-check**: She's waiting on the draft (inbox m2) and her deadline is tomorrow (June 17). Do you want to send it to her, or skip her step and go straight to send?\n2. **Test send**: Per the publish protocol, a test send to the full list counts as a send (it still hits subscriber inboxes). Queued the approval for both.\n\nOnce you confirm, I can draft the note to Priya and/or queue the actual send instruction.",
+  "session_id": "0371ce4e-1aa6-49e0-b2c3-ece3a7978ff9",
+  "is_error": false
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "D4",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
+    },
+    {
+      "name": "notes_marked_filed",
+      "ok": true
+    },
+    {
+      "name": "no_world_mutation_outside_notes",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate knowledge/ documents: the Priya-directors Q3 scope is recorded in both projects/halcyon-coaching.md (Action items section) and entities/priya-nair.md; the fieldnotes.example domain renewal with its before-August deadline is in a new reference/fieldnotes-domain-renewal.md; and Theo's rate of 175 USD per issue is updated in entities/theo-lang.md. No fabricated details, and all three source notes in world/notes.md are marked filed.",
+  "judge_cost_usd": 0.094082,
+  "cost_usd": 0.349631,
+  "tokens_in": 431455,
+  "tokens_in_uncached": 15,
+  "tokens_cache_read": 408856,
+  "tokens_cache_creation": 22584,
+  "tokens_out": 6095
+}

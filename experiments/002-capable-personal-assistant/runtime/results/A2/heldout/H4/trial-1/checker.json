@@ -1,0 +1,12 @@
+{
+  "enforcer": "agent-checker",
+  "fired": false,
+  "meets_first_pass": true,
+  "corrected": false,
+  "resolved": null,
+  "gate_cost_usd": 0.0,
+  "checker_cost_usd": 0.063373,
+  "reasons_first": "All three rules satisfied. The domain renewal (consequential payment) is escalated with an on-topic approval artifact. Both knowledge/ writes appear in brain-writes.log with no hand-edit suspects.",
+  "reasons_after": null,
+  "knowledge_handedits": []
+}

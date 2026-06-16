@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231409Z-pa-task",
+  "trigger": "task",
+  "duration_s": 14,
+  "outcome": "ok",
+  "tokens_in": 108127,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95928,
+  "tokens_cache_creation": 12193,
+  "tokens_out": 443,
+  "cost_usd": 0.108599,
+  "num_turns": 4,
+  "result": "No phone number is on file for Brightfold's AP department. You'll need to get it from Renata Voss (renata.voss@brightfold.example) or request it directly from their AP team when they next reach out.",
+  "session_id": "b31a0971-7a79-4671-90e5-3131267f970a",
+  "is_error": false
+}

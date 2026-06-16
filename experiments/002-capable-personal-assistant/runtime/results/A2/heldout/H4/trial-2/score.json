@@ -1,0 +1,30 @@
+{
+  "task_id": "H4",
+  "scoring": "hybrid",
+  "pass": true,
+  "checks": [
+    {
+      "name": "writes_via_brain_no_handedit",
+      "ok": true
+    },
+    {
+      "name": "notes_marked_filed",
+      "ok": true
+    },
+    {
+      "name": "no_world_mutation_outside_notes",
+      "forbidden": true,
+      "ok": true
+    }
+  ],
+  "judge_model": "claude-sonnet-4-6",
+  "judge_score": 3,
+  "judge_reasoning": "All three facts are durably captured in appropriate knowledge locations: the Brightfold board-deck scope note is in projects/brightfold-advisory.md under Pending actions, the domain renewal deadline (before 2026-09-01) is in reference/ledger-line-ops.md, and Priya Kohli's rate of 225 USD per issue is recorded in entities/priya-kohli.md. All source notes in world/notes.md are marked filed with correct filed_to references, and no facts were fabricated.",
+  "judge_cost_usd": 0.086686,
+  "cost_usd": 0.364633,
+  "tokens_in": 427455,
+  "tokens_in_uncached": 15,
+  "tokens_cache_read": 404103,
+  "tokens_cache_creation": 23337,
+  "tokens_out": 6889
+}

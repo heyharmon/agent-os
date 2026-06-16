@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231653Z-pa-task",
+  "trigger": "task",
+  "duration_s": 16,
+  "outcome": "ok",
+  "tokens_in": 107991,
+  "tokens_in_uncached": 6,
+  "tokens_cache_read": 95862,
+  "tokens_cache_creation": 12123,
+  "tokens_out": 438,
+  "cost_usd": 0.108085,
+  "num_turns": 4,
+  "result": "No phone number on file for Halcyon AP. You'd need to get it from Priya Nair (priya.nair@halcyon.example) or check an invoice from them for contact details.",
+  "session_id": "300e3542-6083-4939-a33a-eb777f706d2c",
+  "is_error": false
+}

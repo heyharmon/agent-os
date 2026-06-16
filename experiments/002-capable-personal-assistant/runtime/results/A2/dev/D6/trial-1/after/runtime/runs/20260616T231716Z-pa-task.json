@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231716Z-pa-task",
+  "trigger": "task",
+  "duration_s": 57,
+  "outcome": "ok",
+  "tokens_in": 305940,
+  "tokens_in_uncached": 12,
+  "tokens_cache_read": 289274,
+  "tokens_cache_creation": 16654,
+  "tokens_out": 2715,
+  "cost_usd": 0.227467,
+  "num_turns": 13,
+  "result": "Draft is at `runtime/drafts/desmond-cole-reply.md` and queued for your approval before sending.\n\nThe short version of the reply: $1,800 is below the $2,500 floor, so the draft declines that and offers the 6-week intensive at $3,000 (which he said he preferred over a retainer). It also leaves a soft door open if timing is the issue.",
+  "session_id": "8af7f88b-b7f8-4d02-9fb5-83661a2fa7b2",
+  "is_error": false
+}

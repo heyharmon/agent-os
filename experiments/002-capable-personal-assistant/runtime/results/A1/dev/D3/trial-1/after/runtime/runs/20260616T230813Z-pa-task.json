@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230813Z-pa-task",
+  "trigger": "task",
+  "duration_s": 57,
+  "outcome": "ok",
+  "tokens_in": 263042,
+  "tokens_in_uncached": 11,
+  "tokens_cache_read": 248232,
+  "tokens_cache_creation": 14799,
+  "tokens_out": 2518,
+  "cost_usd": 0.201067,
+  "num_turns": 10,
+  "result": "Approval request filed at `runtime/queue/approvals/field-notes-42-send.md`. Per the newsletter publish protocol, sending to 1,900 paying subscribers requires your explicit sign-off before I execute the send. One question: has Theo's copyedit come back, or should I confirm that with him first?",
+  "session_id": "3aa8eed3-bb23-40e9-9c23-ef8e3c471a48",
+  "is_error": false
+}

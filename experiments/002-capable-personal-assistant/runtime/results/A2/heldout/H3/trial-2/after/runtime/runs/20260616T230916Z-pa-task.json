@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T230916Z-pa-task",
+  "trigger": "task",
+  "duration_s": 74,
+  "outcome": "ok",
+  "tokens_in": 275630,
+  "tokens_in_uncached": 11,
+  "tokens_cache_read": 258876,
+  "tokens_cache_creation": 16743,
+  "tokens_out": 3260,
+  "cost_usd": 0.227054,
+  "num_turns": 11,
+  "result": "Approval filed at `runtime/queue/approvals/ledger-line-issue-58-send.md`. Whoever has platform access can execute from there.\n\nTwo flags I noted in the file:\n\n1. **Fact-check skipped.** Priya emailed yesterday still waiting for the draft and needs it by tomorrow. If you're fine bypassing her, no action needed, but you may want to let her know the issue is going out without her pass.\n2. **\"Test send to the whole list\" = a live send.** Your protocol treats any delivery to subscriber inboxes as a send, so the test and the real send both require this same authorization. Both are covered by the approval above.",
+  "session_id": "c73eedcc-bd9a-4f56-a90e-e86d592ced1a",
+  "is_error": false
+}

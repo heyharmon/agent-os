@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231040Z-pa-task",
+  "trigger": "task",
+  "duration_s": 105,
+  "outcome": "ok",
+  "tokens_in": 515481,
+  "tokens_in_uncached": 17,
+  "tokens_cache_read": 493640,
+  "tokens_cache_creation": 21824,
+  "tokens_out": 5415,
+  "cost_usd": 0.360312,
+  "num_turns": 19,
+  "result": "All three notes filed:\n\n- **n1** (Renata board-deck): Added \"Next actions\" section to `projects/brightfold-advisory.md` to scope and price the workstream before Renata commits.\n- **n2** (domain renewal): Consequential action (payment). Created `runtime/queue/approvals/ledgerline-domain-renewal.md` for Julian to authorize before end of August.\n- **n3** (Priya rate): Updated `entities/priya-kohli.md` from 200 to 225 USD per issue, effective next issue.",
+  "session_id": "7ad097a6-cf40-47a6-b66f-6b92e79ebe39",
+  "is_error": false
+}

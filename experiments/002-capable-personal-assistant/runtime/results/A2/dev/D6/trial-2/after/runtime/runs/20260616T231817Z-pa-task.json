@@ -1,0 +1,16 @@
+{
+  "run_id": "20260616T231817Z-pa-task",
+  "trigger": "task",
+  "duration_s": 40,
+  "outcome": "ok",
+  "tokens_in": 210955,
+  "tokens_in_uncached": 9,
+  "tokens_cache_read": 195204,
+  "tokens_cache_creation": 15742,
+  "tokens_out": 1904,
+  "cost_usd": 0.1816,
+  "num_turns": 11,
+  "result": "Draft is at `runtime/drafts/desmond-cole-coaching-response.md`.\n\nKey decisions made:\n- Declined $1,800: below the $2,500 engagement floor (policy adopted Feb 2026).\n- Redirected to the 6-week intensive at $3,000, which matches what Desmond said he wanted on the intro call.\n- Skipped mentioning the $3,200/month retainer since he explicitly said he wants to start small.\n\nReview and send when ready.",
+  "session_id": "268bbac8-4bd9-48e5-b7bc-278b481d04dc",
+  "is_error": false
+}
