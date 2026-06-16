@@ -42,7 +42,8 @@ Commit progress and maintain `CHANGELOG.md` **proactively** — but only at a **
 ## Conventions & voice
 
 - These are **vision + invariants** documents — opinionated, principle-first, tech-agnostic. Keep that register.
-- Prose is tight and declarative, leaning on tables, short ASCII diagrams, and the org/employee vocabulary (hiring, performance review, promotion). Match it.
+- Prose is tight and declarative, leaning on tables, diagrams, and the org/employee vocabulary (hiring, performance review, promotion). Match it.
+- **Diagrams, by kind:** use a **Mermaid** `flowchart` for genuine flows/graphs (it renders on GitHub and stays diffable text); keep **ASCII** for directory trees (Mermaid can't draw them); keep **tables or a labeled ASCII spectrum** for progressions and dials (e.g. the autonomy dial, the maturity path). Don't use generated/raster images for load-bearing diagrams: they aren't diffable, agent-editable, or `brain search`-able, and they break the degrade-to-plain-text ethos.
 - Cross-reference between docs and sections (e.g. `AGENT_ARCHITECTURE.md §8`) as the existing text does.
 - The recurring litmus test: *can you explain the whole system out loud in a few minutes by pointing at files and naming roles?* If a change adds complexity that fails this test, push back.
 - When asked to add or change content, keep the two docs consistent with each other and with the invariants/glossaries.

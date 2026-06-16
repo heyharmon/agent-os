@@ -35,13 +35,9 @@ Most of the work happens on its own, in two rhythms — and you can jump in any 
 
 And it **improves itself, auditably:**
 
-```
-  you step in
-     → saved as feedback
-     → dreaming spots the pattern
-     → proposes a diff to the role's charter
-     → you approve
-     → it needs you less next time
+```mermaid
+flowchart LR
+    a["you step in"] --> b["saved as<br/>feedback"] --> c["dreaming spots<br/>the pattern"] --> d["proposes a diff to<br/>the role's charter"] --> e["you approve"] --> f["it needs you<br/>less next time"]
 ```
 
 Every improvement is a readable git diff. Nothing changes behind your back.

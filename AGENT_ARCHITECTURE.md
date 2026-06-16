@@ -104,21 +104,10 @@ An implementation is compliant if and only if it honors these. Everything else i
 
 Six **planes**, each a thin layer over the same brain. You adopt them in order; each is independently useful. Roles live in the Work plane; the management lens (§2) reinterprets the rest.
 
-```
-   YOU
-    │   drive · oversee · observe
-    ▼
-  ┌─────────────────────────────────────────────┐
-  │  ROLES  (jobs)                               │
-  │  Comms · Tasks · Scheduler · Product-Dev · … │
-  │  each filled by an agent (loops · skills)    │
-  └─────────────────────────────────────────────┘
-    │   read · write
-    ▼
-  ┌─────────────────────────────────────────────┐
-  │  THE BRAIN — the bus                         │
-  │  every durable thing lives here              │
-  └─────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    you["YOU"] -- "drive · oversee · observe" --> roles["ROLES (jobs)<br/>Comms · Tasks · Scheduler · Product-Dev · …<br/>each filled by an agent (loops · skills)"]
+    roles -- "read · write" --> brain[("THE BRAIN · the bus<br/>every durable thing lives here")]
 ```
 
 The spine is just three layers: **you** drive/oversee/observe, **agents — each in a role** — do the work, and **the brain** is the only thing they share. The six planes below are how a *builder* decomposes that spine — the diagram is the *operator's* view.
@@ -311,22 +300,15 @@ Improvement is a **loop, and it is automated** — but it lands its changes thro
 
 **The improvement pass (a natural job for the dreaming agent, §6):**
 
-```
-read feedback records + role scorecards
-        │
-        ▼
-cluster recurring mistakes per role        ("keeps mis-prioritizing UI bugs")
-        │
-        ▼
-propose a concrete change                  (edit the charter, add a check, adjust a
-        │                                    tool, or recommend a promotion up the dial)
-        ▼
-open it as a diff (a PR) against the
-role's charter files in the brain
-        │
-        ▼
-YOU review the diff ── approve ─► merged; next run uses it
-                    └─ reject ──► feedback for the next pass
+```mermaid
+flowchart TD
+    a["read feedback records<br/>+ role scorecards"] --> b["cluster recurring mistakes per role<br/><i>(keeps mis-prioritizing UI bugs)</i>"]
+    b --> c["propose a concrete change<br/><i>(edit the charter, add a check, adjust a tool,<br/>or recommend a promotion up the dial)</i>"]
+    c --> d["open it as a diff (a PR) against the<br/>role's charter files in the brain"]
+    d --> e{"YOU review<br/>the diff"}
+    e -- approve --> f["merged; next run uses it"]
+    e -- reject --> g["feedback for the next pass"]
+    g -.-> a
 ```
 
 Why this gets better on its own *without* getting opaque:

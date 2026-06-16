@@ -20,7 +20,16 @@ A working **Stage 1** system (`AGENT_ARCHITECTURE.md §12`): a git-backed brain 
 
 ## What you get
 
-Everything lives in **one git repo**, nothing hidden, nothing cloud: the brain's three areas (`knowledge/` · `agents/` · `runtime/`) with the PA's charter under `knowledge/roles/`, its machinery under `agents/personal-assistant/`, and the `bin/brain` write contract. The full layout is in [`local-brain`](../brains/local-brain.md) (the brain) and [`personal-assistant`](../roles/personal-assistant.md) (the role's files and run loop); the kit just builds both into the same repo. Cron wakes `loop.sh`, the agent reads the charter and queue and writes back through `bin/brain`, and you drop tasks, read briefings, and approve actions. The agent holds nothing: kill it mid-run and the next wake reloads everything from the brain.
+Everything lives in **one git repo**, nothing hidden, nothing cloud: the brain's three areas (`knowledge/` · `agents/` · `runtime/`) with the PA's charter under `knowledge/roles/`, its machinery under `agents/personal-assistant/`, and the `bin/brain` write contract. The full layout is in [`local-brain`](../brains/local-brain.md) (the brain) and [`personal-assistant`](../roles/personal-assistant.md) (the role's files and run loop); the kit just builds both into the same repo. The agent holds nothing: kill it mid-run and the next wake reloads everything from the brain.
+
+```mermaid
+flowchart TD
+    cron["cron · hourly + 7am"] --> loop["loop.sh · harness"]
+    loop --> agent["claude -p · the swappable agent"]
+    agent -- "reads charter + queue,<br/>writes facts / drafts / approvals via bin/brain" --> brain
+    loop -- "writes run record" --> brain[("THE BRAIN · one git repo<br/>knowledge / agents / runtime")]
+    you["YOU"] -- "drop tasks · read briefings · approve actions" --> brain
+```
 
 ## Prerequisites
 
