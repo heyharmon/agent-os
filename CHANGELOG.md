@@ -8,6 +8,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 0.2.0 — 2026-06-16 — First tagged release
+
+Tags the accumulated baseline as a stable version: the three-area brain, the *agents take on roles* reframe, the recipes layer, the brain↔architecture reference/vendoring model, and the rename of the project to **Agent OS**. No new behavior beyond the entries below — this is a version marker so brains can pin and update against a named release.
+
+### Changed
+- **VERSION `0.1.0` → `0.2.0`.**
+  **Impact:** run `/architecture-update` in your brain to re-pin to `0.2.0`. If your brain was built on an earlier `0.1.0` snapshot, the skill will also walk the entries below and apply any you haven't adopted yet (most brains will already be compliant).
+
+---
+
 ## 2026-06-15 — Versioning + the brain↔architecture reference model
 
 Brains can now point back to the architecture they were built from, and update against it.
