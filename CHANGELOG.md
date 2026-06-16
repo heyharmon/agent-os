@@ -8,6 +8,28 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-16 — Agents replace roles; "job" replaces "charter"; machinery area is now `harness/`
+
+A pervasive vocabulary and folder change across both architecture docs, `OVERVIEW.md`, `README.md`, `CLAUDE.md`, and the whole `recipes/` layer. It **reverses the 2026-06-15 "agents take on roles" framing**: the agent is now the single durable primitive, not a swappable executor that fills a role. People think in *agents*, not roles, and treat the model/provider as the swappable part — the architecture now matches that intuition. This is the largest single rename so far; the `/architecture-update` skill will walk a brain through it.
+
+### Changed
+- **"Role" is retired as a first-class term; the agent is the durable unit.** An **agent** is the worker you name, hire, trust, and promote; what it's accountable for is its **job** (the everyday word, formerly "role"). The agent's job and memory live in the brain, so the agent persists across runs.
+  **Impact:** rename "role" → "agent" throughout your own docs, prompts, and `AGENTS.md`; "the role's scope/job" → "the agent's job". The **"This brain's roles"** list in `AGENTS.md` becomes **"This brain's agents."**
+- **Swappability moved down a layer.** Invariant #3 is now **"The runner is swappable"** (was "Agents are swappable"): the **session** (one stateless run) and the **provider** (model + execution environment) are replaceable with no loss of state — *because the agent's job and memory live in the brain*. The agent itself is no longer described as swappable.
+  **Impact:** wording, but it inverts the headline. Where your docs say "agents are swappable," say "the session/provider is swappable; the agent persists." New glossary term **Session / provider** replaces **Agent provider**.
+- **"Charter" is gone; an agent is defined by its `job`.** The document that pins an agent down is its **job** (`type: Agent`), no longer a "charter" (`type: Role Charter`). One fewer term.
+  **Impact:** rename the OKF type **`Role Charter` → `Agent`** in every agent-definition doc, and "charter" → "job" in prose. Any tooling or queries that filter on `type: Role Charter` must update.
+- **Brain folders renamed.** `knowledge/roles/` → **`knowledge/agents/`** (the agents' jobs), and the durable machinery area `agents/` → **`harness/`** (each agent's system prompt, loop, tools, model binding). The brain's three areas are now **knowledge / harness / runtime** (invariant #4 and #7 wording: "role machinery" → "agent harness").
+  **Impact:** in your brain, `git mv knowledge/roles knowledge/agents` and `git mv agents harness`, then fix path references in `bin/brain`, loop scripts, cron entries, and `AGENTS.md`. Because the agent's *job* now lives at `knowledge/agents/`, the word "agent" no longer names the machinery folder — that is the collision this rename resolves.
+- **Run records re-keyed.** The telemetry record's `role:` / `agent:` pair becomes **`agent:` / `session:`**, and `brain run --role R --agent A` becomes `brain run --agent A --session S`.
+  **Impact:** update your `loop.sh`/harness and any dashboards or evals that read the `role` field. Existing run-ledger files are history — leave them; new runs use the new keys.
+- **Recipes layer renamed.** "Role recipe" → **agent recipe**; the `recipes/roles/` directory → **`recipes/agents/`**; frontmatter `type: role-recipe` → **`agent-recipe`** and `provides: role:<x>` → **`agent:<x>`**.
+  **Impact:** if you vendor or author recipes, move the directory and update those frontmatter keys.
+- **"System role" → "System agent"** (the dreaming / ingestion / planner owner); "per-role autonomy dial" → "per-agent." In `AGENT_ARCHITECTURE.md §13` the provider cell reads "model + execution environment" rather than "model + harness," so "harness" unambiguously means the new folder.
+  **Impact:** wording; rename in your own copies.
+
+---
+
 ## 2026-06-16 — Git is no longer a prescribed technology
 
 Resolves a contradiction: the docs are tech-agnostic outside `recipes/` and `kits/`, yet the brain's invariant #2 named **git** as a required technology. The fix separates the brain's *one format commitment* (OKF) from its *required capability* (version history). Git is demoted to the obvious implementation of that capability, named only in recipes.

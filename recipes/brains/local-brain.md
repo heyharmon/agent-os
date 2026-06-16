@@ -14,11 +14,11 @@ stack: [markdown, yaml, git, python, ripgrep]
 
 > The foundation everything else cooks on. A durable, human-readable memory your agents read, write, and coordinate through — built from plain files in a git repo and nothing else. This is the smallest thing that honors every invariant in `BRAIN_ARCHITECTURE.md`. Start here; grow it by adding files, never by re-pouring it.
 
-> **Layout:** three areas, matching `BRAIN_ARCHITECTURE.md §3` — `knowledge/` (world facts *and* role-charters), `agents/` (each role's machinery), and `runtime/` (the exhaust of running).
+> **Layout:** three areas, matching `BRAIN_ARCHITECTURE.md §3` — `knowledge/` (world facts *and* agent jobs), `harness/` (each agent's machinery), and `runtime/` (the exhaust of running).
 
 ## Yields
 
-A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant markdown, including role-charters), an **agents** area (each role's machinery), and a transient **runtime** area, plus a one-file `brain` CLI that is the write contract and a `brain search` that is the retrieval path. Reaches **Stage 0** (`AGENT_ARCHITECTURE.md §12`) — a queryable context store you and a chat agent use by hand, ready for a role recipe to run on.
+A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant markdown, including agent jobs), a **harness** area (each agent's machinery), and a transient **runtime** area, plus a one-file `brain` CLI that is the write contract and a `brain search` that is the retrieval path. Reaches **Stage 0** (`AGENT_ARCHITECTURE.md §12`) — a queryable context store you and a chat agent use by hand, ready for an agent recipe to run on.
 
 ## Prerequisites
 
@@ -43,17 +43,17 @@ A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant ma
    ```
    brain/
      knowledge/        # curated · durable · OKF-conformant
-       roles/          #   role-charters (type: Role Charter)
+       agents/         #   agent jobs (type: Agent)
        entities/       #   people, clients, systems
        projects/       #   ongoing work
        decisions/      #   why things are the way they are
        reference/      #   durable facts, how-tos
-     agents/           # each role's machinery (prompts, loops, tools); role recipes fill this
+     harness/          # each agent's machinery (prompts, loops, tools, model); agent recipes fill this
      runtime/          # exhaust of running · transient or append-only · NOT OKF
-       queue/          #   tasks roles claim (+ queue/approvals/ for escalations)
+       queue/          #   tasks agents claim (+ queue/approvals/ for escalations)
        runs/           #   run-ledger: append-only run records (§7)
        feedback/       #   captured human interventions (§11)
-       evals/          #   per-role scorecards (§10)
+       evals/          #   per-agent scorecards (§10)
      bin/
        brain           # the write-contract CLI (below)
      README.md         # explains the three areas; this file
@@ -71,8 +71,8 @@ A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant ma
    | `brain new <collection> <slug> --title T [--type T] [--tags a,b] [--desc D]` | creates `knowledge/<collection>/<slug>/index.md` with valid OKF frontmatter, then commits | inv. #1, #3 |
    | `brain update <path> [--set key=val ...]` | edits frontmatter fields, **always bumps `timestamp`**, commits | inv. #3, #5 |
    | `brain log <path> "<entry>"` | appends a dated line to the doc's `log.md` (OKF history), commits | one-source-of-truth history |
-   | `brain queue add "<task>" [--for <role>]` | drops a task file into `runtime/queue/`, commits | the inbound coordination side |
-   | `brain run --role R --agent A --json '<record>'` | appends a run record to `runtime/runs/` (written by a role's harness, never by the agent itself), commits | telemetry (§7), inv. #5 |
+   | `brain queue add "<task>" [--for <agent>]` | drops a task file into `runtime/queue/`, commits | the inbound coordination side |
+   | `brain run --agent A --session S --json '<record>'` | appends a run record to `runtime/runs/` (written by an agent's harness, never by the session itself), commits | telemetry (§7), inv. #5 |
    | `brain search "<query>"` | `rg` over the whole brain; prints file:line matches | retrieval (inv. #6) |
 
    Reference skeleton (the agent fills in the rest):
@@ -93,11 +93,11 @@ A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant ma
 
 3. **Seed the knowledge layer** with a couple of real docs via `brain new` (e.g. one `entity`, one `reference`) so search and structure have something to chew on. Each gets `type`, `title`, `description`, `tags`, `timestamp`, `status` in frontmatter. Add an `index.md` to each populated collection as its table of contents.
 
-4. **Write `README.md`** at the repo root: state the three areas (`knowledge/` · `agents/` · `runtime/`), that `bin/brain` is the only write path, that `runtime/` is disposable, and that **secrets never live here** (use a secret manager) — inv. #8.
+4. **Write `README.md`** at the repo root: state the three areas (`knowledge/` · `harness/` · `runtime/`), that `bin/brain` is the only write path, that `runtime/` is disposable, and that **secrets never live here** (use a secret manager) — inv. #8.
 
 5. **Install the architecture reference.** This is what keeps a brain faithful to the architecture as it grows — an agent working here can read the vision and invariants, extend the brain the supported way, and pull updates. Three parts:
    - **Vendor a pinned snapshot.** Clone the architecture ([github.com/heyharmon/agent-os](https://github.com/heyharmon/agent-os)) at a specific commit/tag and copy `OVERVIEW.md`, `AGENT_ARCHITECTURE.md`, `BRAIN_ARCHITECTURE.md`, `CHANGELOG.md`, `VERSION`, and `recipes/` into `.agent-os/` (drop the `.git`). Add `.agent-os/README.md` recording the **pin** (version + commit + upstream URL) and that it is read-only/managed. Committing it keeps the brain self-contained and durable offline.
-   - **Write `AGENTS.md`** at the repo root: what this system is; the invariants it must keep (three areas; write only through `bin/brain`; brain-as-bus; every run recorded; agents take on roles); the **supported way to extend it** (add a role via a role recipe — never bolt features onto an agent ad hoc); a "This brain's roles" list (role recipes append themselves here); and how to update (the skill below). Add a one-line `CLAUDE.md` pointing to `AGENTS.md` (the cross-tool standard; Claude Code reads `CLAUDE.md`).
+   - **Write `AGENTS.md`** at the repo root: what this system is; the invariants it must keep (three areas; write only through `bin/brain`; brain-as-bus; every run recorded; agents hold jobs); the **supported way to extend it** (add an agent via an agent recipe — never bolt features onto an existing agent ad hoc); a "This brain's agents" list (agent recipes append themselves here); and how to update (the skill below). Add a one-line `CLAUDE.md` pointing to `AGENTS.md` (the cross-tool standard; Claude Code reads `CLAUDE.md`).
    - **Install the update skill** at `.claude/skills/architecture-update/SKILL.md`: it fetches the latest upstream, diffs `CHANGELOG.md` from the pinned version, applies each entry's **Impact** note to reconcile this brain, then re-pins.
    Commit. (Both `.agent-os/` and `.claude/` are hidden, so `brain search` — ripgrep — won't conflate the framework with your brain's content; `AGENTS.md` points agents to them.)
 
@@ -107,14 +107,14 @@ A git repo that *is* your brain: a curated **knowledge** area (OKF-conformant ma
 - [ ] `brain new entities acme --title "Acme" --type Entity` creates a doc whose frontmatter is valid OKF (`type` present) and parseable by `pyyaml`.
 - [ ] `brain update` on that doc bumps its `timestamp`.
 - [ ] `brain search Acme` returns the file.
-- [ ] **Degrades gracefully (inv. #7):** delete `bin/`, `agents/`, and `runtime/` and the `knowledge/` tree is still a valid, readable OKF bundle — open it in any markdown viewer and it makes sense.
+- [ ] **Degrades gracefully (inv. #7):** delete `bin/`, `harness/`, and `runtime/` and the `knowledge/` tree is still a valid, readable OKF bundle — open it in any markdown viewer and it makes sense.
 - [ ] No secrets anywhere in the repo.
-- [ ] **Self-references the architecture:** `AGENTS.md` exists at the root and a fresh Claude Code session in the brain reads it and can state the invariants and how to add a role; `.agent-os/README.md` records a version pin; `/architecture-update` is installed.
+- [ ] **Self-references the architecture:** `AGENTS.md` exists at the root and a fresh Claude Code session in the brain reads it and can state the invariants and how to add an agent; `.agent-os/README.md` records a version pin; `/architecture-update` is installed.
 
 ## Pairs with
 
-- **[`personal-assistant`](../roles/personal-assistant.md)** — the first role to run on this brain (Stage 1).
-- Any future role recipe: they all declare `requires: [local-brain]` (or a compatible brain).
+- **[`personal-assistant`](../agents/personal-assistant.md)** — the first agent to run on this brain (Stage 1).
+- Any future agent recipe: they all declare `requires: [local-brain]` (or a compatible brain).
 
 ## Substitutions
 

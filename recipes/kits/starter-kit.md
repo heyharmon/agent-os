@@ -12,7 +12,7 @@ stack: [markdown, git, python, ripgrep, claude-code, cron]
 
 # Starter Kit
 
-> The whole thing, smallest version: a durable brain and one role that works for you on a schedule — nothing cloud, nothing you can't read. Grab this if you want a single thing to build first. It's two modular recipes presented as one menu; once it runs, you grow it by adding more role recipes onto the same brain, never by rebuilding.
+> The whole thing, smallest version: a durable brain and one agent that works for you on a schedule — nothing cloud, nothing you can't read. Grab this if you want a single thing to build first. It's two modular recipes presented as one menu; once it runs, you grow it by adding more agent recipes onto the same brain, never by rebuilding.
 
 ## Yields
 
@@ -20,14 +20,14 @@ A working **Stage 1** system (`AGENT_ARCHITECTURE.md §12`): a git-backed brain 
 
 ## What you get
 
-Everything lives in **one git repo**, nothing hidden, nothing cloud: the brain's three areas (`knowledge/` · `agents/` · `runtime/`) with the PA's charter under `knowledge/roles/`, its machinery under `agents/personal-assistant/`, and the `bin/brain` write contract. The full layout is in [`local-brain`](../brains/local-brain.md) (the brain) and [`personal-assistant`](../roles/personal-assistant.md) (the role's files and run loop); the kit just builds both into the same repo. The agent holds nothing: kill it mid-run and the next wake reloads everything from the brain.
+Everything lives in **one git repo**, nothing hidden, nothing cloud: the brain's three areas (`knowledge/` · `harness/` · `runtime/`) with the PA's job under `knowledge/agents/`, its harness under `harness/personal-assistant/`, and the `bin/brain` write contract. The full layout is in [`local-brain`](../brains/local-brain.md) (the brain) and [`personal-assistant`](../agents/personal-assistant.md) (the agent's files and run loop); the kit just builds both into the same repo. The runner holds nothing: kill it mid-run and the next session reloads everything from the brain.
 
 ```mermaid
 flowchart TD
-    cron["cron · hourly + 7am"] --> loop["loop.sh · harness"]
-    loop --> agent["claude -p · the swappable agent"]
-    agent -- "reads charter + queue,<br/>writes facts / drafts / approvals via bin/brain" --> brain
-    loop -- "writes run record" --> brain[("THE BRAIN · one git repo<br/>knowledge / agents / runtime")]
+    cron["cron · hourly + 7am"] --> loop["loop.sh · the wrapper"]
+    loop --> session["claude -p · swappable session"]
+    session -- "reads job + queue,<br/>writes facts / drafts / approvals via bin/brain" --> brain
+    loop -- "writes run record" --> brain[("THE BRAIN · one git repo<br/>knowledge / harness / runtime")]
     you["YOU"] -- "drop tasks · read briefings · approve actions" --> brain
 ```
 
@@ -44,12 +44,12 @@ This kit is a combination, not a new stack. It bundles:
 | Part | Recipe | Reaches |
 |---|---|---|
 | The foundation | [`brains/local-brain`](../brains/local-brain.md) | Stage 0 |
-| The first role | [`roles/personal-assistant`](../roles/personal-assistant.md) | Stage 1 |
+| The first agent | [`agents/personal-assistant`](../agents/personal-assistant.md) | Stage 1 |
 
 ## Steps
 
 1. **Build the brain.** Follow [`local-brain`](../brains/local-brain.md) end to end. Stop when its *Doneness* checks pass — you now have Stage 0.
-2. **Hire the role.** Follow [`personal-assistant`](../roles/personal-assistant.md), which runs on the brain from step 1. Stop when its *Doneness* checks pass — you now have Stage 1.
+2. **Hire the agent.** Follow [`personal-assistant`](../agents/personal-assistant.md), which runs on the brain from step 1. Stop when its *Doneness* checks pass — you now have Stage 1.
 3. **Smoke-test end to end** (the kit's own check, below).
 
 ## Doneness
@@ -67,9 +67,9 @@ The combined test — both recipes' Doneness, plus the round trip that proves th
 
 This is the base you build *onto*:
 
-- **Add more role recipes** on the same brain to go from one role to a team (Stage 2) — Comms Manager, Scheduler, Product-Dev, etc. Each declares `requires: [local-brain]`, so it drops in with no change to the foundation. Scaling is hiring, not migrating (`§12`).
+- **Add more agent recipes** on the same brain to go from one agent to a team (Stage 2) — Comms Manager, Scheduler, Product-Dev, etc. Each declares `requires: [local-brain]`, so it drops in with no change to the foundation. Scaling is hiring, not migrating (`§12`).
 - **Add a dreaming recipe** (Stage 3) for nightly consolidation and the self-improvement loop (`§11`).
 
 ## Substitutions
 
-Inherit the substitutions from both component recipes — swap the harness, the scheduler, the search layer, or raise the role's autonomy independently. Because the kit is just two modular recipes, you can replace either side without touching the other; that decoupling is the entire reason brain and role are separate recipes.
+Inherit the substitutions from both component recipes — swap the provider, the scheduler, the search layer, or raise the agent's autonomy independently. Because the kit is just two modular recipes, you can replace either side without touching the other; that decoupling is the entire reason brain and agent are separate recipes.

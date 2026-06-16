@@ -1,10 +1,10 @@
 ---
-type: brain-recipe          # brain-recipe | role-recipe | kit
+type: brain-recipe          # brain-recipe | agent-recipe | kit
 name: kebab-case-id         # stable id other recipes reference
 title: "Human Readable Title"
 description: "One line: what this builds and for whom."
 stage: 0                    # maturity stage reached (AGENT_ARCHITECTURE.md §12)
-provides: brain             # what capability this stands up (e.g. brain, role:personal-assistant)
+provides: brain             # what capability this stands up (e.g. brain, agent:personal-assistant)
 requires: []                # recipes this needs first (e.g. [local-brain]); [] for a brain
 pairs-with: []              # recipes commonly combined with this
 stack: []                   # headline tech, e.g. [claude-code, markdown, git, cron]
@@ -20,7 +20,7 @@ What you end up with, in a line or two — and which architecture stage it reach
 
 ## Prerequisites
 
-- **Brain:** which brain recipe must already exist (role recipes & kits only).
+- **Brain:** which brain recipe must already exist (agent recipes & kits only).
 - **Accounts / keys:** anything external.
 - **Runtimes:** languages, CLIs, tools that must be installed.
 
@@ -52,7 +52,7 @@ first evals (`AGENT_ARCHITECTURE.md §10`).
 
 ## Pairs with
 
-Compatible recipes — brains this role runs on, roles that complement this one, kits
+Compatible recipes — brains this agent runs on, agents that complement this one, kits
 that include it.
 
 ## Substitutions

@@ -1,11 +1,11 @@
 # Agent OS — document set
 
-A technology-agnostic vision for organizing AI work by **roles**, and for the **brain** that work runs on. Two peer architecture docs — one for the system, one for its foundation — plus a digest and this index. Read only as far as you need.
+A technology-agnostic vision for organizing AI work by **agents** (each with a job), and for the **brain** that work runs on. Two peer architecture docs — one for the system, one for its foundation — plus a digest and this index. Read only as far as you need.
 
 | Doc | What it is | Answers |
 |---|---|---|
 | [`OVERVIEW.md`](./OVERVIEW.md) | **The 2-minute digest** | The whole thing, distilled — start here. |
-| [`AGENT_ARCHITECTURE.md`](./AGENT_ARCHITECTURE.md) | **Vision & invariants — the system** | *What* the agent system is and *why* — roles, loops, telemetry, autonomy, evaluation, improvement. |
+| [`AGENT_ARCHITECTURE.md`](./AGENT_ARCHITECTURE.md) | **Vision & invariants — the system** | *What* the agent system is and *why* — agents, jobs, loops, telemetry, autonomy, evaluation, improvement. |
 | [`BRAIN_ARCHITECTURE.md`](./BRAIN_ARCHITECTURE.md) | **Vision & invariants — the brain** | *What* the context substrate is and *why* — the three areas, OKF, the conventions agents read and write through. |
 
 ## How the two architecture docs relate
@@ -19,4 +19,4 @@ Neither prescribes technology, with **one exception**: the brain commits to the 
 
 ## On the Open Knowledge Format (OKF)
 
-The brain's one format commitment is [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf): the knowledge layer conforms to it (markdown + YAML frontmatter), the agents and runtime areas sit outside its scope, and we reference the standard rather than vendor it. The brain must also be version-controlled, but the architecture requires only the capability, not a specific tool: git is the obvious implementation and what the recipes use. `BRAIN_ARCHITECTURE.md §0` is the full rationale for why the format is the only thing the set pins down.
+The brain's one format commitment is [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf): the knowledge layer conforms to it (markdown + YAML frontmatter), the harness and runtime areas sit outside its scope, and we reference the standard rather than vendor it. The brain must also be version-controlled, but the architecture requires only the capability, not a specific tool: git is the obvious implementation and what the recipes use. `BRAIN_ARCHITECTURE.md §0` is the full rationale for why the format is the only thing the set pins down.
