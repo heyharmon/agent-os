@@ -4,14 +4,16 @@
 
 An **experimentation repo**: we test what actually works for putting agents to work, then let principles emerge from evidence. The architecture docs in `archive/` are pre-evidence speculation. Read them for context; never cite them as authority.
 
-Your task here is to run experiments, record results, and keep the hypothesis register honest.
+Your task here is to run experiments, record results, and keep the hypothesis register honest. Follow `experiments/PROCESS.md`. Within an experiment's charter you proceed autonomously (revise one variable, re-run, update status); the process names the few decisions that stop for the operator (charter changes, architecture-level pivots, budget breach, any safety-floor failure, anything irreversible or outward-facing). Do not weaken a task's expectation or edit the agent's prompt to force a pass; a real failure is the result.
 
 ## The files
 
 | File / Dir | What it is |
 |---|---|
+| `VISION.md` | The goal: proven agent OS architectures across a complexity spectrum of use cases. |
+| `experiments/PROCESS.md` | How an experiment runs from charter to clear-cut takeaway, plus decision rights. |
 | `HYPOTHESES.md` | The register of bets: one row per claim, with Status and a pre-registered "Refutes if" condition. |
-| `experiments/` | One folder per run: setup, inputs, procedure. |
+| `experiments/` | One folder per experiment: a `charter.md` (goal, bar, stopping criteria), the system under test, the benchmark. |
 | `results/` | Outputs and observations from each run. Link from HYPOTHESES.md. |
 | `archive/` | Pre-evidence architecture docs (OVERVIEW, AGENT_ARCHITECTURE, BRAIN_ARCHITECTURE, recipes). Read-only. Do not edit. |
 | `CHANGELOG.md` | Record of experiment results and hypothesis status changes. |

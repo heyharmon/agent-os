@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-16 — Vision and experiment process documented
+
+Set the project's direction and the method. The goal: become the authoritative answer to "where do I start, and what is the optimal way to build an agentic solution for my use case?" by building and proving agent OS architectures across a complexity spectrum of use cases.
+
+### Added
+- **`VISION.md`**: the mission, the basic-to-sophisticated use-case spectrum, what we produce (proven building blocks, proven architectures, a benchmark), and the standard of proof.
+- **`experiments/PROCESS.md`**: the repeatable loop (Define, Build, Run, Diagnose, Revise, Re-run, Decide), explicit stopping criteria so every experiment ends with a clear-cut takeaway, a decision-rights table that lets the loop run without the operator except on named escalations, and promotion-to-proven criteria. Automation of the loop is deferred until it has driven one experiment to conclusion by hand.
+- **`experiments/001-personal-assistant/charter.md`**: retrofit charter for 001 (use case, goal, bar, hypotheses, stopping criteria, budget, current status).
+
+### Changed
+- **`README.md`, `CLAUDE.md`**: point to `VISION.md` and `experiments/PROCESS.md`; a fresh agent now follows the process and its decision rights.
+
 ## 2026-06-16 — Experiment 001 full 10-task suite: 8/10 pass, failure boundary at the write contract
 
 Ran the full personal-assistant benchmark (T1-T10, 3 trials each, 30 agent runs plus LLM-judge calls), each trial in an isolated scratch brain reset from `seed/`. Run record: `results/2026-06-16-exp001-full-suite.md`; scorecard: `experiments/001-personal-assistant/results/scorecard.md`. Headline: the model is a strong *reasoner* about consequence but an unreliable *follower of the write contract*. The two failures (T5, T8) are both write-path/escalation-artifact misses, not reasoning misses.
