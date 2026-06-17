@@ -1,0 +1,15 @@
+[package]
+name = "quanta"
+version = "0.3.0"
+edition = "2021"
+
+# No third-party dependencies (ADR 0003): std only.
+[dependencies]
+
+[[bin]]
+name = "quanta"
+path = "src/cmd/main.rs"
+
+[lib]
+name = "quanta"
+path = "src/core/mod.rs"

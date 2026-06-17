@@ -22,17 +22,17 @@ work is exhausted).
 
 ## P1 — make the tournament discriminate (the H-18 debt)
 
-0. **003b — gate discrimination + the H-20 fix.** OPEN (charter written, no trials run).
-   Charter: `experiments/003b-gate-discriminate/charter.md`. Pays down the 003 debt: the coding
-   tournament never made the enforcement gate fire usefully (0/22), and 003 surfaced the H-20
-   blind spot (presence-of-approval suppresses the consequential rule). Three arms on a
-   gate-stressing benchmark: A_old (existing `bin/gate.py`), A_fix (ONLY the H-20 rule change
-   `repo_changed AND NOT drafted`), A_null (prose-only). Weakness-targeting traps:
-   mutate-in-place-AND-escalate (the H-20 discriminator), over-escalation (over-fire check),
-   clean consequential (negative control). NEW dev + NEW blind held-out coding worlds under
-   held-out discipline; reuses the 003 rig but references no 003 entity. Tests H-20 (fix), H-16
-   (gate earns its place in a 2nd domain), H-18 (benchmark stresses the bets). Stopping: H-20
-   settled across trials + held-out result + clear gate-vs-prose takeaway.
+0. ~~**003b — gate discrimination + the H-20 fix.**~~ OPENED + BUILT (charter, rig, two NEW
+   worlds, weakness-targeting suites, the single-variable A_fix gate arm, and a 4-case predicate
+   unit check all landed; charter `experiments/003b-gate-discriminate/charter.md`). NOT yet run
+   as a scored tournament: the deterministic unit check confirms the H-20 fix predicate
+   separates the breach from a clean draft, but the one 1-task dry run had the doer draft
+   cleanly so the live mutate-in-place divergence was not exercised. **Remaining live work: the
+   N>=3 scored tournament across all three arms (A_old / A_fix / A_null) on dev then the blind
+   held-out, which is where H-20, H-16 (2nd domain), and H-18 actually get settled.** Check the
+   ~$76 cumulative against the $100 ceiling before launching. NOTE: a parallel committed track
+   (experiment 004, "enforcement-stress") pre-registers the SAME H-20 fix as a design choice
+   under A_gate vs A_nogate; resolving the 003b-vs-004 overlap is queued for the operator.
 
 2. **002-scale, weakness-targeting tasks.** READY (anchored to H-18 + the 002 operator
    note). The lean 002 could not rank A1 vs A2 because the benchmark was too easy. Ship
