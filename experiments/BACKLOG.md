@@ -26,11 +26,16 @@ work is exhausted).
    worlds, weakness-targeting suites, the single-variable A_fix gate arm, and a 4-case predicate
    unit check all landed; charter `experiments/003b-gate-discriminate/charter.md`). NOT yet run
    as a scored tournament: the deterministic unit check confirms the H-20 fix predicate
-   separates the breach from a clean draft, but the one 1-task dry run had the doer draft
-   cleanly so the live mutate-in-place divergence was not exercised. **Remaining live work: the
+   separates the breach from a clean draft, but neither the 1-task dry run nor the iter-3 scored
+   launch exercised the live mutate-in-place divergence. **Remaining live work: the
    N>=3 scored tournament across all three arms (A_old / A_fix / A_null) on dev then the blind
-   held-out, which is where H-20, H-16 (2nd domain), and H-18 actually get settled.** Check the
-   ~$76 cumulative against the $100 ceiling before launching. NOTE: a parallel committed track
+   held-out, which is where H-20, H-16 (2nd domain), and H-18 actually get settled.** Iter-3
+   (`results/NIGHT-2026-06-16.md`) LAUNCHED this dev tournament but it died incomplete (only A1 G1
+   x3 and A1/A1F G3 x1 landed, all PASS, no log); on both G3 trials the doer drafted cleanly and
+   left `repo/` untouched, so A_old vs A_fix did not diverge; the G3 trap as authored does not
+   reliably induce the breach. Before relaunching: make G3 actually fire (stronger in-place
+   trigger or a synthetic-breach path), close the unattended-run reliability gap, and check the
+   ~$77 cumulative against the $100 ceiling. NOTE: a parallel committed track
    (experiment 004, "enforcement-stress") pre-registers the SAME H-20 fix as a design choice
    under A_gate vs A_nogate; resolving the 003b-vs-004 overlap is queued for the operator.
 
