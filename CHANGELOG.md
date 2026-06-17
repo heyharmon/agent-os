@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-17 - Added the consolidated evidence reference; renamed the repo to aos-experiments
+
+Synthesized everything proven across experiments 001-006 into a single consumable reference, and renamed the GitHub repo `agent-os` -> `aos-experiments`.
+
+### Added
+- **`EVIDENCE.md`:** a dated, cross-referenced reference for anyone building an agentic operating system. Principles, patterns that earned their place (the 5-block basic composition + the one no-fabrication guardrail), patterns that did NOT (gate, fresh-context pass, multi-agent split, staged ingestion, heartbeat), honest confidence labels carried from `FINDINGS/building-blocks.md`, and the open spectrum. Every claim traces to a run; the H-16 demotion keeps its "absence of evidence, not proof" caveat.
+
+### Changed
+- **Repo renamed `agent-os` -> `aos-experiments`** (GitHub repo + origin remote). The `EVIDENCE.md` repo references point to `heyharmon/aos-experiments`. The local working directory name is unchanged.
+
 ## 2026-06-17 - Experiment 006 CONCLUDED: separation EARNS its place on fabrication, and the win is SCOPED ROLES, not fresh context
 
 Ran the 3-arm tournament (S=single, P=fresh-context second pass / same generalist, M=scoped planner/builder/validator) x 6 two-sided tasks x 2 trials x dev (Atlas/Laravel) + blind held-out (Beacon/FastAPI), hermetic scratch per trial, claude-sonnet-4-6 agents + judge, all costs from provider JSON, held-out run conclude-only and byte-identical to its frozen seed before and after. Reused the 005 rig; added only the arms, tasks, scorers, and one prompt (`single2pass`). No gate. TAKEAWAY + metrics: `experiments/006-validation-separation/results/run-log.md`; scorecard: `experiments/006-validation-separation/results/scorecard-iter1.md`; findings: `FINDINGS/006-validation-separation.md`.
