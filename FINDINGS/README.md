@@ -24,6 +24,15 @@ basic ----------------------------------------------------> sophisticated
                                                           held-out edge (and the
                                                           benchmark could not
                                                           discriminate).
+                                                          [006] validation-
+                                                          separation: a FAIL-
+                                                          CAPABLE benchmark.
+                                                          SCOPED ROLES beat the
+                                                          single agent on
+                                                          fabrication-into-
+                                                          knowledge; FRESH
+                                                          CONTEXT did not. One
+                                                          guardrail, not a split.
                                                           other domains:
                                                           marketing, sales,
                                                           broader business ops
@@ -32,12 +41,25 @@ basic ----------------------------------------------------> sophisticated
 The biggest jump on the spectrum so far, 005, was attempted and bounced back: a
 4-arm tournament (single agent vs +agent-split vs +staged-ingestion vs +heartbeat)
 on a product-development benchmark concluded that the **single agent is the proven
-architecture for this use case** — every arm passed the held-out world 7/7 with a
+architecture for this use case** - every arm passed the held-out world 7/7 with a
 clean safety floor and none beat the rung below it, so by the simplest-wins rule
 the single agent won (and it was cheapest). The multi-agent machinery did NOT earn
 its place. Critical caveat: the benchmark was NON-DISCRIMINATING (the four tasks
 designed to separate the arms all converged on held-out), so this is "the split
 did not win here," not "the split is proven useless." See the 005 page.
+
+006 then built the FAIL-CAPABLE benchmark that 002/003/005 never managed, targeted
+at the one weakness 005 surfaced (fabrication-into-knowledge), and got the first
+clean architecture ranking: on a benchmark where the single agent demonstrably
+FAILS (it files a fabricated convention to durable knowledge, 0/2 on both worlds),
+a SCOPED-ROLES arm is the only one that does not fabricate (held-out 2/2), with no
+over-escalation regression and no overfitting. The decisive nuance: a FRESH-CONTEXT
+second pass (same generalist, no role scoping) did NOT help: it equals the single
+agent, because pass-1 commits the fabrication to durable knowledge before fresh
+eyes look. So the win is a planner PROMPT scoped to "flag the gap, never
+fabricate," ONE guardrail added to the single agent, not a multi-agent split. The
+self-validation half did not reproduce (a single agent self-caught a
+clearly-specified regression every time), so it remains untested. See the 006 page.
 
 The map now spans TWO domains at the basic position: 001 (personal assistant) and 003 (coding assistant). 003 ran the same basic blocks on a software-engineering project to test whether they were PA-specific. They were not: the file brain, plain-text retrieval, binary reversible/escalate tag, named role, and provider-JSON cost all carried, so they have crossed the two-domain threshold and are closer to PROVEN. The recommended basic architecture is exactly those blocks: file brain + plain-text retrieval + the binary reversible/escalate tag (a prose contract the model self-enforces) + named role + provider-JSON cost. The checked enforcement gate is NOT part of the recommendation: it was demoted 2026-06-17 as unnecessary overhead for current frontier models (it fired 0 useful times across 002 and 003 and would not have caught the one real coding breach; H-16 NOT SUPPORTED, H-20 retired). See the 003 page and building-blocks.md.
 
@@ -49,6 +71,7 @@ The map now spans TWO domains at the basic position: 001 (personal assistant) an
 | One notch up (richer brain), code-gate vs doer+checker | INCONCLUSIVE (machinery validated; ranking open) | [002-capable-personal-assistant-lean.md](./002-capable-personal-assistant-lean.md) |
 | Basic single-agent coding assistant (cross-domain) | SUPPORTED-but-thin (blocks carry PA -> coding; gate DEMOTED) | [003-coding-assistant-lean.md](./003-coding-assistant-lean.md) |
 | Multi-agent product-dev OS (split + staged ingestion + heartbeat) vs one agent | SINGLE AGENT WINS; added blocks did not earn their place (benchmark non-discriminating) | [005-product-dev-os.md](./005-product-dev-os.md) |
+| Validation-separation on a fail-capable benchmark (single vs fresh-context pass vs scoped roles) | SCOPED ROLES win on fabrication-into-knowledge; fresh context does not. One guardrail (a scoped no-fabrication authoring prompt), not a split. Self-validation half untested. | [006-validation-separation.md](./006-validation-separation.md) |
 | Everything further right | UNTESTED | (no experiment concluded) |
 
 "SUPPORTED-but-thin" means the architecture passed its bar (9/10 tasks, 3 trials, zero safety-floor failures) on one seeded world with the same authors writing both the system and the tests. It is a valid starting point, not a guarantee of generalization.
@@ -63,6 +86,7 @@ Experiment 002 (lean cut) was designed as the generalization test and the first 
 - **002-capable-personal-assistant-lean.md**: the machinery-validation result and the inconclusive A1-vs-A2 tournament from the 002 lean cut.
 - **003-coding-assistant-lean.md**: the cross-domain generalization result, the basic blocks carry from PA to coding; the enforcement gate did not.
 - **005-product-dev-os.md**: the 4-arm product-dev tournament. The single agent beat (tied, so won on simplicity) the agent split, staged ingestion, and heartbeat on the held-out world; the benchmark could not discriminate the arms.
+- **006-validation-separation.md**: the fail-capable validation-separation tournament. Scoped roles beat the single agent on fabrication-into-knowledge (held-out); fresh context alone did not. The fix is one scoped authoring guardrail, not a split. The self-validation half did not discriminate.
 
 ## The raw evidence
 

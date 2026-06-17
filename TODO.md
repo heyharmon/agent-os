@@ -17,7 +17,7 @@ The rule: run 002 and 003 by hand on different worlds. When you have copy-pasted
 - [ ] High fixed per-task cost (~$0.13 average for trivial work), almost all cache-read of the brain + Claude Code system prompt. Measure how cost scales as the brain grows. Bears on H-02 and H-14.
 - [ ] Add an unscoped baseline (no role file) so H-05 (roles earn their keep) can be tested, not just observed.
 
-## Experiment 001: CONCLUDED 2026-06-16 — GOAL REACHED (9/10, bar met)
+## Experiment 001: CONCLUDED 2026-06-16 - GOAL REACHED (9/10, bar met)
 
 Final run: full suite, GATE=1, OUTCOME-based T8/T9 scorers -> 9/10, no safety-floor failure on any of 30+ runs, cost in envelope. Proven (thin) basic-PA architecture and per-block verdicts: TAKEAWAY in `results/2026-06-16-exp001-iter2.md`; charter Status updated; H-02/H-08/H-14/H-16 statuses updated, H-05 left UNTESTED. Methodology lesson recorded in `experiments/PROCESS.md` (Build): score outcomes, not mechanism/phrasing.
 
@@ -34,7 +34,7 @@ Little broke on *reasoning* across the whole experiment: the model found every c
 - [ ] Filing-discipline (the n2 honesty note): if "always create a new dedicated note for a new commitment" is required, add an explicit check; the agent prefers `brain update` on an existing doc unprompted (defensible, but not guaranteed).
 - [ ] Cheaper judge: judge spend exceeded agent spend across the suite. Try a smaller judge model or push more tasks to assertion-only and confirm scores hold. Bears on H-14.
 
-## Experiment 002 (lean cut): CONCLUDED 2026-06-16 — machinery VALIDATED; A1-vs-A2 INCONCLUSIVE
+## Experiment 002 (lean cut): CONCLUDED 2026-06-16 - machinery VALIDATED; A1-vs-A2 INCONCLUSIVE
 
 Primary goal met: the anti-overfit + tournament machinery validated end to end
 (dev/held-out split, two worlds, blind held-out authoring, divergent A1-vs-A2
@@ -71,7 +71,7 @@ the lean charter, so it is the operator's call. If approved, the fuller run must
   enforcement/failure path; if all bets converge, the benchmark is still
   non-discriminating (H-18) and the tournament cannot rank.
 
-## Experiment 003 (lean cut): CONCLUDED 2026-06-16 — basic blocks GENERALIZE PA -> coding; gate did NOT carry
+## Experiment 003 (lean cut): CONCLUDED 2026-06-16 - basic blocks GENERALIZE PA -> coding; gate did NOT carry
 
 Primary goal MET: the basic single-agent building blocks proven on PA carried to
 a coding assistant on a blind held-out TypeScript project with NO break and NO
@@ -99,7 +99,7 @@ Run record + TAKEAWAY: `results/2026-06-16-exp003-lean.md`. Scorecard:
 advanced to two-domain support; H-16 held PA-only (NOT generalized); H-18
 reinforced.
 
-### ENFORCEMENT THREAD: CLOSED 2026-06-17 — gate DEMOTED
+### ENFORCEMENT THREAD: CLOSED 2026-06-17 - gate DEMOTED
 The checked enforcement gate is demoted as unnecessary overhead for current
 frontier models. It fired 0 useful times across 002 (0/24) and 003 (0/22), would
 not have caught the one real coding breach (H-20 approval-presence blind spot),
@@ -111,13 +111,48 @@ could not construct a benchmark that reliably induced the breach. Two
 gate-stressing experiments were thrown out without a scored crux: 004 (runaway
 smoke test that hung) and 003b (redundant). Closed on current evidence.
 The two former gate carry-forwards are RETIRED:
-- ~~Fix the gate's consequential rule (`repo_changed AND NOT drafted`)~~ — moot;
+- ~~Fix the gate's consequential rule (`repo_changed AND NOT drafted`)~~ - moot;
   the gate is dropped.
-- ~~Ship a discriminating trap that stresses gate vs no-gate~~ — moot; no gate to
+- ~~Ship a discriminating trap that stresses gate vs no-gate~~ - moot; no gate to
   stress. (If prose-only self-compliance is ever to be stressed adversarially,
   that is a fresh question, not a gate test.)
 
-## Experiment 005 (product-dev OS): CONCLUDED 2026-06-17 — SINGLE AGENT WINS; multi-agent did not earn its place
+## Experiment 006 (validation-separation): CONCLUDED 2026-06-17 - SCOPED ROLES beat the single agent on fabrication; fresh context did not
+
+The fail-capable benchmark 002/003/005 never managed, built and run. Three arms
+(S=single, P=fresh-context second pass / same generalist, M=scoped
+planner/builder/validator), 6 two-sided tasks, 2 trials, dev (Atlas/Laravel) +
+blind held-out (Beacon/FastAPI). The benchmark could actually fail the single
+agent: S files a fabricated convention to durable knowledge, FAB-GAP 0/2 dev AND
+FAB-GAP-H 0/2 held-out. M is the only arm that does not fabricate (FAB-GAP-H 2/2),
+no over-escalation regression (0/4), no safety regression (0), small non-positive
+gen gap. Held-out pass S 83% / P 83% / M 100%. The confound-reducer paid off:
+FRESH CONTEXT (P) = the single agent (both 0/2), because pass-1 commits the
+fabrication before fresh eyes look. So the win is a planner PROMPT scoped to "flag
+the gap, never fabricate," ONE guardrail on the single agent, not a split.
+TAKEAWAY: `experiments/006-validation-separation/results/run-log.md`; scorecard:
+`.../scorecard-iter1.md`; findings: `FINDINGS/006-validation-separation.md`.
+Hypotheses: H-21 -> SUPPORTED-but-narrow (fabrication half, scoped roles only);
+H-05 -> SUPPORTED-but-thin (scoping beats fresh context); H-03 -> SUPPORTED-but-thin
+(held under a same-method collision); H-18 streak broken on FAB-GAP (not on
+BURIED-REG); H-08/H-17 re-confirmed.
+
+OPERATOR DECISION: none (operator delegated; hermetic sandbox; no safety/budget
+breach; nothing irreversible).
+
+### Carry-forward from 006 (the open thread)
+- [ ] **The self-validation / authorship-bias half is UNTESTED.** BURIED-REG did
+  not discriminate (every arm self-caught a clearly-specified float regression
+  2/2). The test that would settle whether a separated validator ever beats
+  single-agent self-review is a regression the author genuinely cannot see in its
+  own output, in a FRESH, blind-authored subtle-regression world. Re-authoring
+  006's BURIED-REG against its observed self-catch behavior is BARRED (overfitting);
+  build a new world.
+- [ ] Scorer false-positive (`merged into` noun-sense) reported, not patched (one
+  trip is on held-out). If a future cut reuses this scorer, fix the pattern to
+  require a verb-sense consequential claim, with a still-fails fixture.
+
+## Experiment 005 (product-dev OS): CONCLUDED 2026-06-17 - SINGLE AGENT WINS; multi-agent did not earn its place
 
 A 4-arm ablation tournament (single agent vs +agent-split vs +staged-ingestion vs
 +heartbeat) on a product-development benchmark, dev + blind held-out, 2 trials.
@@ -142,15 +177,14 @@ the only place the split showed an edge.
 The loop has now held across FOUR experiments (001, 002, 003, 005) including
 blind held-out worlds in 002/003/005 and the first 2+-agent run in 005. The next
 direction is an operator-level choice:
-- [ ] **The named next experiment for 005's open question:** make
-  AMBIGUITY/fabrication-resistance the discriminating axis (MULTIPLE ambiguity
-  tasks across BOTH worlds) + a buried-regression task only a dedicated
-  fresh-context validator could catch + a TRUE concurrent-conflict coordination
-  task (two issues editing the same LINES). The smallest change that could make
-  the split earn its place or refute H-05 cleanly. This is the dominant
-  carry-forward: H-18 says our benchmarks are the binding constraint, not the
-  architectures, so the highest-leverage move is a HARDER, discrimination-targeting
-  benchmark.
+- [x] **The named next experiment for 005's open question** - DONE by 006. Made
+  fabrication-resistance the discriminating axis with a fail-capable benchmark and
+  a buried-regression task; H-18's binding-constraint claim was directly attacked
+  and the streak broke on FAB-GAP (the single agent finally fails). Result: scoped
+  roles win on fabrication, fresh context does not. The fabrication half of H-05/H-21
+  is settled (scoping helps); the buried-regression (self-validation) half did NOT
+  discriminate and is the new open thread (see 006 carry-forward above). The TRUE
+  same-LINES conflict ran (CONFLICT) and H-03 held but was not stressed to failure.
 - [ ] **A third domain** (marketing, sales, ops) to push H-19 toward PROVEN.
 - [ ] **Self-improvement (H-01)**, deferred by the 005 charter; the marquee bet,
   still UNTESTED.

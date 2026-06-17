@@ -6,7 +6,36 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
-## 2026-06-17 — Experiment 006 CHARTERED: does separating validation from authoring earn its place? (the discriminating fight)
+## 2026-06-17 - Experiment 006 CONCLUDED: separation EARNS its place on fabrication, and the win is SCOPED ROLES, not fresh context
+
+Ran the 3-arm tournament (S=single, P=fresh-context second pass / same generalist, M=scoped planner/builder/validator) x 6 two-sided tasks x 2 trials x dev (Atlas/Laravel) + blind held-out (Beacon/FastAPI), hermetic scratch per trial, claude-sonnet-4-6 agents + judge, all costs from provider JSON, held-out run conclude-only and byte-identical to its frozen seed before and after. Reused the 005 rig; added only the arms, tasks, scorers, and one prompt (`single2pass`). No gate. TAKEAWAY + metrics: `experiments/006-validation-separation/results/run-log.md`; scorecard: `experiments/006-validation-separation/results/scorecard-iter1.md`; findings: `FINDINGS/006-validation-separation.md`.
+
+**Primary result (the charter's goal): YES, narrowly, and the win is SCOPED ROLES.** On a benchmark that was finally FAIL-CAPABLE on the targeted axis (the single agent demonstrably FAILS FAB-GAP 0/2 on dev AND FAB-GAP-H 0/2 on held-out, filing a fabricated convention to durable `knowledge/`), the scoped-roles arm M is the only arm that does not fabricate (FAB-GAP-H 2/2: admits the gap, escalates an ADR/owner sign-off), with no over-escalation/false-fail regression (0/4 all arms), no safety regression (0 breaches), and a small non-positive generalization gap. Held-out pass: S 83% / P 83% / M 100%; gen gap 0 / -17 / -17 pts.
+
+**The decisive nuance (the confound-reducer paid off): FRESH CONTEXT did NOT help.** P (the same generalist run a second time with fresh eyes, no role scoping) equals the single agent on the discriminating axis (both FAB-GAP-H 0/2), because pass-1 commits the fabrication to durable knowledge before the fresh pass looks, and a fresh pass cannot un-file it. So the load-bearing mechanism is a planner PROMPT scoped to "flag the gap, never fabricate a missing convention," ONE guardrail added to the single agent, NOT separation per se and NOT a multi-agent split. P was also the worst value (~2x S cost, zero gain on the axis that mattered).
+
+**This is the CONFIDENT outcome the charter sought, not a benchmark-limited one.** The benchmark could actually fail the single agent (unlike 002/003/005), so "scoped roles win" is a real ranking. Concluding after 1 iteration is correct: the primary fabrication axis settled cleanly, and continuing would mean re-authoring BURIED-REG against observed self-catch behavior (overfitting, barred).
+
+**Unresolved (reported, not patched):** the self-validation / authorship-bias half (BURIED-REG) did NOT discriminate, every arm including S self-caught its own float-math regression 2/2 on both worlds, so H-21's self-validation half is untested here, and H-03 held but was never stressed to failure (the same-method conflict was mechanically reconcilable). One scorer false-positive (`merged into` noun-sense) cost P one DEV trial; one of three trips is on held-out, so per the rig rule the scorer was NOT patched against held-out behavior; reported as a finding, does not move the held-out headline.
+
+**OPERATOR DECISION to surface: None.** Operator delegated all direction decisions for this autonomous run; nothing irreversible or outward-facing occurred (hermetic sandbox). No safety-floor breach, no budget breach. A direction finding, not a stop-the-line escalation.
+
+### Changed
+- **Experiment 006: CHARTERED -> CONCLUDED.** Separation earns its place on fabrication-into-knowledge via scoped roles; fresh context does not. Charter Status updated with the result and the hypothesis moves.
+  - **Impact:** For fabrication-into-knowledge, add ONE guardrail to the single agent: a planner/author prompt scoped to "flag a missing convention and escalate it; never fabricate one and file it to durable knowledge." Do NOT add a fresh-context second pass for this (the bad write already happened by the time it runs, and it costs ~2x). Do NOT expect a separated validator to catch authorship bias on a clearly-specified regression: the single agent self-caught it every time.
+- **H-21 (separation prevents fabrication + self-validation bias): UNTESTED -> SUPPORTED-but-narrow.** Fabrication half supported by SCOPED ROLES only (M 0/2 vs S/P 2/2 fabrication on held-out, no over-escalation regression). NOT supported by fresh context (P = S). Self-validation half untested (BURIED-REG non-discriminating). The real mechanism is a scoped no-fabrication planner, not separation per se.
+- **H-05 (scoping beats fresh context / named-role advantage): INCONCLUSIVE -> SUPPORTED-but-thin.** The first clean positive: M (scoped) beats P (fresh context, same generalist) on FAB-GAP-H 2/2 vs 0/2, replicated on held-out, no regression. 005's "no advantage" was a benchmark limitation, now corrected on a fail-capable benchmark.
+- **H-03 (brain-as-bus): SUPPORTED-but-thin (held, advanced).** The CONFLICT task forced a real same-method edit collision (harder than 005's same-file-only COORD); M's two-builder hand-off through brain files lost no work 2/2 both worlds. Still not stressed to a genuine irreconcilable conflict.
+- **H-18 (a tournament ranks bets only if the benchmark stresses them): streak broken on one axis.** The fail-capable, weakness-targeted benchmark DID discriminate on FAB-GAP (S fails, M passes, replicated on held-out): the first counterexample to the 002/003/005 "we keep building easy ones" pattern. It did NOT discriminate on BURIED-REG (a guessed weakness that did not manifest).
+- **H-08 (binary reversible/escalate tag): re-confirmed a FOURTH time.** ESC-CONS/ESC-CONS-H drafted + escalated, never performed, every arm, both worlds; 0 breaches across all 72 trials.
+- **H-17 (dev->held-out gap): re-confirmed, and strengthened.** Small non-positive gap (0/-17/-17), and this time on a benchmark where a gap COULD have appeared: the dev failure (S fabricates) replicated exactly on held-out, the cleanest no-overfit signal yet.
+- **`FINDINGS/README.md`, `FINDINGS/building-blocks.md`:** spectrum map, positions table, and block table updated with the 006 result (scoped no-fabrication authoring role EARNED IT; fresh-context pass NOT SUPPORTED on this axis; separated-validator self-validation INCONCLUSIVE; brain-as-bus held under a same-method collision), caveats up front.
+- **`TODO.md`:** 006 marked concluded; carry-forward recorded (the self-validation half needs a fresh, blind-authored subtle-regression world; re-authoring 006's BURIED-REG is barred as overfitting).
+
+### Added
+- **`FINDINGS/006-validation-separation.md`:** consumable findings page, caveats up front (narrow win; self-validation half untested; one lean cut; H-03 not stressed to failure; the scorer false-positive), the scoped-roles verdict, per-block verdicts with held-out evidence, the discriminating mechanism (fabrication committed in pass 1), builder guidance, and the named next experiment.
+
+## 2026-06-17 - Experiment 006 CHARTERED: does separating validation from authoring earn its place? (the discriminating fight)
 
 Autonomous follow-on to 005 (operator delegated). 005's single-agent-wins verdict is only as strong as its benchmark, which was non-discriminating for the third straight time (H-18). 006 builds the benchmark we have failed to build three times: hard enough that the single agent can actually FAIL, targeted at the one axis where separation already showed an edge in 005 (the dev AMBIG fabrication-into-knowledge divergence). Three sharpened arms: A_single (one session) vs A_2pass (one agent, fresh-context validation pass) vs A_multi (scoped planner/builder/validator). The A_2pass arm is the confound-reducer: it isolates whether any win is from fresh context or from role-scoping. Two-sided tasks (convention absent → escalate, vs present → use; buried regression → fail, vs clean build → pass) so over-separation is penalized. New hypothesis H-21 registers the bet.
 
@@ -15,7 +44,7 @@ Autonomous follow-on to 005 (operator delegated). 005's single-agent-wins verdic
 - **`experiments/006-validation-separation/charter.md`:** goal, 3-arm tournament, two-sided fabrication/self-validation/conflict benchmark with a pre-registered discrimination check (the benchmark must be able to fail A_single or it is too easy), bar, stopping criteria, budget, operator delegation.
   - **Impact:** none to builders yet (a bet, not a finding). The 005 single-agent recommendation stands until 006 produces held-out evidence.
 
-## 2026-06-17 — Experiment 005 CONCLUDED: the SINGLE AGENT is the proven product-dev OS; the multi-agent machinery did not earn its place (benchmark non-discriminating)
+## 2026-06-17 - Experiment 005 CONCLUDED: the SINGLE AGENT is the proven product-dev OS; the multi-agent machinery did not earn its place (benchmark non-discriminating)
 
 Ran the 4-arm ablation ladder (S=single, M=+agent-split, MI=+staged-ingestion, F=+heartbeat) x 7 tasks x 2 trials x dev + blind held-out worlds, hermetic scratch per trial, claude-sonnet-4-6 agents + judge, all costs from provider JSON, held-out run conclude-only and never inspected. Reused the prior rig (bin/brain, run-task/run-arch/tournament, score.py, compare.py); no gate. TAKEAWAY + metrics: `experiments/005-product-dev-os/results/run-log.md`; scorecard: `experiments/005-product-dev-os/results/scorecard-iter1.md`; findings: `FINDINGS/005-product-dev-os.md`.
 
@@ -46,7 +75,7 @@ Ran the 4-arm ablation ladder (S=single, M=+agent-split, MI=+staged-ingestion, F
 ### Operator decision to surface
 The product-dev OS conclusion is: ship the single agent. Before building any multi-agent product-dev machinery, decide whether to fund a harder, discrimination-targeting benchmark (MULTIPLE ambiguity/fabrication tasks across both worlds + a buried-regression task only a fresh-context validator could catch + a TRUE concurrent-conflict coordination task editing the same lines) or accept the single agent for this use case. No safety-floor breach, no budget breach (~$36 of a ~$250 ceiling), nothing irreversible occurred; this is a direction decision, not a stop-the-line escalation.
 
-## 2026-06-17 — Experiment 005 CHARTERED: does the full multi-agent product-dev OS beat one agent?
+## 2026-06-17 - Experiment 005 CHARTERED: does the full multi-agent product-dev OS beat one agent?
 
 The biggest jump on the spectrum so far: from the proven basic single-agent position (001 PA, 003 coding) toward the sophisticated multi-agent OS end. Use case is a product-development operating system (ingest meetings/Slack → triage → plan → build → validate → approve, proactive, vision-aware, learns from interventions). The charter tests whether climbing the spectrum actually improves outcomes (autonomy + output quality) over the proven single agent on the same product-dev benchmark.
 
@@ -75,7 +104,7 @@ Honest framing (H-18 caveat): this is an ABSENCE of a fired enforcement path acr
   - **Impact:** future experiment runs are protected against the 004 runaway and will not reintroduce the gate.
 - **`TODO.md`:** the enforcement thread marked closed; the gate-fix and gate-stressing carry-forwards retired.
 
-## 2026-06-16 — Repo hygiene: gitignore runtime scratch; drop provisional throwaway experiments
+## 2026-06-16 - Repo hygiene: gitignore runtime scratch; drop provisional throwaway experiments
 
 ### Changed
 - **`runtime/` is now gitignored.** It had been committing thousands of disposable scratch files; dropped from tracking and ignored going forward.
@@ -83,7 +112,7 @@ Honest framing (H-18 caveat): this is an ABSENCE of a fired enforcement path acr
 ### Removed
 - **Provisional throwaway experiments `003b-gate-discriminate` and `004-enforcement-stress`** and their `results/` artifacts, built and run outside the experiment envelope on an unreliable rig and never audited. The H-18/H-20 gate-discrimination question they targeted remains OPEN (see the 003 takeaway below and `HYPOTHESES.md` H-20): the next experiment should reliably induce the in-place-mutation breach and run a divergent gate-predicate tournament to settle it.
 
-## 2026-06-16 — Experiment 003 (lean cut) CONCLUDED: basic blocks GENERALIZE PA -> coding; enforcement gate did NOT carry
+## 2026-06-16 - Experiment 003 (lean cut) CONCLUDED: basic blocks GENERALIZE PA -> coding; enforcement gate did NOT carry
 
 Ran the cross-domain generalization test: the PA-proven basic architecture ported to a single-agent coding assistant, as a two-architecture tournament (A_proven = ported architecture incl. the checked enforcement gate; A_null = same agent, prose-only, no gate) across a visible dev project (Tasklet, layered Python) and a blind, never-inspected held-out project (Plotline, TypeScript staged pipeline), 2 trials per task, hermetic scratch brain per trial, all costs from provider JSON. Run record + TAKEAWAY: `results/2026-06-16-exp003-lean.md`; scorecard: `experiments/003-coding-assistant/results/scorecard-003-lean.md`; findings: `FINDINGS/003-coding-assistant-lean.md`.
 
@@ -109,7 +138,7 @@ Ran the cross-domain generalization test: the PA-proven basic architecture porte
   - **Impact:** if your enforcement gate keys "consequential and not-allowed" on the absence of an approval artifact, an agent that escalates the risky part and just-does the easy part slips through. Gate on the action itself (an in-place mutation outside the draft path), independent of approvals.
 - **`results/2026-06-16-exp003-lean.md`** (run record + TAKEAWAY) and **`FINDINGS/003-coding-assistant-lean.md`** (consumable findings page: blocks carry, gate did not, the load-bearing lesson). The scorecard `experiments/003-coding-assistant/results/scorecard-003-lean.md` was already present.
 
-## 2026-06-16 — Experiment 002 (lean cut) CONCLUDED: anti-overfit + tournament machinery VALIDATED; A1-vs-A2 INCONCLUSIVE
+## 2026-06-16 - Experiment 002 (lean cut) CONCLUDED: anti-overfit + tournament machinery VALIDATED; A1-vs-A2 INCONCLUSIVE
 
 Ran the lean first cut at one notch up the spectrum: a divergent two-architecture tournament (A1 single agent + code-gate, carried from 001, vs A2 doer + checker) on a fixed benchmark across two worlds, dev (Marisol Vega, D1-D6) and a blind-authored held-out (Julian Reyes, H1-H5), 2 trials per task, hermetic scratch brain per trial, all costs from provider JSON. Run record + TAKEAWAY: `experiments/002-capable-personal-assistant/results/2026-06-16-exp002-lean.md`; scorecard: `experiments/002-capable-personal-assistant/results/scorecard-002-lean.md`; findings: `FINDINGS/002-capable-personal-assistant-lean.md`.
 
@@ -132,7 +161,7 @@ Ran the lean first cut at one notch up the spectrum: a divergent two-architectur
   - **Impact:** Treat tournament benchmark difficulty as a first-class design requirement: ship tasks that target each bet's weakness, and verify at least one bet's failure/enforcement path actually fired before trusting any ranking.
 - **`experiments/002-capable-personal-assistant/results/2026-06-16-exp002-lean.md`** (run record + TAKEAWAY) and **`FINDINGS/002-capable-personal-assistant-lean.md`** (consumable findings page: machinery validated, A1-vs-A2 inconclusive, the load-bearing lesson). The scorecard `results/scorecard-002-lean.md` was already present.
 
-## 2026-06-16 — Experiment 001 CONCLUDED: basic-PA architecture proven (thin) at 9/10; score outcomes, not mechanism
+## 2026-06-16 - Experiment 001 CONCLUDED: basic-PA architecture proven (thin) at 9/10; score outcomes, not mechanism
 
 Iter2 re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked gate ON and the T8/T9 scorers rebuilt to score OUTCOMES instead of implementation/phrasing. Result: **9/10, bar MET, no safety-floor failure across 30+ runs, cost in envelope (~$4.31, per-task agent median $0.08-$0.36). Experiment 001 reaches its goal and is CONCLUDED.** The two prior "failures" (T8 filing, T9 missing-info) were eval-rig false failures that vanished under outcome scoring with no expectation weakened; the lone remaining miss (T5, flaky 1/3) is attributable to the gate's generic correction writing an approval artifact about the wrong task, not to agent reasoning (the agent found the conflict, mutated nothing, sent nothing every trial), so the charter's "no flaky task attributable to the agent" clause holds. Run record + TAKEAWAY: `results/2026-06-16-exp001-iter2.md`; scorecard: `experiments/001-personal-assistant/results/scorecard-iter2.md`.
 
@@ -155,7 +184,7 @@ Iter2 re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked gate ON 
 ### Added
 - **`results/2026-06-16-exp001-iter2.md`** (run record + the concluding TAKEAWAY) and **`experiments/001-personal-assistant/results/scorecard-iter2.md`** (per-task scorecard with gate fires, corrective resolution, false-positives, all costs from provider JSON).
 
-## 2026-06-16 — Experiment 001 H-16 gated re-run: the checked gate fixes the escalation failure but not the headline rate
+## 2026-06-16 - Experiment 001 H-16 gated re-run: the checked gate fixes the escalation failure but not the headline rate
 
 Re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked harness gate ON (`bin/gate.py`, GATE=1: refuse an escalation lacking a `runtime/queue/approvals/` artifact, refuse a hand-edit to `knowledge/`, one corrective re-prompt on a fire). Run record: `results/2026-06-16-exp001-h16-gate.md`; scorecard: `experiments/001-personal-assistant/results/scorecard-h16-gated.md`. Headline: the gate did exactly what prose could not (flipped T5's escalation FAIL 0/3 -> PASS, escalation accuracy 0/1 -> 1/1, no regression on the 8 passers) but the suite stayed 8/10. 001 does NOT conclude; the bar (9/10) is not met. No safety-floor failure; cost envelope respected; budget intact.
 
@@ -170,7 +199,7 @@ Re-ran the full PA suite (T1-T10, 3 trials) with the H-16 checked harness gate O
 ### Added
 - **`results/2026-06-16-exp001-h16-gate.md`** and **`experiments/001-personal-assistant/results/scorecard-h16-gated.md`**: gated-run record and per-task scorecard (gate fires, corrective resolution, false-positives, costs all from provider JSON). Baseline `results/scorecard.md` left intact for comparison.
 
-## 2026-06-16 — Vision and experiment process documented
+## 2026-06-16 - Vision and experiment process documented
 
 Set the project's direction and the method. The goal: become the authoritative answer to "where do I start, and what is the optimal way to build an agentic solution for my use case?" by building and proving agent OS architectures across a complexity spectrum of use cases.
 
@@ -182,7 +211,7 @@ Set the project's direction and the method. The goal: become the authoritative a
 ### Changed
 - **`README.md`, `CLAUDE.md`**: point to `VISION.md` and `experiments/PROCESS.md`; a fresh agent now follows the process and its decision rights.
 
-## 2026-06-16 — Experiment 001 full 10-task suite: 8/10 pass, failure boundary at the write contract
+## 2026-06-16 - Experiment 001 full 10-task suite: 8/10 pass, failure boundary at the write contract
 
 Ran the full personal-assistant benchmark (T1-T10, 3 trials each, 30 agent runs plus LLM-judge calls), each trial in an isolated scratch brain reset from `seed/`. Run record: `results/2026-06-16-exp001-full-suite.md`; scorecard: `experiments/001-personal-assistant/results/scorecard.md`. Headline: the model is a strong *reasoner* about consequence but an unreliable *follower of the write contract*. The two failures (T5, T8) are both write-path/escalation-artifact misses, not reasoning misses.
 
@@ -204,7 +233,7 @@ Ran the full personal-assistant benchmark (T1-T10, 3 trials each, 30 agent runs 
 
 ---
 
-## 2026-06-16 — Pivot: architecture demoted to archive, repo reorganized around experiments
+## 2026-06-16 - Pivot: architecture demoted to archive, repo reorganized around experiments
 
 The repo is no longer a doctrine. All prior architecture docs (OVERVIEW, AGENT_ARCHITECTURE, BRAIN_ARCHITECTURE, TOOLS, and the recipes/ layer) are demoted to `archive/` as pre-evidence provenance. They may inform hypotheses but are not authoritative.
 
@@ -222,12 +251,12 @@ The repo is no longer a doctrine. All prior architecture docs (OVERVIEW, AGENT_A
 
 ---
 
-## 2026-06-16 — Tools: a building block for reaching beyond the brain
+## 2026-06-16 - Tools: a building block for reaching beyond the brain
 
 Names how an agent reaches an external service (email, a data API) as a first-class **building block**, the **tool**, and adds a focused doc plus a new recipe kind. A tool is *not* a new plane or invariant: it rides on consequence tags (#6), autonomy (`§8`), escalation (`§9`), secrets (`BRAIN_ARCHITECTURE.md` inv. #8), and the runtime area. "Tool" is the AI-native, human-sized word ("my agent needs gmail"); within a tool, the consequence-tagged operations are **actions** (already invariant #6's word).
 
 ### Added
-- **`TOOLS.md`** — a building-block doc (subordinate to the two peers). The model: a **tool** offers consequence-tagged **actions**; it separates into **tool / account / grant** (how many collapse is what makes one clean vs fiddly); **direction** (outbound actions, inbound events, or both); a **modular method** (reach = CLI/MCP/API/bash, data strategy = live or materialized) that is agnostic at the architecture level and pinned in the recipe, defaulting to **CLI-first** for token efficiency; two build principles (**power-user fidelity**, **token efficiency under intense use**); and **local materialization** (a cache in the runtime area) as an *earned* upgrade, never the base.
+- **`TOOLS.md`** - a building-block doc (subordinate to the two peers). The model: a **tool** offers consequence-tagged **actions**; it separates into **tool / account / grant** (how many collapse is what makes one clean vs fiddly); **direction** (outbound actions, inbound events, or both); a **modular method** (reach = CLI/MCP/API/bash, data strategy = live or materialized) that is agnostic at the architecture level and pinned in the recipe, defaulting to **CLI-first** for token efficiency; two build principles (**power-user fidelity**, **token efficiency under intense use**); and **local materialization** (a cache in the runtime area) as an *earned* upgrade, never the base.
 - **New recipe kind: tool recipes** (`recipes/tools/`). `provides: tool:<capability>` (e.g. `tool:email`), consumed by an agent via `requires: [tool:<capability>]`. Added `recipes/tools/TEMPLATE.md` and a worked **`recipes/tools/gmail.md`** (CLI-first, multiple accounts, inbound poll, optional SQLite cache, shared-inbox claim guard).
 - **Per-kind recipe templates.** The single root `recipes/TEMPLATE.md` is replaced by a dead-simple `TEMPLATE.md` in each folder (`brains/`, `agents/`, `tools/`, `kits/`).
 
@@ -235,57 +264,57 @@ Names how an agent reaches an external service (email, a data API) as a first-cl
 - **`recipes/README.md`** now lists **four** recipe kinds (brain / agent / tool / kit), notes that an agent recipe may `requires: [tool:<x>]`, and indexes `tools/gmail.md`. The root `README.md` adds a `TOOLS.md` row (marked a building block, not a third peer). `recipes/agents/TEMPLATE.md` gains a **Tools** prerequisite line.
   **Impact:** to give an agent an external capability, add a tool recipe under `recipes/tools/` and grant it in the agent's role (account handle + action subset, least-privilege); put the credential in your secret manager and the account **handle** in a `knowledge/tools/<name>/` registry, never the brain. Account count (shared inbox vs separate) is a deployment choice, not a different tool. Nothing in the two constitutions changed, so existing brains/agents need no migration; this only adds a building block. If you mirror the architecture's vocabulary, "an external integration/connection" is now "a **tool**," and the per-operation unit is an "**action**." `AGENT_ARCHITECTURE.md §5` and the personal-assistant recipe now use that split: an agent's **tools** are wired in the harness and granted in the role, and their consequence-tagged operations are **actions** (the PA's harness `tools.md` is renamed `actions.md`, and its step-3 table is now "Action | Consequence | In base?").
 
-The brain drops from three areas to two. An agent's **harness** — its system prompt, loop, tool wiring, and model binding — is machinery, code rather than data, so it now lives **with the runner** that executes it, not in the brain. The brain holds only **knowledge** (durable, OKF: facts + agent roles) and **runtime** (transient exhaust). This sharpens the brain-as-data / runner-as-code split and softens invariant #1: the brain holds all *state*, just not the harness *code*.
+The brain drops from three areas to two. An agent's **harness** - its system prompt, loop, tool wiring, and model binding - is machinery, code rather than data, so it now lives **with the runner** that executes it, not in the brain. The brain holds only **knowledge** (durable, OKF: facts + agent roles) and **runtime** (transient exhaust). This sharpens the brain-as-data / runner-as-code split and softens invariant #1: the brain holds all *state*, just not the harness *code*.
 
 ### Changed
 - **Brain: three areas → two.** `BRAIN_ARCHITECTURE.md` §1.2/§3/§5 now describe **knowledge** and **runtime** only; the harness is explicitly the runner's, not a brain area. Invariant #4 "Three areas, never confused" → **"Two areas, never confused"**; invariant #7's degrade list drops `harness`; the §3 diagram drops the `harness/` branch (with a note that it lives with the runner).
-  **Impact:** update any "three areas (knowledge / harness / runtime)" wording in your own docs and `AGENTS.md` to **"two areas (knowledge / runtime)."** You need not physically move `harness/` — colocating it with the brain on one machine is fine — but it is no longer a *brain area*; it is the runner's code. In a split deployment, ship the harness with the runner.
+  **Impact:** update any "three areas (knowledge / harness / runtime)" wording in your own docs and `AGENTS.md` to **"two areas (knowledge / runtime)."** You need not physically move `harness/` - colocating it with the brain on one machine is fine - but it is no longer a *brain area*; it is the runner's code. In a split deployment, ship the harness with the runner.
 - **`AGENT_ARCHITECTURE.md` invariant #1 reworded.** "Everything lives in the brain" → **"All state lives in the brain"**: everything the system learns or produces lives there; the harness and runner are stateless code outside it. Invariant #3 now notes the runner "holds none (its harness is code, not state)." The §5 anatomy table's "Why it lives in the brain" column becomes **"Where it lives, and why"** (role and reporting in the brain; harness and schedule with the runner; tool *permissions* in the role, *wiring* in the harness). New glossary term **Harness**; §13 gains a Harness row. `OVERVIEW.md`, `README.md`, and `CLAUDE.md` follow.
   **Impact:** wording in your own copies. If you cite invariant #1 as "everything lives in the brain," change it to "all *state* lives in the brain"; the harness is the carve-out.
 - **Recipes recategorize `harness/`.** `local-brain` presents the brain as two areas plus the runner's `harness/` (colocated for a one-machine build); `personal-assistant` and `starter-kit` reframe `harness/personal-assistant/` as the runner's machinery, not a brain area. The directory and every path, `loop.sh`, and cron line are unchanged.
-  **Impact:** none mechanical — only the framing changed. `harness/` is the runner's, not the brain's.
+  **Impact:** none mechanical - only the framing changed. `harness/` is the runner's, not the brain's.
 
 ---
 
-## 2026-06-16 — An agent's scope of work is its **role**, not its "job"
+## 2026-06-16 - An agent's scope of work is its **role**, not its "job"
 
-Renames the everyday word for what an agent is accountable for: **"job" → "role"**, and dials back how hard the docs lean on the concept. "Job" reads too close to "task" (a single unit of work); a **role** is a bounded set of responsibilities plus the tools and knowledge for them — a personal assistant, QA testing, prospecting, marketing manager. This refines the *"'job' replaces 'charter'"* entry below: the **agent** is still the durable primitive, and "role" now names its scope of work. Note "role" here is *not* the pre-2026-06-15 sense (a swappable executor, which became "agent") — it means the job description, one level down.
+Renames the everyday word for what an agent is accountable for: **"job" → "role"**, and dials back how hard the docs lean on the concept. "Job" reads too close to "task" (a single unit of work); a **role** is a bounded set of responsibilities plus the tools and knowledge for them - a personal assistant, QA testing, prospecting, marketing manager. This refines the *"'job' replaces 'charter'"* entry below: the **agent** is still the durable primitive, and "role" now names its scope of work. Note "role" here is *not* the pre-2026-06-15 sense (a swappable executor, which became "agent") - it means the job description, one level down.
 
 ### Changed
 - **"Job" → "role" throughout** both architecture docs, `OVERVIEW.md`, `README.md`, `CLAUDE.md`, and the `recipes/` layer. An **agent has a role**: a well-defined scope of work, written as a file in the brain. The §5 anatomy field **"Job" → "Role"**, and "Agents hold jobs" → **"Agents hold roles."**
-  **Impact:** rename "job" → "role" in your own docs, prompts, and `AGENTS.md` (e.g. "agents hold jobs" → "agents hold roles"; an agent's registration line `job:` → `role:`). **No structural change:** the OKF type stays **`type: Agent`**, agent definitions stay in **`knowledge/agents/`**, and run-record keys (`agent:` / `session:`) are unchanged — this is wording only.
+  **Impact:** rename "job" → "role" in your own docs, prompts, and `AGENTS.md` (e.g. "agents hold jobs" → "agents hold roles"; an agent's registration line `job:` → `role:`). **No structural change:** the OKF type stays **`type: Agent`**, agent definitions stay in **`knowledge/agents/`**, and run-record keys (`agent:` / `session:`) are unchanged - this is wording only.
 - **The concept is dialed back.** The docs no longer over-explain it or equate "an agent *is* a job"; the point is simply that each agent has a **well-defined scope of work**. Recurring-task uses of "job" (e.g. "the dreaming job") are now just "dreaming" / "the nightly pass."
   **Impact:** none required; cosmetic if you mirror the architecture's phrasing.
 
 ---
 
-## 2026-06-16 — Version control dropped from the architecture
+## 2026-06-16 - Version control dropped from the architecture
 
-The architecture no longer mentions version control at all. The earlier *"Git is no longer a prescribed technology"* entry demoted **git** to a recommended *capability* (version history); this removes the topic entirely. **OKF is the brain's sole hard commitment.** Version control is an implementation detail every builder already knows how to handle — the docs neither require, recommend, nor discuss it, so they stop cluttering the invariants and recipes with it.
+The architecture no longer mentions version control at all. The earlier *"Git is no longer a prescribed technology"* entry demoted **git** to a recommended *capability* (version history); this removes the topic entirely. **OKF is the brain's sole hard commitment.** Version control is an implementation detail every builder already knows how to handle - the docs neither require, recommend, nor discuss it, so they stop cluttering the invariants and recipes with it.
 
 ### Changed
-- **`BRAIN_ARCHITECTURE.md`** — invariant #2 is now just **"Plain text, conforming to OKF"** (no version-control clause). §0, the §3 diagram, §7, §9 (intro + the dropped "Version control" table row), and the glossary no longer mention version history, audit-via-version, or revert; auditability now rests on the run-ledger and each doc's OKF `log.md`.
-- **Cross-doc** — `OVERVIEW.md`, `AGENT_ARCHITECTURE.md` (including the example-stack table, now "Markdown (OKF)" rather than "Markdown + git (OKF)"), and `CLAUDE.md` drop their version-control lines.
-- **Recipes de-git'd** — `recipes/brains/local-brain.md` removes git from the stack, prerequisites, ingredients, the "init the repo" step, the `brain` CLI's `commit()` (the CLI just writes files now), the "commits" notes in the command table, the `git log` Doneness check, and both git substitution rows. `recipes/kits/starter-kit.md`, `recipes/README.md`, and `recipes/agents/personal-assistant.md` follow.
-  **Impact:** the architecture now asks **nothing** about version control — keep using git (or anything) for your brain exactly as before; it's simply no longer part of the spec, so nothing "complies" or "doesn't" on that axis. If your `AGENTS.md`, docs, or the local-brain `brain` CLI still tie writes to auto-commits or call version control an architectural requirement, you can leave them (harmless) or trim the mentions to match. OKF conformance of the knowledge layer is the only brain requirement. **Supersedes the "Git is no longer a prescribed technology" entry below.**
+- **`BRAIN_ARCHITECTURE.md`** - invariant #2 is now just **"Plain text, conforming to OKF"** (no version-control clause). §0, the §3 diagram, §7, §9 (intro + the dropped "Version control" table row), and the glossary no longer mention version history, audit-via-version, or revert; auditability now rests on the run-ledger and each doc's OKF `log.md`.
+- **Cross-doc** - `OVERVIEW.md`, `AGENT_ARCHITECTURE.md` (including the example-stack table, now "Markdown (OKF)" rather than "Markdown + git (OKF)"), and `CLAUDE.md` drop their version-control lines.
+- **Recipes de-git'd** - `recipes/brains/local-brain.md` removes git from the stack, prerequisites, ingredients, the "init the repo" step, the `brain` CLI's `commit()` (the CLI just writes files now), the "commits" notes in the command table, the `git log` Doneness check, and both git substitution rows. `recipes/kits/starter-kit.md`, `recipes/README.md`, and `recipes/agents/personal-assistant.md` follow.
+  **Impact:** the architecture now asks **nothing** about version control - keep using git (or anything) for your brain exactly as before; it's simply no longer part of the spec, so nothing "complies" or "doesn't" on that axis. If your `AGENTS.md`, docs, or the local-brain `brain` CLI still tie writes to auto-commits or call version control an architectural requirement, you can leave them (harmless) or trim the mentions to match. OKF conformance of the knowledge layer is the only brain requirement. **Supersedes the "Git is no longer a prescribed technology" entry below.**
 
 ---
 
-## 2026-06-16 — Agents replace roles; "job" replaces "charter"; machinery area is now `harness/`
+## 2026-06-16 - Agents replace roles; "job" replaces "charter"; machinery area is now `harness/`
 
-A pervasive vocabulary and folder change across both architecture docs, `OVERVIEW.md`, `README.md`, `CLAUDE.md`, and the whole `recipes/` layer. It **reverses the 2026-06-15 "agents take on roles" framing**: the agent is now the single durable primitive, not a swappable executor that fills a role. People think in *agents*, not roles, and treat the model/provider as the swappable part — the architecture now matches that intuition. This is the largest single rename so far; the `/architecture-update` skill will walk a brain through it.
+A pervasive vocabulary and folder change across both architecture docs, `OVERVIEW.md`, `README.md`, `CLAUDE.md`, and the whole `recipes/` layer. It **reverses the 2026-06-15 "agents take on roles" framing**: the agent is now the single durable primitive, not a swappable executor that fills a role. People think in *agents*, not roles, and treat the model/provider as the swappable part - the architecture now matches that intuition. This is the largest single rename so far; the `/architecture-update` skill will walk a brain through it.
 
 ### Changed
 - **"Role" is retired as a first-class term; the agent is the durable unit.** An **agent** is the worker you name, hire, trust, and promote; what it's accountable for is its **job** (the everyday word, formerly "role"). The agent's job and memory live in the brain, so the agent persists across runs.
   **Impact:** rename "role" → "agent" throughout your own docs, prompts, and `AGENTS.md`; "the role's scope/job" → "the agent's job". The **"This brain's roles"** list in `AGENTS.md` becomes **"This brain's agents."**
-- **Swappability moved down a layer.** Invariant #3 is now **"The runner is swappable"** (was "Agents are swappable"): the **session** (one stateless run) and the **provider** (model + execution environment) are replaceable with no loss of state — *because the agent's job and memory live in the brain*. The agent itself is no longer described as swappable.
+- **Swappability moved down a layer.** Invariant #3 is now **"The runner is swappable"** (was "Agents are swappable"): the **session** (one stateless run) and the **provider** (model + execution environment) are replaceable with no loss of state - *because the agent's job and memory live in the brain*. The agent itself is no longer described as swappable.
   **Impact:** wording, but it inverts the headline. Where your docs say "agents are swappable," say "the session/provider is swappable; the agent persists." New glossary term **Session / provider** replaces **Agent provider**.
 - **"Charter" is gone; an agent is defined by its `job`.** The document that pins an agent down is its **job** (`type: Agent`), no longer a "charter" (`type: Role Charter`). One fewer term.
   **Impact:** rename the OKF type **`Role Charter` → `Agent`** in every agent-definition doc, and "charter" → "job" in prose. Any tooling or queries that filter on `type: Role Charter` must update.
 - **Brain folders renamed.** `knowledge/roles/` → **`knowledge/agents/`** (the agents' jobs), and the durable machinery area `agents/` → **`harness/`** (each agent's system prompt, loop, tools, model binding). The brain's three areas are now **knowledge / harness / runtime** (invariant #4 and #7 wording: "role machinery" → "agent harness").
-  **Impact:** in your brain, `git mv knowledge/roles knowledge/agents` and `git mv agents harness`, then fix path references in `bin/brain`, loop scripts, cron entries, and `AGENTS.md`. Because the agent's *job* now lives at `knowledge/agents/`, the word "agent" no longer names the machinery folder — that is the collision this rename resolves.
+  **Impact:** in your brain, `git mv knowledge/roles knowledge/agents` and `git mv agents harness`, then fix path references in `bin/brain`, loop scripts, cron entries, and `AGENTS.md`. Because the agent's *job* now lives at `knowledge/agents/`, the word "agent" no longer names the machinery folder - that is the collision this rename resolves.
 - **Run records re-keyed.** The telemetry record's `role:` / `agent:` pair becomes **`agent:` / `session:`**, and `brain run --role R --agent A` becomes `brain run --agent A --session S`.
-  **Impact:** update your `loop.sh`/harness and any dashboards or evals that read the `role` field. Existing run-ledger files are history — leave them; new runs use the new keys.
+  **Impact:** update your `loop.sh`/harness and any dashboards or evals that read the `role` field. Existing run-ledger files are history - leave them; new runs use the new keys.
 - **Recipes layer renamed.** "Role recipe" → **agent recipe**; the `recipes/roles/` directory → **`recipes/agents/`**; frontmatter `type: role-recipe` → **`agent-recipe`** and `provides: role:<x>` → **`agent:<x>`**.
   **Impact:** if you vendor or author recipes, move the directory and update those frontmatter keys.
 - **"System role" → "System agent"** (the dreaming / ingestion / planner owner); "per-role autonomy dial" → "per-agent." In `AGENT_ARCHITECTURE.md §13` the provider cell reads "model + execution environment" rather than "model + harness," so "harness" unambiguously means the new folder.
@@ -293,17 +322,17 @@ A pervasive vocabulary and folder change across both architecture docs, `OVERVIE
 
 ---
 
-## 2026-06-16 — Git is no longer a prescribed technology
+## 2026-06-16 - Git is no longer a prescribed technology
 
 Resolves a contradiction: the docs are tech-agnostic outside `recipes/` and `kits/`, yet the brain's invariant #2 named **git** as a required technology. The fix separates the brain's *one format commitment* (OKF) from its *required capability* (version history). Git is demoted to the obvious implementation of that capability, named only in recipes.
 
 ### Changed
 - **`BRAIN_ARCHITECTURE.md` invariant #2** reframed from "Plain text in git, conforming to OKF" to "Plain text, conforming to OKF, under version control." Version control is now a required **capability** (a tracked, reversible history = the audit log and undo), not a prescribed tool. The §0 framing, §9 fill-in table (now a distinct **Version control** row), glossary, and the cross-doc summaries in `AGENT_ARCHITECTURE.md`, `OVERVIEW.md`, and `README.md` follow suit (e.g. "plain files under version control," "a tracked, reversible change you can revert").
-  **Impact:** brains built on git are **fully compliant, no action needed** — git remains the default and what every recipe uses. What changed is the *definition of compliance*: a brain kept under any version-control system that tracks changes reversibly now also conforms. If your own docs or `AGENTS.md` describe git as a hard requirement of the architecture, soften that to "version control is required; git is the default." The brain still must be versioned somehow; that requirement did not loosen.
+  **Impact:** brains built on git are **fully compliant, no action needed** - git remains the default and what every recipe uses. What changed is the *definition of compliance*: a brain kept under any version-control system that tracks changes reversibly now also conforms. If your own docs or `AGENTS.md` describe git as a hard requirement of the architecture, soften that to "version control is required; git is the default." The brain still must be versioned somehow; that requirement did not loosen.
 
 ---
 
-## 2026-06-16 — Diagrams: Mermaid for flows
+## 2026-06-16 - Diagrams: Mermaid for flows
 
 A documentation-convention change. No invariant, layout, or build step changes; the docs read the same, they just render their flow diagrams.
 
@@ -313,9 +342,9 @@ A documentation-convention change. No invariant, layout, or build step changes; 
 
 ---
 
-## 0.2.0 — 2026-06-16 — First tagged release
+## 0.2.0 - 2026-06-16 - First tagged release
 
-Tags the accumulated baseline as a stable version: the three-area brain, the *agents take on roles* reframe, the recipes layer, the brain↔architecture reference/vendoring model, and the rename of the project to **Agent OS**. No new behavior beyond the entries below — this is a version marker so brains can pin and update against a named release.
+Tags the accumulated baseline as a stable version: the three-area brain, the *agents take on roles* reframe, the recipes layer, the brain↔architecture reference/vendoring model, and the rename of the project to **Agent OS**. No new behavior beyond the entries below - this is a version marker so brains can pin and update against a named release.
 
 ### Changed
 - **VERSION `0.1.0` → `0.2.0`.**
@@ -323,15 +352,15 @@ Tags the accumulated baseline as a stable version: the three-area brain, the *ag
 
 ---
 
-## 2026-06-15 — Versioning + the brain↔architecture reference model
+## 2026-06-15 - Versioning + the brain↔architecture reference model
 
 Brains can now point back to the architecture they were built from, and update against it.
 
 ### Added
 - **Architecture versioning.** A `VERSION` file (now `0.1.0`) so a brain can pin to a specific release and reconcile against later ones.
-  **Impact:** none required — new brains just record the version they were built on.
+  **Impact:** none required - new brains just record the version they were built on.
 - **Brains now reference the architecture.** The recipes install, into each brain: a root **`AGENTS.md`** (what the system is, the invariants it must keep, the supported way to extend it = add a role via a role recipe, this brain's roles, and how to update) plus a one-line `CLAUDE.md` shim; a **pinned, read-only `.agent-os/`** vendored snapshot (version + commit + upstream URL); and a **`/architecture-update`** skill that diffs this `CHANGELOG.md` from the brain's pinned version and applies each entry's **Impact** note to reconcile the brain. The model is package-manager-style (vendor + update), *not* clone-and-build-inside.
-  **Impact:** if you built a brain before this, add the reference so a coding agent working in it honors the architecture — vendor a pinned copy into `.agent-os/`, write a root `AGENTS.md` (invariants + how to extend via role recipes + your roles), and install the update skill; or re-run the scaffolding from the updated `local-brain` recipe. Then run `/architecture-update` to stay current.
+  **Impact:** if you built a brain before this, add the reference so a coding agent working in it honors the architecture - vendor a pinned copy into `.agent-os/`, write a root `AGENTS.md` (invariants + how to extend via role recipes + your roles), and install the update skill; or re-run the scaffolding from the updated `local-brain` recipe. Then run `/architecture-update` to stay current.
 
 ### Changed
 - **The architecture is now its own repo:** [github.com/heyharmon/agent-os](https://github.com/heyharmon/agent-os), extracted from a personal docs collection (history preserved). This is the canonical upstream that brains vendor from and update against.
@@ -339,34 +368,34 @@ Brains can now point back to the architecture they were built from, and update a
 
 ---
 
-## 2026-06-15 — "Agents take on roles" (role/agent reframe)
+## 2026-06-15 - "Agents take on roles" (role/agent reframe)
 
 A terminology and framing change, not a structural one. The brain layout, charters, run records, and recipes are unchanged on disk.
 
 ### Changed
-- **The agent is now the foreground actor; a role is the job it holds.** Reversed the earlier framing that demoted "agent" to a "disposable shift of work / pair of hands" and crowned the **role** the "virtual employee." Now: **agents take on roles the way people take jobs** — the agent is the worker (it holds a bounded context, tools, and knowledge); the role is the durable, well-defined job that owns accountability and the tools+knowledge for the work. The "virtual employee" term is retired.
-  **Impact:** mostly wording. If your own docs, prompts, or charters call the role a "virtual employee" or the agent a "shift of work / pair of hands," update them — agent = the worker that *fills* a role; role = the job it holds. No change to the brain's areas, charters, or the `agents/` machinery.
-- **Swappability is now told through stateless runs + agent providers.** Invariant #3 is renamed **"Agents are swappable"** (was "disposable"): a run holds no state, and the **provider** behind an agent — the model + harness (Anthropic, OpenAI, an open-source model) — can be swapped without touching the role or the brain. New glossary term **Agent provider**.
+- **The agent is now the foreground actor; a role is the job it holds.** Reversed the earlier framing that demoted "agent" to a "disposable shift of work / pair of hands" and crowned the **role** the "virtual employee." Now: **agents take on roles the way people take jobs** - the agent is the worker (it holds a bounded context, tools, and knowledge); the role is the durable, well-defined job that owns accountability and the tools+knowledge for the work. The "virtual employee" term is retired.
+  **Impact:** mostly wording. If your own docs, prompts, or charters call the role a "virtual employee" or the agent a "shift of work / pair of hands," update them - agent = the worker that *fills* a role; role = the job it holds. No change to the brain's areas, charters, or the `agents/` machinery.
+- **Swappability is now told through stateless runs + agent providers.** Invariant #3 is renamed **"Agents are swappable"** (was "disposable"): a run holds no state, and the **provider** behind an agent - the model + harness (Anthropic, OpenAI, an open-source model) - can be swapped without touching the role or the brain. New glossary term **Agent provider**.
   **Impact:** if a single model/vendor is baked into your role definitions, move provider choice to the harness layer so it's swappable, per the architecture. No brain or charter changes required.
 
 ---
 
-## 2026-06-15 — Three-area brain, System role, and the recipes layer
+## 2026-06-15 - Three-area brain, System role, and the recipes layer
 
 Inaugural entry establishing the current baseline.
 
 ### Added
 - **`recipes/` implementation layer.** A prescriptive, stack-specific build layer beneath the tech-agnostic docs, in three kinds: **brain recipes** (the foundation), **role recipes** (one role each, modular), and **kits** (a brain + role(s) combined). The architecture docs stay agnostic; recipes are where a concrete stack is chosen.
-  **Impact:** none required — additive. If you want a turnkey build instead of interpreting the architecture yourself, start from a kit.
+  **Impact:** none required - additive. If you want a turnkey build instead of interpreting the architecture yourself, start from a kit.
 
 ### Changed
-- **The brain is now three areas, not two layers.** `knowledge/` (curated, durable, OKF) · `agents/` (role machinery — prompts, loops, tool lists, skills — durable but *not* OKF) · `runtime/` (work-queue, run-ledger, feedback, evals — transient, not OKF). Role machinery previously had no clear home; it now gets its own area, separated from regenerable runtime exhaust along two axes (*OKF vs. not* and *durable vs. transient*).
+- **The brain is now three areas, not two layers.** `knowledge/` (curated, durable, OKF) · `agents/` (role machinery - prompts, loops, tool lists, skills - durable but *not* OKF) · `runtime/` (work-queue, run-ledger, feedback, evals - transient, not OKF). Role machinery previously had no clear home; it now gets its own area, separated from regenerable runtime exhaust along two axes (*OKF vs. not* and *durable vs. transient*).
   **Impact:** if you implemented the old two-layer split, add an **`agents/`** area and move role machinery (system prompts, loop scripts, tool definitions, skills) into it, out of the runtime/operational layer. The knowledge layer is unchanged. Brain invariant #4 is now "three areas, never confused."
-- **Dreaming is owned by a dedicated System role** and split by nature of work: **cross-cutting consolidation** (ingest, reconcile across roles, surface cross-role patterns, the digest) — always global — and **per-role reflection** (a role reviewing its own runs/feedback/charter) — an *earned* split you make only when the global pass is too coarse.
+- **Dreaming is owned by a dedicated System role** and split by nature of work: **cross-cutting consolidation** (ingest, reconcile across roles, surface cross-role patterns, the digest) - always global - and **per-role reflection** (a role reviewing its own runs/feedback/charter) - an *earned* split you make only when the global pass is too coarse.
   **Impact:** if you ran dreaming as a role-less nightly job, reassign it to an explicit **System role** so it rolls up to an accountable owner. Start with that one role doing all reflection; split per-role only when warranted.
 
 ### Fixed
-- **Invariant #4 ("every capability rolls up to a role") is now absolute** — dreaming no longer contradicts it, since the System role owns the cross-cutting work. No carve-out needed.
-- **Write contract surfaced in the agent doc.** Agents write back *through the brain's write contract*, not by editing raw files — aligning the agent doc with brain invariant #5.
+- **Invariant #4 ("every capability rolls up to a role") is now absolute** - dreaming no longer contradicts it, since the System role owns the cross-cutting work. No carve-out needed.
+- **Write contract surfaced in the agent doc.** Agents write back *through the brain's write contract*, not by editing raw files - aligning the agent doc with brain invariant #5.
 - **OKF restored to the example stacks**, and database cells labeled as *indexes* over the files, so no example reads as a database-as-source-of-truth (which the brain anti-patterns forbid).
 - **Run-ledger format clarified** as illustrative operational-layer state (not OKF knowledge), and stale section cross-references corrected.

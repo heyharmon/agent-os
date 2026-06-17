@@ -55,6 +55,27 @@ below means "showed no advantage on a benchmark that could not stress it," NOT
 
 ---
 
+## Blocks evaluated in experiment 006 (validation-separation, a fail-capable benchmark)
+
+Experiment 006 built the benchmark 002/003/005 never managed: hard enough that the
+single agent demonstrably FAILS (it files a fabricated convention to durable
+knowledge, FAB-GAP 0/2 on both worlds), targeted at the one weakness 005 surfaced.
+It ran three arms, S (single), P (fresh-context second pass, same generalist), and
+M (scoped planner/builder/validator), to isolate whether any win is FRESH CONTEXT
+or SCOPED ROLES (`FINDINGS/006-validation-separation.md`). Result: scoped roles win
+on fabrication-into-knowledge; fresh context does not. The decisive mechanism is a
+planner PROMPT scoped to "flag the gap, never fabricate," ONE guardrail on the
+single agent, not a multi-agent split. The self-validation half did not reproduce.
+
+| Building block | What it is | Verdict | Confidence | Experiment |
+|---|---|---|---|---|
+| Scoped no-fabrication authoring role | A planner/author prompt scoped to "flag a missing convention and escalate it; never fabricate one and file it to durable knowledge." | EARNED ITS PLACE on fabrication-into-knowledge. M did not fabricate on held-out (FAB-GAP-H 0/2) where the single agent and the fresh-context arm both did (2/2), with no over-escalation regression (FAB-USE-H 2/2, uses a convention that DOES exist). The one block that did the work. | SUPPORTED-but-narrow (one axis, one cut; H-21 fabrication half, H-05) | [006](../experiments/006-validation-separation/results/scorecard-iter1.md) |
+| Fresh-context validation pass | The same generalist agent run a second time with fresh context (no role scoping) to review the build before approval. | DID NOT earn its place. P equalled the single agent on the discriminating axis (both FAB-GAP-H 0/2): pass-1 commits the fabrication to durable knowledge before fresh eyes look, and a fresh pass cannot un-file it. Worst value (~2x single-agent cost, zero gain on the axis that mattered). | NOT SUPPORTED on this axis (H-21 fresh-context leg) | [006](../experiments/006-validation-separation/results/scorecard-iter1.md) |
+| Separated validator vs self-validation (authorship bias) | A separate validator session reviewing the author's own freshly-written code for a buried regression. | INCONCLUSIVE / not tested. BURIED-REG did NOT discriminate: every arm, including the single agent, self-caught its own float-math regression 2/2 on both worlds. The authorship bias 005 hinted at did not manifest on a clearly-specified ADR-violation regression. | INCONCLUSIVE (H-21 self-validation half; non-discriminating) | [006](../experiments/006-validation-separation/results/scorecard-iter1.md) |
+| Brain-as-bus under a same-method collision (H-03) | M's two builders edit the SAME method/lines via two issues queued together, coordinating only through brain files. | Held: 0 lost-work on CONFLICT/CONFLICT-H, both changes survived and reconciled 2/2 on both worlds. Harder than 005's same-file-only collision, but the edits were mechanically reconcilable, so the bus was not forced to break. | SUPPORTED-but-thin (held across two experiments, never stressed to failure) | [006](../experiments/006-validation-separation/results/scorecard-iter1.md), [005](../experiments/005-product-dev-os/results/scorecard-iter1.md) |
+
+---
+
 ## Blocks not yet evaluated
 
 These are in `HYPOTHESES.md` but no experiment has concluded on them.
