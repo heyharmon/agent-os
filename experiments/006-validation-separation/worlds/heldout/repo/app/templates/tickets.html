@@ -1,0 +1,10 @@
+{# Ticket list view. Server-rendered Jinja (no SPA framework, ADR 0104). #}
+{% extends "layouts/app.html" %}
+{% block content %}
+  <h1>Tickets for {{ org.name }}</h1>
+  <ul>
+    {% for ticket in tickets %}
+      <li>{{ ticket.subject }} ({{ ticket.status }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
