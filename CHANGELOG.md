@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-17 - Queued experiment 007: OKF as the brain's knowledge format
+
+Chartered a test of whether committing the brain's knowledge layer to Google's Open Knowledge Format (OKF v0.1) is worth its cost over our current ad-hoc markdown + YAML frontmatter (H-07). Not started; no runs. Queued while scaffolding the separate `aos-brain` build, which deliberately ships plain frontmatter until this settles.
+
+### Added
+- **`experiments/007-okf-brain-format/`** (charter + README). Two divergent brain-format arms (A_plain vs A_okf) on the reused 003 coding benchmark, dev + blind held-out. Pre-registers a portability discriminator per H-18: point a generic OKF-aware reader at each brain and require it to answer using only OKF-standard fields. Bar = task-pass parity (OKF must not regress) plus a fired portability win; safety floor unchanged (no fabrication, no consequential action).
+
+### Changed
+- **H-07 (OKF worth its cost over plain frontmatter): UNTESTED -> UNTESTED, QUEUED as 007.** Updated with the published OKF v0.1 spec facts (markdown + frontmatter, one required `type`, six standard fields, reserved `index.md`/`log.md`, a markdown-link graph) and a sharpened, fireable test. Key prior: OKF v0.1 is nearly identical to the proven file brain, so the cost side is small and the open question is whether the interop benefit is real or ceremony.
+  - **Impact:** do not adopt OKF in any build until 007 supports it.
+- **`TODO.md`:** added a "Queued experiments" entry for 007.
+
 ## 2026-06-17 - Added the consolidated evidence reference; renamed the repo to aos-experiments
 
 Synthesized everything proven across experiments 001-006 into a single consumable reference, and renamed the GitHub repo `agent-os` -> `aos-experiments`.
