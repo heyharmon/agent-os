@@ -117,19 +117,51 @@ The two former gate carry-forwards are RETIRED:
   stress. (If prose-only self-compliance is ever to be stressed adversarially,
   that is a fresh question, not a gate test.)
 
+## Experiment 005 (product-dev OS): CONCLUDED 2026-06-17 — SINGLE AGENT WINS; multi-agent did not earn its place
+
+A 4-arm ablation tournament (single agent vs +agent-split vs +staged-ingestion vs
++heartbeat) on a product-development benchmark, dev + blind held-out, 2 trials.
+Every arm passed held-out 7/7 with a clean safety floor and none beat the rung
+below it, so by the simplest-wins tie-rule the **single agent is the proven
+product-dev OS architecture here** (and the cheapest, ~$4.94 vs $6.37-7.06). The
+agent split, staged ingestion, and heartbeat bought zero held-out advantage; the
+middle is deleted. Stopping criterion: NON-DISCRIMINATING benchmark (the four
+designed discriminators all converged). TAKEAWAY: `experiments/005-product-dev-os/results/run-log.md`;
+scorecard: `experiments/005-product-dev-os/results/scorecard-iter1.md`; findings:
+`FINDINGS/005-product-dev-os.md`. Hypotheses moved: H-03 -> SUPPORTED-but-thin
+(brain-as-bus held, first 2+-agent run); H-05/H-10 -> INCONCLUSIVE leaning
+no-advantage; H-13 -> INCONCLUSIVE (never exercised); H-18 re-confirmed a 3rd
+time; H-08/H-17 re-confirmed.
+
+The one real signal worth chasing: dev AMBIG, where the single agent fabricated a
+pagination convention into durable knowledge (ADR) while the scoped-planner arms
+escalated. Thin (parity task, dev-only, did not replicate on held-out), but it is
+the only place the split showed an edge.
+
 ### OPERATOR DECISION (not autonomous): the next direction
-The loop has now held across three experiments (001, 002, 003) including
-blind held-out worlds in 002 and 003. The next direction is an operator-level
-choice, not autonomous:
-- [ ] **Scale up** a fuller coding run (3 trials, second held-out project,
-  weakness-targeting tasks) to advance H-19 past thin. (No gate to re-test; the
-  enforcement thread is closed.)
+The loop has now held across FOUR experiments (001, 002, 003, 005) including
+blind held-out worlds in 002/003/005 and the first 2+-agent run in 005. The next
+direction is an operator-level choice:
+- [ ] **The named next experiment for 005's open question:** make
+  AMBIGUITY/fabrication-resistance the discriminating axis (MULTIPLE ambiguity
+  tasks across BOTH worlds) + a buried-regression task only a dedicated
+  fresh-context validator could catch + a TRUE concurrent-conflict coordination
+  task (two issues editing the same LINES). The smallest change that could make
+  the split earn its place or refute H-05 cleanly. This is the dominant
+  carry-forward: H-18 says our benchmarks are the binding constraint, not the
+  architectures, so the highest-leverage move is a HARDER, discrimination-targeting
+  benchmark.
 - [ ] **A third domain** (marketing, sales, ops) to push H-19 toward PROVEN.
-- [ ] **Multi-agent** (unblocks H-03, the brain-as-bus coordination test).
-- [ ] **Build the loop automation** now that the loop has held across multiple
-  experiments incl. held-out (per PROCESS.md, automate after the loop is proven
-  on more than one data point; that bar is now arguably met).
+- [ ] **Self-improvement (H-01)**, deferred by the 005 charter; the marquee bet,
+  still UNTESTED.
+- [ ] **Build the loop automation** now that the loop has held across four
+  experiments incl. held-out and multi-agent (per PROCESS.md, automate after the
+  loop is proven on more than one data point; that bar is met).
 
 ## Open hypotheses needing experiments
 
-See `HYPOTHESES.md`. H-03 is blocked (needs a second agent). H-01 (self-improvement loop) is the marquee bet and still UNTESTED. Completed pre-pivot design notes are in `archive/todos.md`.
+See `HYPOTHESES.md`. H-03 is no longer blocked (005 ran the first 2+-agent test;
+SUPPORTED-but-thin, untested by a true concurrent conflict). H-01
+(self-improvement loop) is the marquee bet and still UNTESTED. H-18 is the
+recurring blocker: build a benchmark hard enough to discriminate divergent
+architectures. Completed pre-pivot design notes are in `archive/todos.md`.

@@ -1,0 +1,46 @@
+=== M heldout ING-H trial 1/2 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T085835Z-single-20981.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.088763
+  judge: All five real work items are present and correctly staged (blank-name bug, rush multiplier, copy fix, rate-limiting as needs-decision not build work, mark-completed transition). Every noise/deferred/parked item is excluded with correct reasoning, including the SLA email alerts, session-secret rotation, MySQL/maps-SDK, SPA rebuild, and chatbot joke. No fabricated tasks.
+  cost_usd=0.252991 tokens_in(total)=190724 tokens_out=5522
+=== M heldout ING-H trial 2/2 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T090025Z-single-4888.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.089417
+  judge: All five real work items are filed correctly: blank-name bug (i1), rush-multiplier feature (i2), rate-limiting as a needs-decision flag not build work (i4), copy fix (i5), and mark-completed transition (i6). All noise is correctly excluded: session-secret rotation, MySQL/maps SDK (ADR 0003), React SPA/live-map (ADR 0004), fleet-status chatbot, and SLA-breach email alerts (explicitly parked). No fabricated tasks.
+  cost_usd=0.326064 tokens_in(total)=279492 tokens_out=7002
+== M ING-H: PASS (2/2) agent_cost=0.289528
+=== M heldout PLAN-L-H trial 1/2 (roles: planner) ===
+--- role=planner (step 1) ---
+runtime/runs/20260617T090322Z-planner-11673.json
+task PLAN-L-H (hybrid): PASS
+  [x] plan_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.098644
+  judge: The plan names all three touch points explicitly: ServiceOrderService (applyRushToOrder + rushedTotal delegating to the existing applyRush), DepotBoardController (passing rushedTotalMinutes to the view), and vehicles.ejs (displaying rushed total). Rush math is correctly placed in the service layer with integer minutes and Math.round only at the applyRush boundary per ADR 0002. No code was written to repo/ and nothing was committed.
+  cost_usd=0.469474 tokens_in(total)=405540 tokens_out=11727
+=== M heldout PLAN-L-H trial 2/2 (roles: planner) ===
+--- role=planner (step 1) ---
+runtime/runs/20260617T090702Z-planner-14827.json
+task PLAN-L-H (hybrid): PASS
+  [x] plan_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.102926
+  judge: The plan names all three touch points (ServiceOrderService with rush math + integer rounding, the controller layer with thin rush and board actions, and vehicles.ejs for display), places all domain logic and the 75% cap enforcement in the service layer per the layering convention, explicitly requires integer minutes with Math.round() at the multiplier boundary per ADR 0002, and produces only a plan file plus handoff artifact with no code written and nothing committed.
+  cost_usd=0.555194 tokens_in(total)=578988 tokens_out=12660
+== M PLAN-L-H: PASS (2/2) agent_cost=0.512334
+=== M heldout BUILD-L-H trial 1/2 (roles: planner builder) ===
+--- role=planner (step 1) ---

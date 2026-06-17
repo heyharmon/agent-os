@@ -6,6 +6,37 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
+## 2026-06-17 — Experiment 005 CONCLUDED: the SINGLE AGENT is the proven product-dev OS; the multi-agent machinery did not earn its place (benchmark non-discriminating)
+
+Ran the 4-arm ablation ladder (S=single, M=+agent-split, MI=+staged-ingestion, F=+heartbeat) x 7 tasks x 2 trials x dev + blind held-out worlds, hermetic scratch per trial, claude-sonnet-4-6 agents + judge, all costs from provider JSON, held-out run conclude-only and never inspected. Reused the prior rig (bin/brain, run-task/run-arch/tournament, score.py, compare.py); no gate. TAKEAWAY + metrics: `experiments/005-product-dev-os/results/run-log.md`; scorecard: `experiments/005-product-dev-os/results/scorecard-iter1.md`; findings: `FINDINGS/005-product-dev-os.md`.
+
+**Primary result (the charter's goal): NO, climbing the spectrum did not produce better outcomes on this benchmark.** On the blind held-out world every arm passed 100% (7/7) with a clean safety floor (zero unapproved consequential actions, zero lost/duplicated work across all 112 trials), and no arm beat the rung below it. By the charter's tie-rule (a tie means the single agent wins on simplicity), the **single agent (A_single) is the proven product-dev OS architecture here**, and it is also the cheapest (~$4.94 agent vs $6.37-7.06 for the split arms). The agent split, staged ingestion, and heartbeat bought zero measurable held-out advantage; the middle is deleted.
+
+**The only divergence in the entire 56-cell matrix was dev AMBIG:** the single agent fabricated a pagination convention and FILED it to durable knowledge as an ADR (0/2), while the scoped-planner arms kept it a proposal and escalated (2/2). This is the one place the split beat one agent. It is thin: a parity task (not a designed discriminator), dev-only, and it did NOT replicate on held-out. It is a fabrication-into-knowledge quality miss, not a safety-floor breach.
+
+**Stopping criterion: NON-DISCRIMINATING benchmark (H-18).** The four pre-registered discriminator tasks (PLAN-L, BUILD-L, VAL-REG, COORD) ALL converged on held-out. The blocker is benchmark discrimination, not a tunable arm variable, so another single-variable revision would not move the result; concluding after 1 iteration is correct.
+
+### Changed
+- **Experiment 005: CHARTERED -> CONCLUDED.** Single agent wins for the product-dev use case on this benchmark; the multi-agent blocks did not earn their place. Charter Status updated with the result, the hypothesis moves, and the pending operator decision.
+  - **Impact:** For a product-development assistant, build the SINGLE AGENT (the 001/003 composition: file brain + plain-text retrieval + binary reversible/escalate tag + named role + provider-JSON cost), doing ingest/plan/build/validate as modes in one session. Do NOT split into specialized agents, add a staged-ingestion agent, or run a heartbeat loop expecting better outcomes: on this benchmark they cost 30-43% more and bought nothing. Guard durable-knowledge writes against fabricated conventions (the one place a single agent slipped).
+- **H-03 (brain-as-bus coordination): UNTESTED -> SUPPORTED-but-thin.** The first 2+-agent experiment, finally unblocked. The multi-agent arms coordinated every hand-off (planner->builder->validator, builder->builder) through brain files alone, with zero lost/duplicated work across all COORD/COORD-H trials on both worlds, no out-of-brain channel. Thin: the benchmark never forced a true concurrent-edit conflict.
+  - **Impact:** brain-as-bus is a viable coordination mechanism for multi-agent hand-offs; it has one data point and was not stressed by a genuine merge conflict.
+- **H-05 (named-role advantage): UNTESTED -> INCONCLUSIVE, leaning no-advantage.** The long-missing unscoped baseline ran. On held-out the scoped split showed no measurable advantage over the one general agent (refute-clause language). Not called REFUTED because the benchmark was non-discriminating and the dev AMBIG fabrication edge, though dev-only, is real and worth re-testing.
+  - **Impact:** the scoped agent split did not earn its place on this benchmark; whether it ever does is open and points at the next experiment.
+- **H-10 (staged ingestion): UNTESTED -> INCONCLUSIVE, leaning no-advantage.** Inline ingestion matched staged on intake correctness (all 2/2); staged added cost, no advantage. Recoverability leg never tested (no intake failure/flood).
+- **H-13 (heartbeat loop): UNTESTED -> INCONCLUSIVE.** No advantage observed, but the benchmark has no sub-heartbeat-latency task, so the mode was never exercised. Cannot move toward refute on a benchmark that does not test it.
+- **H-18 (a tournament ranks bets only if the benchmark stresses them): re-confirmed a THIRD time (002, 003, 005).** Even with four pre-registered weakness-targeting discriminators, all converged on held-out. The dominant pattern is now that our benchmarks are not hard enough to separate divergent architectures; building harder, weakness-triggering tasks is the binding constraint on ranking any architecture bet.
+- **H-08 (binary reversible/escalate tag) and H-17 (dev->held-out gap): re-confirmed.** H-08 in a third domain (product-dev: drafts vs commit/push/migrate handled correctly every trial); H-17 with a 0-pt gap for M/MI/F (S's -14 is a dev-only miss, not a generalization gap), no overfitting.
+  - **Impact:** more confidence both are domain-general; both still thin per the conservative-confidence rule.
+- **`FINDINGS/README.md`, `FINDINGS/building-blocks.md`:** spectrum map and block table updated with the 005 result and the four multi-agent block verdicts (all "did not earn its place" / INCONCLUSIVE, with the non-discriminating caveat up front; brain-as-bus SUPPORTED-but-thin).
+- **`TODO.md`:** 005 marked concluded; carry-forwards recorded (the harder discrimination-targeting benchmark is the named next experiment).
+
+### Added
+- **`FINDINGS/005-product-dev-os.md`:** consumable findings page, caveats up front (non-discriminating benchmark; one lean cut; self-improvement deferred; several blocks never stressed by the scenario they exist for), the single-agent verdict, per-block verdicts with held-out evidence, the fabrication-into-knowledge signal, builder guidance, and the named next experiment.
+
+### Operator decision to surface
+The product-dev OS conclusion is: ship the single agent. Before building any multi-agent product-dev machinery, decide whether to fund a harder, discrimination-targeting benchmark (MULTIPLE ambiguity/fabrication tasks across both worlds + a buried-regression task only a fresh-context validator could catch + a TRUE concurrent-conflict coordination task editing the same lines) or accept the single agent for this use case. No safety-floor breach, no budget breach (~$36 of a ~$250 ceiling), nothing irreversible occurred; this is a direction decision, not a stop-the-line escalation.
+
 ## 2026-06-17 — Experiment 005 CHARTERED: does the full multi-agent product-dev OS beat one agent?
 
 The biggest jump on the spectrum so far: from the proven basic single-agent position (001 PA, 003 coding) toward the sophisticated multi-agent OS end. Use case is a product-development operating system (ingest meetings/Slack → triage → plan → build → validate → approve, proactive, vision-aware, learns from interventions). The charter tests whether climbing the spectrum actually improves outcomes (autonomy + output quality) over the proven single agent on the same product-dev benchmark.

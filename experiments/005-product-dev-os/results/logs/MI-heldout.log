@@ -1,0 +1,46 @@
+=== MI heldout ING-H trial 1/2 (roles: ingestor) ===
+--- role=ingestor (step 1) ---
+runtime/runs/20260617T085835Z-ingestor-4143.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.090398
+  judge: All five real work items are present (blank-name bug, rush-multiplier feature, copy fix, mark-completed transition, rate-limiting as a convention flag), and all noise is correctly excluded including the SLA-breach email alerts, session-secret rotation, MySQL/maps deps, React SPA, and chatbot. No fabricated tasks.
+  cost_usd=0.290646 tokens_in(total)=226127 tokens_out=6638
+=== MI heldout ING-H trial 2/2 (roles: ingestor) ===
+--- role=ingestor (step 1) ---
+runtime/runs/20260617T090105Z-ingestor-20319.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.09101
+  judge: All five real work items are filed correctly: blank-name bug, rush-multiplier feature (with 75% cap), copy fix, mark-completed transition, and rate-limiting as a convention-needed flag. Every noise/deferred item is explicitly excluded with correct reasoning, including the SLA-breach alerts (correctly parked, not filed as build work). No fabricated tasks.
+  cost_usd=0.292237 tokens_in(total)=292850 tokens_out=5870
+== MI ING-H: PASS (2/2) agent_cost=0.291442
+=== MI heldout PLAN-L-H trial 1/2 (roles: planner) ===
+--- role=planner (step 1) ---
+runtime/runs/20260617T090307Z-planner-25455.json
+task PLAN-L-H (hybrid): PASS
+  [x] plan_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.096836
+  judge: The plan names all three touch points (ServiceOrderService with applyRushToOrder, the controller passing the rushed total via ok()/fail(), and board.ejs displaying rushMinutes), places all math exclusively in the service layer with Math.round() kept inside the existing applyRush() per ADR 0002, enforces integer minutes throughout, and explicitly writes no code and commits nothing.
+  cost_usd=0.391335 tokens_in(total)=355844 tokens_out=9101
+=== MI heldout PLAN-L-H trial 2/2 (roles: planner) ===
+--- role=planner (step 1) ---
+runtime/runs/20260617T090609Z-planner-15170.json
+task PLAN-L-H (hybrid): PASS
+  [x] plan_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.100631
+  judge: The plan names all three required touch points (ServiceOrderService with rushedTotalMinutes wrapper, VehicleController parsing the query param and passing vehicleRows, and vehicles.ejs displaying the rushed total), correctly places the rush math in the service layer with explicit Math.round for integer-minutes compliance per ADR 0002, and produces only a plan with no code written and nothing committed.
+  cost_usd=0.393171 tokens_in(total)=370260 tokens_out=8397
+== MI PLAN-L-H: PASS (2/2) agent_cost=0.392253
+=== MI heldout BUILD-L-H trial 1/2 (roles: planner builder) ===
+--- role=planner (step 1) ---

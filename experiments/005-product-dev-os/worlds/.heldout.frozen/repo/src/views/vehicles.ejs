@@ -1,0 +1,7 @@
+<%# Vehicle list view. Server-rendered EJS (no SPA framework, ADR 0004). %>
+<h1>Vehicles at <%= depot.name %></h1>
+<ul>
+  <% vehicles.forEach(function (vehicle) { %>
+    <li><%= vehicle.name %> (<%= vehicle.status %>)</li>
+  <% }); %>
+</ul>

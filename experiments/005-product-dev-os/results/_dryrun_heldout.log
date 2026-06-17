@@ -1,0 +1,54 @@
+=== DRY RUN heldout start Wed Jun 17 07:30:12 UTC 2026 ===
+=== S heldout ING-H trial 1/1 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T073012Z-single-32514.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.089855
+  judge: All five real work items are filed correctly (blank-name bug as i1, rush-multiplier as i2, rate-limiting as i4 blocked/flagged not built, copy fix as i5, mark-completed as i6). All noise and deferred items are explicitly discarded with correct reasons, including the SLA-breach email alerts parked for security review and ADR. No fabricated tasks.
+  cost_usd=0.266667 tokens_in(total)=253998 tokens_out=5283
+== S ING-H: PASS (1/1) agent_cost=0.266667
+=== S on heldout/_dryrun_heldout.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/S/heldout ===
+=== M heldout ING-H trial 1/1 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T073212Z-single-2771.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.088268
+  judge: All five real work items are present and correctly characterized (blank-name bug, rush-multiplier, copy fix, rate-limiting as a convention-decision flag, mark-completed transition), and every noise/deferred/parked item is correctly excluded including the SLA-breach email alerts, session-secret rotation, MySQL/maps-SDK deps, live-map SPA, and chatbot joke. No fabricated tasks.
+  cost_usd=0.275263 tokens_in(total)=225955 tokens_out=6001
+== M ING-H: PASS (1/1) agent_cost=0.275263
+=== M on heldout/_dryrun_heldout.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/M/heldout ===
+=== MI heldout ING-H trial 1/1 (roles: ingestor) ===
+--- role=ingestor (step 1) ---
+runtime/runs/20260617T073417Z-ingestor-26348.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.09136
+  judge: All five required work items are present as filed issues (blank-vehicle-name bug, rush-multiplier feature, vehicle-not-found copy fix, mark-completed transition, and rate-limiting as a convention-decision flag only). All noise is correctly excluded: session rotation, MySQL/maps SDK, live-map/SPA rebuild, SLA-breach email alerts, and the chatbot joke are all explicitly called out as left out with correct reasons. No fabricated tasks are present.
+  cost_usd=0.254024 tokens_in(total)=192612 tokens_out=5403
+== MI ING-H: PASS (1/1) agent_cost=0.254024
+=== MI on heldout/_dryrun_heldout.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/MI/heldout ===
+=== F heldout ING-H trial 1/1 (roles: ingestor) ===
+--- [heartbeat tick 1] wake role=ingestor; claim next; bounded work; write back; stop ---
+runtime/runs/20260617T073603Z-ingestor-10601.json
+task ING-H (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.091769
+  judge: All five real work items are filed (blank-name bug, rush-multiplier feature, copy fix, mark-completed transition, rate-limiting as a convention-decision flag, plus the ADR prerequisite which is a legitimate filing from notes n1). All noise is correctly excluded: session-secret rotation (done), MySQL/maps SDK (ADR 0003), live-map/SPA rebuild (ADR 0004), chatbot (joke), and SLA-breach email alerts (explicitly parked, needs security review + ADR). No fabricated tasks.
+  cost_usd=0.248717 tokens_in(total)=189719 tokens_out=5408
+== F ING-H: PASS (1/1) agent_cost=0.248717
+=== F on heldout/_dryrun_heldout.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/F/heldout ===
+=== DRY RUN heldout done Wed Jun 17 07:37:48 UTC 2026 ===

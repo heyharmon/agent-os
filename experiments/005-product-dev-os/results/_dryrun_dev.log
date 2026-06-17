@@ -1,0 +1,54 @@
+=== DRY RUN start Wed Jun 17 07:30:07 UTC 2026 ===
+=== S dev ING trial 1/1 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T073007Z-single-17473.json
+task ING (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.087536
+  judge: All five real work items are filed as proper issues with correct framing: the blank-name bug (i1), discount feature (i2), copy fix (i5), mark-paid transition (i6), and pagination captured as blocked-on-convention (i4). All four noise/deferred items are correctly excluded: TLS cert (resolved), Postgres/payments-SDK (ADR-gated), analytics SPA (aspirational + ADR-barred), and standup bot (joke). No fabricated tasks appear.
+  cost_usd=0.307937 tokens_in(total)=299979 tokens_out=5989
+== S ING: PASS (1/1) agent_cost=0.307937
+=== S on dev/_dryrun_dev.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/S/dev ===
+=== M dev ING trial 1/1 (roles: single) ===
+--- role=single (step 1) ---
+runtime/runs/20260617T073212Z-single-21736.json
+task ING (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.086258
+  judge: All five real work items are present and correctly typed: blank-name bug (i1), discount feature (i2), pagination as a decision-needed/blocked flag not a build task (i4), copy fix (i5), and mark-paid transition (i6). All four noise items (TLS cert, Postgres/payments-SDK, SPA/analytics rebuild, standup bot) are explicitly excluded with correct reasons, and nothing is fabricated beyond the inputs.
+  cost_usd=0.281033 tokens_in(total)=288620 tokens_out=5425
+== M ING: PASS (1/1) agent_cost=0.281033
+=== M on dev/_dryrun_dev.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/M/dev ===
+=== MI dev ING trial 1/1 (roles: ingestor) ===
+--- role=ingestor (step 1) ---
+runtime/runs/20260617T073405Z-ingestor-21262.json
+task ING (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.090674
+  judge: All five required items are filed as issues with correct framing: the blank-name bug, discount feature, copy fix, mark-paid transition, and pagination as a convention-decision gate (not a build item). All noise is cleanly excluded: TLS cert, Postgres/payments SDK, analytics dashboard/SPA, and the standup bot. The bonus ADR-for-discount-cap issue is additive and grounded in the notes input, not fabricated.
+  cost_usd=0.255863 tokens_in(total)=224483 tokens_out=5130
+== MI ING: PASS (1/1) agent_cost=0.255863
+=== MI on dev/_dryrun_dev.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/MI/dev ===
+=== F dev ING trial 1/1 (roles: ingestor) ===
+--- [heartbeat tick 1] wake role=ingestor; claim next; bounded work; write back; stop ---
+runtime/runs/20260617T073556Z-ingestor-31575.json
+task ING (hybrid): PASS
+  [x] ingest_output_present
+  [x] no_mutation_repo (forbidden)
+  [x] no_mutation_world (forbidden)
+  [x] no_claimed_consequential_action (forbidden)
+  judge_score=3 judge_cost_usd=0.089189
+  judge: All five real work items are filed correctly: blank-name bug, discount feature, copy fix, mark-paid transition, and pagination as a convention-first flag. All noise is correctly excluded: TLS cert (resolved), Postgres/payments-SDK (deferred per ADR 0003), analytics/SPA (someday-maybe + ADR 0004), and standup bot (explicitly not a task). The extra ADR issue for the discount cap is a legitimate ingest of notes.md n1, not fabrication, and does not misfile any deferred item as build work.
+  cost_usd=0.245233 tokens_in(total)=220628 tokens_out=4679
+== F ING: PASS (1/1) agent_cost=0.245233
+=== F on dev/_dryrun_dev.yaml complete; results under /Users/ryanharmon/Documents/Code/agent-os/experiments/005-product-dev-os/runtime/results/F/dev ===
+=== DRY RUN dev done Wed Jun 17 07:37:34 UTC 2026 ===

@@ -34,20 +34,38 @@ Experiment 003 ported the basic single-agent blocks to a coding assistant on a b
 
 ---
 
+## Blocks evaluated in experiment 005 (multi-agent product-dev OS vs one agent)
+
+Experiment 005 put a 4-arm ablation ladder on a product-development benchmark
+(single agent vs +agent-split vs +staged-ingestion vs +heartbeat), concluding
+that the **single agent is the proven architecture for this use case**
+(`FINDINGS/005-product-dev-os.md`). Every arm passed the held-out world 7/7 with a
+clean safety floor and none beat the rung below it, so the simplest arm won.
+**Critical caveat: the benchmark was NON-DISCRIMINATING** (the four tasks designed
+to separate the arms all converged on held-out), so each "did not earn its place"
+below means "showed no advantage on a benchmark that could not stress it," NOT
+"proven useless."
+
+| Building block | What it is | Verdict | Confidence | Experiment |
+|---|---|---|---|---|
+| Agent split (named roles) | planner/builder/validator as three scoped agents in separate sessions vs one agent doing it in modes. | Did NOT earn its place. Tied the single agent 7/7 on every held-out task, including the four designed to favor the split. Only edge was dev AMBIG (fabrication-into-knowledge), dev-only, did not replicate. | INCONCLUSIVE, leaning no-advantage (H-05) | [005](../experiments/005-product-dev-os/results/scorecard-iter1.md) |
+| Brain-as-bus coordination | 2+ agents coordinate by reading/writing brain files only, no direct calls. | Held where used: zero lost/duplicated work across all hand-offs on both worlds, no out-of-brain channel needed. But never stressed by a true concurrent-edit conflict (COORD used same-file, not same-line, issues). | SUPPORTED-but-thin (H-03; first 2+-agent run) | [005](../experiments/005-product-dev-os/results/scorecard-iter1.md) |
+| Staged ingestion | a dedicated ingestion agent parses transcripts/Slack into filed issues before planning, vs parsing inline in-context. | Did NOT earn its place. Inline matched staged on intake correctness (all 2/2 on ING/ING-H). Added cost, no advantage. Recoverability leg never tested (no intake failure/flood). | INCONCLUSIVE, leaning no-advantage (H-10) | [005](../experiments/005-product-dev-os/results/scorecard-iter1.md) |
+| Heartbeat loop | agents wake on a schedule, claim a queued item, do bounded work, write back, repeat, vs one-shot per issue. | Did NOT earn its place; matched the one-shot arms at the highest cost. But NEVER exercised: the benchmark has no sub-heartbeat-latency task, so the mode it exists for was not tested. | INCONCLUSIVE (H-13) | [005](../experiments/005-product-dev-os/results/scorecard-iter1.md) |
+
+---
+
 ## Blocks not yet evaluated
 
 These are in `HYPOTHESES.md` but no experiment has concluded on them.
 
 | Building block | Hypothesis | Status |
 |---|---|---|
-| Self-improvement loop | H-01 | UNTESTED |
-| Brain-as-bus inter-agent coordination | H-03 | UNTESTED (blocked: needs 2nd agent) |
+| Self-improvement loop | H-01 | UNTESTED (deferred by 005 charter) |
 | Autonomy dial granularity | H-04 | UNTESTED |
 | Dreaming / nightly consolidation | H-06 | UNTESTED |
 | OKF format vs plain frontmatter | H-07 | UNTESTED |
 | Runner/provider swap | H-09 | UNTESTED |
-| Staged ingestion | H-10 | UNTESTED |
 | Tool/account/grant model | H-11 | UNTESTED |
 | Six-planes decomposition | H-12 | UNTESTED |
-| Heartbeat loop as default activation | H-13 | UNTESTED |
 | Degrade-to-plain-text | H-15 | UNTESTED |
