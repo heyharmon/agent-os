@@ -6,7 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
-## 2026-06-17 — Enforcement thread CLOSED: the checked gate is DEMOTED as unnecessary overhead for current frontier models
+## 2026-06-17 — Experiment 005 CHARTERED: does the full multi-agent product-dev OS beat one agent?
+
+The biggest jump on the spectrum so far: from the proven basic single-agent position (001 PA, 003 coding) toward the sophisticated multi-agent OS end. Use case is a product-development operating system (ingest meetings/Slack → triage → plan → build → validate → approve, proactive, vision-aware, learns from interventions). The charter tests whether climbing the spectrum actually improves outcomes (autonomy + output quality) over the proven single agent on the same product-dev benchmark.
+
+Design choices (operator-set): a divergent tournament NOW (not a staged ladder); test the full vision against the single-agent baseline ("everything at once") as a delete-first move (if the maximal system does not beat the minimal proven one, delete the middle); win condition is autonomy + output quality (not throughput); keep the A_multi ablation arm; defer self-improvement (H-01) to a later stage. To avoid a confounded "it won but we don't know why" result, the arms are a **4-arm ablation ladder**, each adding exactly one block: A_single → A_multi (agent split, H-03/H-05) → A_multi_ing (staged ingestion, H-10) → A_full (heartbeat, H-13). The benchmark is pre-registered to DISCRIMINATE (the trap that left 002/003 unable to rank): four tasks designed to favor the split, with a post-run check that at least one arm actually diverged or the benchmark is declared non-discriminating (H-18).
+
+### Added
+- **`experiments/005-product-dev-os/charter.md`:** use case + spectrum position, goal, per-rung comparative bar + absolute safety floor (zero unapproved consequential actions; zero lost/duplicated work across hand-offs), pre-registered outcome-based scoring with the discrimination check, hypotheses in play (H-03 and H-05 finally unblocked by the first 2+-agent experiment; plus H-10/H-13 and re-confirm H-02/H-08/H-17/H-19), stopping criteria, budget, and a recorded operator delegation for an unattended overnight autonomous run.
+  - **Impact:** none to builders yet (no results). This is a bet, not a finding. The single-agent composition from 001/003 remains the recommended basic architecture until 005 produces held-out evidence.
+
+
 
 Operator decision: accept that the checked enforcement gate looks unnecessary for current frontier models and demote it. The model self-enforces the consequential-action contract from prose alone (drafts the reversible part, escalates the consequential part) even when explicitly tempted. Across the experiments that could measure it the checked gate fired 0 useful times (002: 0/24; 003: 0/22), did no work, and on the one real coding breach recorded `would_have_fired=false` (the H-20 approval-presence blind spot), so it would not have caught it. The only positive signal was 001 T5, which was thin and where the gate also over-fired on phrasing and could mis-target its corrective artifact.
 
