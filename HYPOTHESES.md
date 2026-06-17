@@ -62,10 +62,11 @@ This register holds every unproven architectural claim from the archived docs as
 - Claim: Committing the knowledge layer to OKF buys enough portability and ecosystem leverage to justify its constraints versus ad-hoc markdown + YAML frontmatter.
 - Source: `archive/BRAIN_ARCHITECTURE.md` §0, inv. #2, §4, §8 (the brain's only hard commitment).
 - Why we believe it: format alone determines longevity, so anything that speaks OKF can read and write the brain, and it outlives every tool.
-- Test: Build the brain in OKF and attempt one concrete portability win (read/write the same brain with a second OKF-aware tool with zero migration). Observable signal: whether a second tool operates on the brain unmodified, and whether OKF's constraints ever block a needed field or structure.
-- Refutes if: no second tool ever reads the brain via OKF over the project's life, AND OKF's frontmatter rules force at least one workaround that plain frontmatter would not have, making it pure cost.
-- Status: UNTESTED
-- Evidence: (none)
+- Spec note (added 2026-06-17, from the published OKF v0.1): OKF is markdown + YAML frontmatter, a directory of "concept" files, exactly one required field (`type`), six standardized/queryable fields (`type`, `title`, `description`, `resource`, `tags`, `timestamp`), reserved `index.md` and `log.md`, and concepts cross-linked by ordinary markdown links. That is nearly identical to the brain's current ad-hoc frontmatter, so the cost side is small; the open question is whether the portability/interop is real or ceremony.
+- Test: experiment 007 (QUEUED, `experiments/007-okf-brain-format/charter.md`). Put two divergent brain-format arms on one already-proven task benchmark (reuse 003's coding brain + suite, the richest knowledge layer): A_plain (current ad-hoc frontmatter, the proven baseline) vs A_okf (knowledge layer committed to OKF v0.1). Same agent, same tasks, dev + blind held-out. Pre-register a portability task designed to make the difference FIRE (H-18): point a generic OKF-aware reader at each brain and require it to answer a query using only OKF-standard fields. Observable signals: (1) task pass-rate parity (OKF must not lower it), (2) whether the second tool operates on the OKF brain unmodified where it cannot on plain, (3) whether OKF's rules ever force a field/structure workaround plain frontmatter would not.
+- Refutes if: no second tool ever reads the brain via OKF (the portability win never fires) AND OKF's frontmatter rules force at least one workaround plain frontmatter would not, making it pure cost. Also counts against OKF if A_okf lowers held-out task pass-rate vs A_plain.
+- Status: UNTESTED. QUEUED as experiment 007.
+- Evidence: (none yet; queued)
 
 ## H-08  A consequence-tag taxonomy beyond reversible/escalate is needed
 - Claim: Governing actions requires more than the binary reversible-vs-consequential tag; a richer consequence taxonomy is needed to make correct autonomy decisions.

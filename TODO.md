@@ -199,3 +199,11 @@ SUPPORTED-but-thin, untested by a true concurrent conflict). H-01
 (self-improvement loop) is the marquee bet and still UNTESTED. H-18 is the
 recurring blocker: build a benchmark hard enough to discriminate divergent
 architectures. Completed pre-pivot design notes are in `archive/todos.md`.
+
+### Queued experiments
+- [ ] **007 - OKF brain format** (tests H-07). Charter written, not started:
+  `experiments/007-okf-brain-format/charter.md`. Two divergent brain-format arms
+  (A_plain vs A_okf) on the reused 003 coding benchmark. The published OKF v0.1 is
+  nearly identical to our file brain, so the real question is whether the
+  portability win ever fires or OKF is neutral ceremony. Operator-requested
+  2026-06-17 while scaffolding the aos-brain build.
