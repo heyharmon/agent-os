@@ -6,7 +6,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ---
 
-## 2026-06-17 - Queued experiment 007: OKF as the brain's knowledge format
+## 2026-06-17 - Queued experiment 008: roles (markdown) vs skills/agents for agent modes
+
+Chartered a test of whether delivering the agent modes (product / developer / validation / verify) as Claude Code **skills** (and/or subagents) scopes behavior more reliably than injecting `roles/*.md` into the prompt, and at what cost (H-22). Not started; no runs. The aos roadmap's open question, queued like OKF / H-07.
+
+### Added
+- **`experiments/008-roles-vs-skills/`** (charter + README). Two primary divergent delivery arms (A_roles = current `roles/*.md` injected by `bin/run`; A_skills = the same modes as Claude Code skills) on the reused 006 fail-capable benchmark, with A_agents (modes as subagents) as a cost-bounded conditional third bet. Holds the proven single-agent + scoped-no-fabrication composition fixed and varies ONLY the mode-delivery mechanism. Pre-registers a two-sided discriminator per H-18: run FAB-GAP under role-dilution pressure (favors skills/agents) AND under a non-obvious trigger (favors roles), so each mechanism's weakness can manifest. Bar = task-pass parity (a challenger must not regress) plus a fired reliability win; safety floor unchanged (no fabrication, no consequential action). Cost a signal, not a bar.
+
+### Changed
+- **H-22 (skills/agents scope modes more reliably than injected role files): NEW, UNTESTED -> QUEUED as 008.** Added to the register. Key prior: 006 proved a scoped no-fabrication PROMPT on a single agent is what earns its place (not separation), so 008's open question is purely the DELIVERY mechanism of that scoping; the honest bet is that delivery may be neutral and `roles/*.md` wins on simplicity.
+  - **Impact:** do not move the harness off `roles/*.md` to skills/agents until 008 settles it.
+- **`TODO.md`:** added a "Queued experiments" entry for 008.
+
+
 
 Chartered a test of whether committing the brain's knowledge layer to Google's Open Knowledge Format (OKF v0.1) is worth its cost over our current ad-hoc markdown + YAML frontmatter (H-07). Not started; no runs. Queued while scaffolding the separate `aos-product-dev` build, which deliberately ships plain frontmatter until this settles.
 

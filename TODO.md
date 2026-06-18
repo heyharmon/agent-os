@@ -207,3 +207,12 @@ architectures. Completed pre-pivot design notes are in `archive/todos.md`.
   nearly identical to our file brain, so the real question is whether the
   portability win ever fires or OKF is neutral ceremony. Operator-requested
   2026-06-17 while scaffolding the aos-product-dev build.
+- [ ] **008 - roles (markdown) vs skills/agents for agent modes** (tests H-22).
+  Charter written, not started: `experiments/008-roles-vs-skills/charter.md`. Two
+  primary divergent delivery arms (A_roles = current `roles/*.md` injected by
+  `bin/run`; A_skills = the same modes as Claude Code skills) on the reused 006
+  fail-capable benchmark, with A_agents (modes as subagents) as a cost-bounded
+  conditional third bet. 006 proved a scoped no-fabrication PROMPT earns its place;
+  008 asks only whether a skill/agent delivers that scoping MORE reliably under
+  prompt pressure, or whether injected markdown ties and wins on simplicity.
+  Operator-requested 2026-06-17 (aos roadmap open question).
