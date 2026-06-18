@@ -16,12 +16,14 @@ Ran the operator-approved lean cut of 008. ONE variable: how a scoped agent mode
 
 ### Added
 - **`experiments/008-roles-vs-skills/`** lean-cut rig + results: `run.py` (roles/skills delivery runner reusing 006 unchanged), trimmed `tasks/{dev,heldout}.yaml` (FAB-GAP + FAB-USE; FAB-GAP set to assertion-only), `skills/planner/SKILL.md`, `summarize.py`, and `results/run-log.md` (scorecard + takeaway). Per-trial scores under `runtime/results/`.
+- **`FINDINGS/008-roles-vs-skills.md`:** consumable findings page (caveats up front, the neutral result, building-block verdicts, the delivery-independent FAB-GAP slip, builder guidance, hypotheses moved, the named next experiment).
 
 ### Changed
 - **H-22 (skills/agents scope modes more reliably than injected role files): QUEUED -> REFUTED-but-thin.** Delivery is neutral (tied on every cell at equal cost). Skills are an equal-cost, equal-reliability SWAP; the trigger-miss risk did not fire under explicit naming; a separate delivery-independent FAB-GAP filing slip was surfaced.
   - **Impact:** moving `aos-product-dev` from `roles/*.md` to `.claude/skills/` is SAFE on the evidence (no reliability or cost regression); decide it on architecture (progressive disclosure, repo-wide availability, policy-vs-procedure layering, optional tool-scoping), not behavior. Keep the no-fabrication rule in the always-on contract (CLAUDE.md) so it holds regardless of skill load. Independently, sharpen the planner guardrail: an undecided convention's ADR goes to `runtime/drafts/`, never to durable `knowledge/`.
 - **`experiments/008-roles-vs-skills/charter.md`:** Status RUNNING -> CONCLUDED; the lean cut was pre-registered before the first run (operator-approved), not a moved goalpost.
 - **`EVIDENCE.md`:** recorded delivery-mechanism neutrality under the named-role block, with the caveats and the guardrail note.
+- **`FINDINGS/README.md`, `FINDINGS/building-blocks.md`:** spectrum narrative + positions table updated with the 008 neutral result; the Named-role block now records that its delivery (role file vs skill) is interchangeable, plus a new 008 block section (delivery NEUTRAL, trigger reliability under explicit naming, the authoring-guardrail carry-forward).
 - **`TODO.md`:** 008 marked concluded.
 
 ## 2026-06-17 - Queued experiment 008: roles (markdown) vs skills/agents for agent modes

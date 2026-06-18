@@ -61,6 +61,18 @@ fabricate," ONE guardrail added to the single agent, not a multi-agent split. Th
 self-validation half did not reproduce (a single agent self-caught a
 clearly-specified regression every time), so it remains untested. See the 006 page.
 
+008 then asked a mechanism question about that scoped role: does it matter HOW the
+mode reaches the agent, an injected `roles/*.md` prompt vs a Claude Code skill?
+Answer: NO. On the reused 006 fabrication benchmark, an injected role and a skill
+carrying the same content tied on every cell at equal cost (within 2%), and the
+skill loaded every time the harness named it (no trigger-miss). So the
+roles-vs-skills choice is an ARCHITECTURE decision (progressive disclosure,
+repo-wide availability, tool-scoping), not a behavioral one; H-22's "skills are more
+reliable" claim is refuted. A delivery-independent slip surfaced too: the scoped
+planner files a `PROPOSED` ADR to durable `knowledge/` ~1-in-3 on the dev trap (both
+delivery mechanisms, identically), so the authoring guardrail wording is worth
+sharpening. See the 008 page.
+
 The map now spans TWO domains at the basic position: 001 (personal assistant) and 003 (coding assistant). 003 ran the same basic blocks on a software-engineering project to test whether they were PA-specific. They were not: the file brain, plain-text retrieval, binary reversible/escalate tag, named role, and provider-JSON cost all carried, so they have crossed the two-domain threshold and are closer to PROVEN. The recommended basic architecture is exactly those blocks: file brain + plain-text retrieval + the binary reversible/escalate tag (a prose contract the model self-enforces) + named role + provider-JSON cost. The checked enforcement gate is NOT part of the recommendation: it was demoted 2026-06-17 as unnecessary overhead for current frontier models (it fired 0 useful times across 002 and 003 and would not have caught the one real coding breach; H-16 NOT SUPPORTED, H-20 retired). See the 003 page and building-blocks.md.
 
 ### Positions with results
@@ -72,6 +84,7 @@ The map now spans TWO domains at the basic position: 001 (personal assistant) an
 | Basic single-agent coding assistant (cross-domain) | SUPPORTED-but-thin (blocks carry PA -> coding; gate DEMOTED) | [003-coding-assistant-lean.md](./003-coding-assistant-lean.md) |
 | Multi-agent product-dev OS (split + staged ingestion + heartbeat) vs one agent | SINGLE AGENT WINS; added blocks did not earn their place (benchmark non-discriminating) | [005-product-dev-os.md](./005-product-dev-os.md) |
 | Validation-separation on a fail-capable benchmark (single vs fresh-context pass vs scoped roles) | SCOPED ROLES win on fabrication-into-knowledge; fresh context does not. One guardrail (a scoped no-fabrication authoring prompt), not a split. Self-validation half untested. | [006-validation-separation.md](./006-validation-separation.md) |
+| Mode delivery: injected role file vs Claude Code skill (same content, reused 006 benchmark) | NEUTRAL: tied on every cell at equal cost; the skill loaded every time it was named (no trigger-miss). Choose on architecture, not reliability. H-22 refuted-but-thin. | [008-roles-vs-skills.md](./008-roles-vs-skills.md) |
 | Everything further right | UNTESTED | (no experiment concluded) |
 
 "SUPPORTED-but-thin" means the architecture passed its bar (9/10 tasks, 3 trials, zero safety-floor failures) on one seeded world with the same authors writing both the system and the tests. It is a valid starting point, not a guarantee of generalization.
@@ -87,6 +100,7 @@ Experiment 002 (lean cut) was designed as the generalization test and the first 
 - **003-coding-assistant-lean.md**: the cross-domain generalization result, the basic blocks carry from PA to coding; the enforcement gate did not.
 - **005-product-dev-os.md**: the 4-arm product-dev tournament. The single agent beat (tied, so won on simplicity) the agent split, staged ingestion, and heartbeat on the held-out world; the benchmark could not discriminate the arms.
 - **006-validation-separation.md**: the fail-capable validation-separation tournament. Scoped roles beat the single agent on fabrication-into-knowledge (held-out); fresh context alone did not. The fix is one scoped authoring guardrail, not a split. The self-validation half did not discriminate.
+- **008-roles-vs-skills.md**: roles vs skills for delivering a scoped mode. Neutral: an injected role file and a Claude Code skill scope behavior equally well at equal cost (H-22 refuted-but-thin); choose on architecture, not reliability. Surfaced a delivery-independent authoring-guardrail slip.
 
 ## The raw evidence
 
