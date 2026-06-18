@@ -206,4 +206,4 @@ architectures. Completed pre-pivot design notes are in `archive/todos.md`.
   (A_plain vs A_okf) on the reused 003 coding benchmark. The published OKF v0.1 is
   nearly identical to our file brain, so the real question is whether the
   portability win ever fires or OKF is neutral ceremony. Operator-requested
-  2026-06-17 while scaffolding the aos-brain build.
+  2026-06-17 while scaffolding the aos-product-dev build.

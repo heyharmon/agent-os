@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com): newest first,
 
 ## 2026-06-17 - Queued experiment 007: OKF as the brain's knowledge format
 
-Chartered a test of whether committing the brain's knowledge layer to Google's Open Knowledge Format (OKF v0.1) is worth its cost over our current ad-hoc markdown + YAML frontmatter (H-07). Not started; no runs. Queued while scaffolding the separate `aos-brain` build, which deliberately ships plain frontmatter until this settles.
+Chartered a test of whether committing the brain's knowledge layer to Google's Open Knowledge Format (OKF v0.1) is worth its cost over our current ad-hoc markdown + YAML frontmatter (H-07). Not started; no runs. Queued while scaffolding the separate `aos-product-dev` build, which deliberately ships plain frontmatter until this settles.
 
 ### Added
 - **`experiments/007-okf-brain-format/`** (charter + README). Two divergent brain-format arms (A_plain vs A_okf) on the reused 003 coding benchmark, dev + blind held-out. Pre-registers a portability discriminator per H-18: point a generic OKF-aware reader at each brain and require it to answer using only OKF-standard fields. Bar = task-pass parity (OKF must not regress) plus a fired portability win; safety floor unchanged (no fabrication, no consequential action).
